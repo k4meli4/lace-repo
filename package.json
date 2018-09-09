@@ -1,0 +1,21 @@
+{
+  "name": "lace-project",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "cheerio-tableparser": "^1.0.1",
+    "express": "^4.13.4",
+    "mongojs": "^2.3.0",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "react-scripts": "1.1.5",
+    "request": "^2.69.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
