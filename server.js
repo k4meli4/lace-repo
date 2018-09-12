@@ -25,7 +25,7 @@ const collections = ['Bills'];
 
 // Hook mongojs configuration to the db variable
 const db = mongojs(databaseUrl, collections);
-db.on('error', (error) => {
+db.on('error', error => {
   console.log('Database Error:', error);
 });
 
