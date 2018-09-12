@@ -10,6 +10,7 @@
     "client": "cd client && npm run start",
     "install": "cd client && yarn install",
     "build": "cd client && npm run build",
+    "test": "npm run lint",
     "heroku-postbuild": "npm run build"
   },
   "author": "LACE_TEAM",
