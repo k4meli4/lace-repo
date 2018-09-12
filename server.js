@@ -46,12 +46,10 @@ app.get("/scrape", (req, res) => {
 
   request("https://www.ola.org/en/legislative-business/bills/current", (error, response, html) => {
 
-    let $ = cheerio.load(html);
+    const $ = cheerio.load(html);
     cheerioTableParser($)
 
-    $(".views-row").each(function(i, element) {
-
-
+    $(".views-row").each((i, element) => {
       let title = $(element).find("h2").text();
       let URL = $(element).find("a").attr("href");
       let MPP = $(element).find("p").text();
