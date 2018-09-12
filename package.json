@@ -1,21 +1,46 @@
 {
-  "name": "lace-project",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "cheerio": "^0.20.0",
-    "cheerio-tableparser": "^1.0.1",
-    "express": "^4.13.4",
-    "mongojs": "^2.3.0",
-    "react": "^16.5.0",
-    "react-dom": "^16.5.0",
-    "react-scripts": "1.1.5",
-    "request": "^2.69.0"
-  },
+  "name": "lace-repo",
+  "version": "1.0.0",
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "server.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "install": "cd client && yarn install",
+    "build": "cd client && npm run build",
+    "lint": "eslint **/*.js --quiet",
+    "fix": "eslint --fix .",
+    "test": "npm run lint",
+    "heroku-postbuild": "npm run build"
+  },
+  "author": "LACE_TEAM",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-eslint": "^9.0.0",
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "concurrently": "^3.5.0",
+    "eslint": "^5.5.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^2.10.0",
+    "eslint-plugin-html": "^4.0.5",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "cheerio-tableparser": "^1.0.1",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.3",
+    "mongojs": "^2.6.0",
+    "prettier": "^1.14.2",
+    "request": "^2.88.0"
   }
 }
