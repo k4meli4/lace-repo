@@ -87,6 +87,41 @@ app.get('/scrape', (req, res) => {
     });
   });
 
+  app.get('/scrape', (req, res) => {
+    console.log("Scrape")
+    request(
+      'https://www.ola.org/en/legislative-business/house-documents/parliament-42/session-1/2018-08-14/hansard#P402_92152',
+      (error, response, html) => {
+        const $ = cheerio.load(html);
+        cheerioTableParser($);
+  
+        $('.speakerStart').each((i, element) => {
+          let object = $(element).text()
+  
+          // var ford = obj.map(name => name.id);
+  
+          console.log(object);
+          // console.log(typeof object);
+          
+         
+          db.Hansard.insert(
+            {
+              object,
+            },
+            (err, inserted) => {
+              if (err) {
+                // Log the error if one is encountered during the query
+                console.log(err);
+              } else {
+                // Otherwise, log the inserted data
+              }
+              // });
+            }
+          );
+        });
+      }
+    );
+
   // Send a "Scrape Complete" message to the browser
   res.send('Scrape Complete');
 });
