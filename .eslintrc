@@ -52,7 +52,6 @@
       1,
       {
         "extensions": [
-          ".js",
           ".jsx"
         ]
       }
