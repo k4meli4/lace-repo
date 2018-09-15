@@ -41,51 +41,33 @@ app.get('*', (req, res) => {
 });
 
 app.get('/scrape', (req, res) => {
-  request('https://www.ola.org/en/legislative-business/bills/current', (error, response, html) => {
-    const $ = cheerio.load(html);
-    cheerioTableParser($);
+  request(
+    'https://www.ola.org/en/legislative-business/house-documents/parliament-42/session-1/2018-08-14/hansard#P402_92152',
+    (error, response, html) => {
+      const $ = cheerio.load(html);
+      cheerioTableParser($);
 
-    $('.views-row').each((i, element) => {
-      const title = $(element)
-        .find('h2')
-        .text();
-      const URL = $(element)
-        .find('a')
-        .attr('href');
-      const MPP = $(element)
-        .find('p')
-        .text();
-      const data = $(element).parsetable(false, false, true);
+      $('.speakerStart').each((i, element) => {
+        const object = $(element).text();
 
-      // let date = $(element).find("td").eq(0).text()
-      // let billStage = $(element).find("td").eq(1).text()
-      // let activity =  $(element).find("td").eq(2).text()
-      // let committee =  $(element).find("td").eq(3).text()
+        console.log(object);
 
-      // If this found element had both a title and a link
-      if (title && URL) {
-        // Insert the data in the scrapedData db
-        db.scrapedData.insert(
+        // console.log(typeof object);
+        db.Hansard.insert(
           {
-            title,
-            URL,
-            MPP,
-            data,
-            // date, billStage, activity, committee
+            object,
           },
           (err, inserted) => {
             if (err) {
               // Log the error if one is encountered during the query
-              console.log(err);
-            } else {
-              // Otherwise, log the inserted data
               console.log(inserted);
+              console.log(err);
             }
           }
         );
-      }
-    });
-  });
+      });
+    }
+  );
 
   // Send a "Scrape Complete" message to the browser
   res.send('Scrape Complete');
