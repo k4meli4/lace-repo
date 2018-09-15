@@ -36,9 +36,7 @@ db.on('error', error => {
 
 // Send every other request to the React app
 // Define any API routes before this runs
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build/index.html'));
-});
+
 
 app.get('/scrape', (req, res) => {
   request(
@@ -71,6 +69,10 @@ app.get('/scrape', (req, res) => {
 
   // Send a "Scrape Complete" message to the browser
   res.send('Scrape Complete');
+});
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
 // Listen on port 3000
