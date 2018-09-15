@@ -36,8 +36,6 @@ db.on('error', error => {
 
 // Send every other request to the React app
 // Define any API routes before this runs
-
-
 app.get('/scrape', (req, res) => {
   request(
     'https://www.ola.org/en/legislative-business/house-documents/parliament-42/session-1/2018-08-14/hansard#P402_92152',
