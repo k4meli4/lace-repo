@@ -94,6 +94,7 @@ app.get('/scrape', (req, res) => {
 
       $('.speakerStart').each((i, element) => {
         let object = $(element).text();
+        const object = $(element).text();
 
         console.log(object);
 
@@ -105,6 +106,7 @@ app.get('/scrape', (req, res) => {
           (err, inserted) => {
             if (err) {
               // Log the error if one is encountered during the query
+              console.log(inserted);
               console.log(err);
             }
           }

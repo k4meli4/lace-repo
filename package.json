@@ -11,6 +11,7 @@
     "install": "cd client && yarn install",
     "build": "cd client && npm run build",
     "lint": "eslint \"**/*.js\"",
+    "lints": "eslint server.js",
     "fix": "eslint --fix .",
     "test": "npm run lint",
     "heroku-postbuild": "npm run build"
