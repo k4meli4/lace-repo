@@ -5,7 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 // import compoenents
 import Navbar from './components/Navbar';
 import Landing from './components/Landing';
-//
+// styling
 import './App.css';
 
 class App extends Component {
@@ -19,7 +19,6 @@ class App extends Component {
           <Route exact path="/" component={Landing} />
         </div>
       </BrowserRouter>
-
       </div>
     );
   }
