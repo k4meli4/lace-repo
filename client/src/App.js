@@ -2,7 +2,10 @@
 // eslint disbale to be removed once states added.
 import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-
+// import compoenents
+import Navbar from './components/Navbar';
+import Landing from './components/Landing';
+//
 import './App.css';
 
 class App extends Component {
