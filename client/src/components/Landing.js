@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-const Landing = props => (
-  <h1>Hello Lnding! </h1>
-)
+const Landing = () => <h1>Hello Lnding! </h1>;
 
 export default Landing;
