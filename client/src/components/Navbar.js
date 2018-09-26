@@ -12,8 +12,8 @@ const Navbar = () => (
     <Link to="/login" clasclassNames="link dim gray    f6 f5-ns dib mr3" title="login">
       Login
     </Link>
-    <Link to="/profile" className="link dim gray    f6 f5-ns dib mr3" title="other">
-      other?
+    <Link to="/test" className="link dim gray    f6 f5-ns dib mr3" title="Shortcut for testing">
+      Shortcut for test?
     </Link>
   </nav>
 );

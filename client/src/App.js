@@ -5,6 +5,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 // import compoenents
 import Navbar from './components/Navbar';
 import Landing from './components/Landing';
+import SelectedDash from './components/SelectedDash';
 // styling
 import './App.css';
 
@@ -17,6 +18,9 @@ class App extends Component {
         <div>
         <Navbar />
           <Route exact path="/" component={Landing} />
+          <Route exact path="/test" component={SelectedDash} />
+          <Route exact path="/login" component={SelectedDash} />
+          <Route exact path="/signup" component={SelectedDash} />
         </div>
       </BrowserRouter>
       </div>
