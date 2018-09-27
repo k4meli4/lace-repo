@@ -1,5 +1,0 @@
-models/index.js
-/node_modules/*
-/client/src/registerServiceWorker.js
-/client/build/*
-/client/node_modules/*
