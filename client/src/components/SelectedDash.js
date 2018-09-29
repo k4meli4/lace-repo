@@ -13,3 +13,4 @@ export default class SelectedMPP extends Component {
     return <MppInfo name={this.state.name} position={this.state.position} number={this.state.number} picture={this.state.picture}/>;
   }
 }
+// commit me
