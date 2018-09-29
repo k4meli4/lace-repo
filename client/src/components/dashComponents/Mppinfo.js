@@ -10,12 +10,13 @@ const styles = {
   fixedHeight: {
     height: '280px',
   },
+
 };
 
 const Mppinfo = props => (
 
   <div className="container center" style={styles.layout}>
-    <article style={styles.fixedHeight} className="mw5 bg-white br3 pa3 pa4-ns ba b--black-10">
+    <article style={styles.fixedHeight} className="mw5 bg-white pa3 pa4-ns ba b--black-10">
       <div className="tc">
         <img
           src={props.picture}
@@ -27,8 +28,8 @@ const Mppinfo = props => (
       </div>
     </article>
 
-    <article style={styles.fixedHeight} className="br3 hidden ba b--black-10">
-      <h1 className="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">Information on {props.name}</h1>
+    <article style={styles.fixedHeight} className="hidden ba b--black-10 w-60">
+      <h1 className="f4 bg-near-white br--top black-60 mv0 pv2 ph3">Information on {props.name}</h1>
       <div className="pa3 bt b--black-10">
         <p>Name:<strong>{props.name}</strong> </p>
         <p>Current Position:<strong>{props.position}</strong> </p>
