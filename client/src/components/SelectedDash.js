@@ -11,42 +11,45 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    padding: ''
+    padding: '',
   },
   size: {
-    height: '400px'
+    height: '400px',
   },
   rightA: {
-    'margin-right': '0px'
-  }
-}
+    'margin-right': '0px',
+  },
+};
 export default class SelectedMPP extends Component {
   state = {
     name: 'Hon. Doug Ford',
     position: 'Premier',
     number: '416-325-1941',
-    picture:'https://www.ola.org/sites/default/files/member/profile-photo/doug_ford.jpg'
+    picture: 'https://www.ola.org/sites/default/files/member/profile-photo/doug_ford.jpg',
   };
-
-
 
   render() {
     return (
       <div>
-        <MppInfo name={this.state.name} position={this.state.position} number={this.state.number} picture={this.state.picture}/>
-        <div className='outterDiv center w-80 ' style={styles.layout}>
-          <div className='innerDiv-left'>
+        <MppInfo
+          name= {name}
+          position= {position}
+          number= {number}
+          picture= {picture}
+        />
+        <div className="outterDiv center w-80 " style={styles.layout}>
+          <div className="innerDiv-left">
             <SocialFeed />
             <EventFeed />
           </div>
-          <div className='innerDiv-right w-80 '>
-            <NewsFeed customStyle={styles.rightA}/>
-            <VotingRecords customStyle={styles.rightA}/>
-            <SpeechFeed customStyle={styles.rightA}/>
+          <div className="innerDiv-right w-80 ">
+            <NewsFeed customStyle={styles.rightA} />
+            <VotingRecords customStyle={styles.rightA} />
+            <SpeechFeed customStyle={styles.rightA} />
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
 // commit me
