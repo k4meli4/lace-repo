@@ -12,7 +12,16 @@ const styles = {
   },
 };
 
+
+const styles = {
+  layout: {
+    display: 'flex',
+    flexDirection: 'row'
+  }
+}
+
 const Mppinfo = props => (
+
   <div className="container center" style={styles.layout}>
     <article style={styles.fixedHeight} className="mw5 bg-white br3 pa3 pa4-ns ba b--black-10">
       <div className="tc">
@@ -37,6 +46,7 @@ const Mppinfo = props => (
         <h3 />
       </div>
     </article>
+
   </div>
 );
 
