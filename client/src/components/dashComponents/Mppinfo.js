@@ -5,20 +5,12 @@ const styles = {
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItem: 'center',
+    alignItems: 'center',
   },
   fixedHeight: {
     height: '280px',
   },
 };
-
-
-const styles = {
-  layout: {
-    display: 'flex',
-    flexDirection: 'row'
-  }
-}
 
 const Mppinfo = props => (
 
@@ -30,7 +22,7 @@ const Mppinfo = props => (
           className="br-100 h4 w4 dib ba b--black-05 pa2"
           alt="selected MPP"
         />
-        <h1 className="f3 mb2">Ford something</h1>
+        <h1 className="f3 mb2">{props.name}</h1>
         <h2 className="f5 fw4 gray mt0">Position: something</h2>
       </div>
     </article>
