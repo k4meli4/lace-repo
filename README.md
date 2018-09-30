@@ -15,8 +15,6 @@ For decades a diversity of opinion and commentary contributed to a robust politi
 How does one get to the politicians words - without filters.  We give you the politicians' facebook and twitter feeds and their parliamentary record - their official speeches, votes and news releases.  All of this information is available to you in real-time
 
 
-]
-
 ## Technical Specs
 
 [txt here]
@@ -26,7 +24,7 @@ How does one get to the politicians words - without filters.  We give you the po
 - npm run intall
 - npm start
 
-### LACE Team
+### KLACE Team
 
 - **K**amelia [@k4meli4](https://github.com/k4meli4)
 - **L**isa [@LisaFreedman](https://github.com/LisaFreedman)
