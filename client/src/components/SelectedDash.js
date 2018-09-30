@@ -29,15 +29,11 @@ export default class SelectedMPP extends Component {
   };
 
   render() {
+    const { name, position, number, picture } = this.state;
     return (
       <div>
-        <MppInfo
-          name= {name}
-          position= {position}
-          number= {number}
-          picture= {picture}
-        />
-        <div className="outterDiv center w-80 " style={styles.layout}>
+        <MppInfo name={name} position={position} number={number} picture={picture} />
+        <div className="outterDiv center w-80" style={styles.layout}>
           <div className="innerDiv-left">
             <SocialFeed />
             <EventFeed />

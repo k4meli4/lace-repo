@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const styles = {};
 
@@ -6,8 +6,8 @@ styles.rightA = {
   'margin-right': '0px',
 };
 
-const VotingRecords = props => (
-  <article style={props.customStyle} className="center br3 hidden ba b--black-10 mv4 w-90">
+const VotingRecords = ({ customStyle }) => (
+  <article style={customStyle} className="center br3 hidden ba b--black-10 mv4 w-90">
     <h1 className="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">Voting Records</h1>
     <div className="pa3 bt b--black-10">
       <p className="f6 f5-ns lh-copy measure">
