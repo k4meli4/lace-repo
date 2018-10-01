@@ -25,7 +25,7 @@ mongoose.connect('mongodb://localhost/lace-repo');
 
 // database is called lace-repo, you can see from 'mongoose.connect' code above
 // Scraping steps:
-// **uncomment lines 5-12, and 25
+// **uncomment lines 5-11, sorry issues with es6 and passing the build
 // 1) connect to your mongoDB
 // 2) open Database folder, open scraping folder, copy code from "scrape" file
 // 3) save
