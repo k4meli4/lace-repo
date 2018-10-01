@@ -1,4 +1,6 @@
-export const Hansard = require('./Hansard');
-export const Bills = require('./Bills');
-export const MPPurl = require('./MPPurl');
-export const eachMPP = require('./eachMPP');
+module.exports = {
+  Hansard: require('./Hansard'),
+  Bills: require('./Bills'),
+  MPPurl: require('./MPPurl'),
+  eachMPP: require('./eachMPP'),
+};

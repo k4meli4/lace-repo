@@ -1,7 +1,7 @@
-import { Schema as _Schema, model } from 'mongoose';
+import * as mongoose from 'mongoose';
 
 // Save a reference to the Schema constructor
-const Schema = _Schema;
+const Schema = mongoose.Schema;
 
 // schema to grab data out of careerDetails array
 const CareerDetailSchema = new Schema({
@@ -39,6 +39,6 @@ const eachMPPSchema = new Schema({
 });
 
 // This creates our model from the above schema, using mongoose's model method
-const eachMPP = model('eachMPP', eachMPPSchema);
+const eachMPP = mongoose.model('eachMPP', eachMPPSchema);
 
 export default eachMPP;
