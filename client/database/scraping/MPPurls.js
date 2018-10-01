@@ -19,9 +19,7 @@
 //           })
 //           .catch(err => res.json(err));
 //       });
-  
 //       // Send a "Scrape Complete" message to the browser
 //       res.send('Scrape Complete');
 //     });
 //   });
-  
