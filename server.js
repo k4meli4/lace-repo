@@ -8,7 +8,7 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 // const cheerioTableParser = require('cheerio-tableparser');
 const mongoose = require('mongoose');
-const db = require('./client/database/models');
+// const db = require('./client/database/models');
 
 // Initialize Express
 const app = express();
@@ -53,10 +53,10 @@ app.get('/scrape', (_req, res) => {
 
         console.log(result);
 
-        db.Hansard.create(result)
-          .then(dbHansard => {
-            // View the added result in the console
-            console.log(dbHansard);
+//         db.Hansard.create(result)
+//           .then(dbHansard => {
+//             // View the added result in the console
+//             console.log(dbHansard);
           })
           .catch(err =>
             // If an error occurred, send it to the client
