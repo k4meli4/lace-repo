@@ -53,17 +53,17 @@ app.get('/scrape', (_req, res) => {
 
         console.log(result);
 
-//         db.Hansard.create(result)
-//           .then(dbHansard => {
-//             // View the added result in the console
-//             console.log(dbHansard);
-//          })
-//          .catch(err =>
-            // If an error occurred, send it to the client
-//            res.json(err)
-//          );
-//      });
-//    });
+        //         db.Hansard.create(result)
+        //           .then(dbHansard => {
+        //             // View the added result in the console
+        //             console.log(dbHansard);
+        //          })
+        //          .catch(err =>
+        // If an error occurred, send it to the client
+        //            res.json(err)
+        //          );
+      });
+    });
 
   // Send a "Scrape Complete" message to the browser
   res.send('Scrape Complete');
