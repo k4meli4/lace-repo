@@ -2,14 +2,13 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-// const mongojs = require('mongojs');
-// const request = require('request');
-// const cheerio = require('cheerio');
-// const axios = require('axios');
-// const cheerioTableParser = require('cheerio-tableparser');
-// const passport = require('passport');
-// const mongoose = require('mongoose');
-// const db = require('./database/models');
+const mongojs = require('mongojs');
+const request = require('request');
+const cheerio = require('cheerio');
+const axios = require('axios');
+const cheerioTableParser = require('cheerio-tableparser');
+const mongoose = require('mongoose');
+const db = require('./client/database/models');
 
 // Initialize Express
 const app = express();
@@ -22,7 +21,7 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
-// mongoose.connect('mongodb://localhost/lace-repo');
+mongoose.connect('mongodb://localhost/lace-repo');
 
 // database is called lace-repo, you can see from 'mongoose.connect' code above
 // Scraping steps:
@@ -39,7 +38,36 @@ if (process.env.NODE_ENV === 'production') {
 
 // copy Entire scrape file just below here
 // HERE//
+app.get('/scrape', (_req, res) => {
+  axios
+    .get(
+      'https://www.ola.org/en/legislative-business/house-documents/parliament-42/session-1/2018-08-14/hansard#P402_92152'
+    )
+    .then(response => {
+      const $ = cheerio.load(response.data);
 
+      $('.speakerStart').each((_i, element) => {
+        const result = {};
+
+        result.object = $(element).text();
+
+        console.log(result);
+
+        db.Hansard.create(result)
+          .then(dbHansard => {
+            // View the added result in the console
+            console.log(dbHansard);
+          })
+          .catch(err =>
+            // If an error occurred, send it to the client
+            res.json(err)
+          );
+      });
+    });
+
+  // Send a "Scrape Complete" message to the browser
+  res.send('Scrape Complete');
+});
 // scrape code goes ABOVE here!!
 app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
