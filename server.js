@@ -2,14 +2,18 @@
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
-const mongojs = require('mongojs');
-const request = require('request');
-const cheerio = require('cheerio');
-const cheerioTableParser = require('cheerio-tableparser');
+// const mongojs = require('mongojs');
+// const request = require('request');
+// const cheerio = require('cheerio');
+// const axios = require('axios');
+// const cheerioTableParser = require('cheerio-tableparser');
+// const passport = require('passport');
+// const mongoose = require('mongoose');
+// const db = require('./database/models');
 
 // Initialize Express
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 8080;
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -18,58 +22,26 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
+// mongoose.connect('mongodb://localhost/lace-repo');
 
-// Database configuration
-const databaseUrl = 'LACE';
-const collections = ['Bills'];
+// database is called lace-repo, you can see from 'mongoose.connect' code above
+// Scraping steps:
+// **uncomment lines 5-12, and 25
+// 1) connect to your mongoDB
+// 2) open Database folder, open scraping folder, copy code from "scrape" file
+// 3) save
+// 4) yarn start (this is development start, uses nodemon)
+// 5) let React app load (loads on 3000)
+// 6) open a new tab in your browser and type http://localhost:8080/scrape in browser
+// 7) you'll get a "Scrape Complete" if things worked
+// 8) come back to this page and you will see results in the console.
+// 9) view collection in MongoDB in the lace-repo database
 
-// Hook mongojs configuration to the db variable
-const db = mongojs(databaseUrl, collections);
-db.on('error', error => {
-  console.log('Database Error:', error);
-});
+// copy Entire scrape file just below here
+// HERE//
 
-// Main route (simple Hello World Message)
-// app.get("/", (req, res) => {
-//   res.send("Hello world");
-// });
-
-// Send every other request to the React app
-// Define any API routes before this runs
-app.get('/scrape', (req, res) => {
-  request(
-    'https://www.ola.org/en/legislative-business/house-documents/parliament-42/session-1/2018-08-14/hansard#P402_92152',
-    (error, response, html) => {
-      const $ = cheerio.load(html);
-      cheerioTableParser($);
-
-      $('.speakerStart').each((i, element) => {
-        const object = $(element).text();
-
-        console.log(object);
-
-        // console.log(typeof object);
-        db.Hansard.insert(
-          {
-            object,
-          },
-          (err, inserted) => {
-            if (err) {
-              // Log the error if one is encountered during the query
-              console.log(inserted);
-              console.log(err);
-            }
-          }
-        );
-      });
-    }
-  );
-
-  // Send a "Scrape Complete" message to the browser
-  res.send('Scrape Complete');
-});
-
-app.get('*', (req, res) => {
+// scrape code goes ABOVE here!!
+app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
