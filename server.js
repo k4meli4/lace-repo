@@ -57,13 +57,13 @@ app.get('/scrape', (_req, res) => {
 //           .then(dbHansard => {
 //             // View the added result in the console
 //             console.log(dbHansard);
-          })
-          .catch(err =>
+//          })
+//          .catch(err =>
             // If an error occurred, send it to the client
-            res.json(err)
-          );
-      });
-    });
+//            res.json(err)
+//          );
+//      });
+//    });
 
   // Send a "Scrape Complete" message to the browser
   res.send('Scrape Complete');
