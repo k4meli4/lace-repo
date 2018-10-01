@@ -1,6 +1,4 @@
 //still working on an array to get each page, right now the scrape is hardcoded with Dougie.
-
-
 // app.get('/scrape', (req, res) => {
 //   axios.get('https://www.ola.org/en/members/all/doug-ford').then(response => {
 //     const $ = cheerio.load(response.data);
