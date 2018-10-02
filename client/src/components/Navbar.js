@@ -9,7 +9,7 @@ const Navbar = () => (
     <Link to="/signup" className="link dim gray    f6 f5-ns dib mr3" title="signup">
       Sign Up
     </Link>
-    <Link to="/login" clasclassNames="link dim gray    f6 f5-ns dib mr3" title="login">
+    <Link to="/login" className="link dim gray    f6 f5-ns dib mr3" title="login">
       Login
     </Link>
     <Link to="/test" className="link dim gray    f6 f5-ns dib mr3" title="Shortcut for testing">
