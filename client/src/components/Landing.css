@@ -25,3 +25,7 @@
 .notShown {
     display: none;
 }
+
+.writeRed {
+    color: red;
+}

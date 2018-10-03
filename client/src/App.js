@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Landing from './components/Landing';
 import SelectedDash from './components/SelectedDash';
+import Footer from './components/Footer';
 // styling
 import './App.css';
 

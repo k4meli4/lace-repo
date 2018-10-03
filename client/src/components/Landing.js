@@ -1,47 +1,78 @@
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
-import Footer from "./Footer";
-import "./Landing.css"
-// import {Tabs, Tab} from 'react-bootstrap-tabs';
-const styles = {
-    feed: {
-        borderStyle: "solid",
-        height: "200px",
-        width: "30%",
-        margin: "auto",
-        marginTop: "15px"
-    }
-}
+import Footer from './Footer';
+import TwitterFeed from './TwitterFeed';
+import FacebookFeed from './FacebookFeed';
+import './Landing.css';
 
 class Landing extends Component {
+    
+    state = {
+        TwitterClass: '',
+        FacebookClass: 'notShown'
+    };
 
-   
+    FacebookButton = (e) => {
+        e.preventDefault();
+        console.log("facebook buttonnnnnnn")
+        this.setState({
+            TwitterClass: 'notShown',
+            FacebookClass: ''
+        })
+        
+    }
+    TwitterButton = (e) => {
+        e.preventDefault();
+        console.log("twitter buttonnnnnnn")
+        this.setState({
+            TwitterClass: '',
+            FacebookClass: 'notShown'
+        })
+       
+    }
 
-
-    render () {
+    render() {
         return (
             <div>
-                <SearchBar />
-                <div className="feeds" style={{ display: "flex", justifyContent: "center", justifyItems: "center", padding: "0px", width: "100%", borderStyle: "solid"}}>
-                    <div style={{width: "100%"}}>
-                        <h3 id="twitter">
-                            Twitter content here
-                        </h3>
-                        <h3 id="facebook" className="notShown">
-                            Facebook Content
-                        </h3>
-                        <div className="btn-group" style={{width:"100%", borderStyle: "solid"}}>
-                            <button style={{width:"50%"}}>Twitter</button>
-                            <button style={{width:"50%"}}>Facebook</button>
+                <div
+                    className="feeds"
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        justifyItems: 'center',
+                        padding: '0px',
+                        width: '100%',
+                    }}>
+                    <div style={{ width: "100%"}}>
+                        <TwitterFeed className={this.state.TwitterClass}/>
+                        <FacebookFeed className={this.state.FacebookClass}/>
+                        <div className="btn-group" style={{ width: "100%", borderStyle: "solid" }}>
+                            <button style={{ width: "50%" }} onClick = {this.TwitterButton}>Twitter</button>
+                            <button style={{ width: "50%" }} onClick = {this.FacebookButton}>Facebook</button>
                         </div>
+
                     </div>
                 </div>
-                <Footer />
+                <div className="postalCodeSearch" style={{marginTop: "0px", marginBottom: "0px", height: "150px", backgroundColor: 'blue'}}>
+                    <h3>Not Sure who your MPP is?</h3>
+                    <input id="search" type="search" placeholder="search politicans"></input>
+                    <button onClick={console.log("hello it's the postal code button")}>
+                        <i className="fa fa-search"></i>
+                    </button> 
+                </div>
+                <div className='' style={{width: '100%', display: '-webkit-box', height: '365px', marginBottom: '0px'}}>
+                    <div className='legislatureToday' style={{width: '50%', height: '100%',backgroundColor: 'red', }}>
+                        <h2>Legislature Today</h2>
+                    </div>
+                    <div className="billsToday" style={{width: '50%', height: '100%', backgroundColor: 'orange'}}>
+                        <h2>Bills Today</h2>
+                    </div>
+                </div>
+                <Footer/>
             </div>
         )
     }
-}
-    
 
+}
 
 export default Landing;
