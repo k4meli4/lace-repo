@@ -12,6 +12,10 @@ import Signup from './components/Signup';
 import './App.css';
 
 class App extends Component {
+  state = {
+    login: 'false'
+  }
+
   render() {
     return (
       <div className="App">
@@ -20,8 +24,8 @@ class App extends Component {
         <Navbar />
           <Route exact path="/" component={Landing} />
           <Route exact path="/test" component={SelectedDash} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
+          <Route exact path="/login" component={Login} state={this.state.login}/>
+          <Route exact path="/signup" component={Signup} state={this.state.login}/>
         </div>
       </BrowserRouter>
       </div>
