@@ -19,6 +19,9 @@
     "jquery": true
   },
   "rules": {
+    "required": {
+      "some": ["nesting", "id"]
+    },
     "no-unused-vars": [
       1,
       {
