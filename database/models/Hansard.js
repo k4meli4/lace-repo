@@ -1,13 +1,14 @@
-// const mongoose = require('mongoose');
+/* eslint-disable */
+const mongoose = require('mongoose');
 
-// const Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-// const HansardSchema = new Schema({
-//   object: {
-//     type: String,
-//   },
-// });
+const HansardSchema = new Schema({
+  object: {
+    type: String,
+  },
+});
 
-// const Hansard = mongoose.model('Hansard', HansardSchema);
+const Hansard = mongoose.model('Hansard', HansardSchema);
 
-// module.exports = Hansard;
+module.exports = Hansard;
