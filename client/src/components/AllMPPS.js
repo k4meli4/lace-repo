@@ -1,3 +1,4 @@
+/* eslint-disable */
 //this page here will display all mpps as a list of cards
 import React, { Component } from 'react';
 //will use array as demo but will have to see how we get all of them

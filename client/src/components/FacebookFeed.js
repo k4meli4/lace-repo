@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 const FacebookFeed = (props) => (
     <div className={props.className} style={

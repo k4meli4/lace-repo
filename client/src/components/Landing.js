@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import SearchBar from './SearchBar';
 import Footer from './Footer';
