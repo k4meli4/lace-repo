@@ -1,13 +1,16 @@
-// const mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-// const Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
-// const HansardSchema = new Schema({
-//   object: {
-//     type: String,
-//   },
-// });
+const HansardSchema = Schema({
+  name: {
+    type: String,
+  },
+  speech: {
+    type: String,
+  },
+});
 
-// const Hansard = mongoose.model('Hansard', HansardSchema);
+const Hansard = mongoose.model('Hansard', HansardSchema);
 
-// module.exports = Hansard;
+module.exports = Hansard;

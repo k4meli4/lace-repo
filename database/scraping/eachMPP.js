@@ -1,7 +1,7 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
 const mongoose = require('mongoose');
-const EachMPP = require('../models/eachMPP');
+const EachMPP = require('../models/eachMPP')
 const db = require('../models/MPPurl');
 
 mongoose.connect('mongodb://localhost/lace-repo');
