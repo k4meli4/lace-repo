@@ -7,7 +7,7 @@ import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 //
 import NewsAPI from 'newsapi';
-const newsapi = new NewsAPI('ab40f06643634b82bfe50ad70def3943');
+const newsapi = new NewsAPI('api_key');
 
 const styles = {
   layout: {
