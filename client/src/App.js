@@ -6,6 +6,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Landing from './components/Landing';
 import SelectedDash from './components/SelectedDash';
+import UserDash from './components/UserDash';
+import fakeData from './fakedata';
 // styling
 import './App.css';
 
@@ -21,6 +23,15 @@ class App extends Component {
           <Route exact path="/test" component={SelectedDash} />
           <Route exact path="/login" component={SelectedDash} />
           <Route exact path="/signup" component={SelectedDash} />
+          <Route exact path="/user"
+          render={(props) =>
+            fakeData.map(follow => (
+              <UserDash {...props}
+                item={follow}
+                />)
+              )
+            }
+          />
         </div>
       </BrowserRouter>
       </div>
