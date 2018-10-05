@@ -3,10 +3,11 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const HansardSchema = new Schema({
-  object: {
+const HansardSchema = Schema({
+  name: {
     type: String,
   },
+  speech: {
 });
 
 const Hansard = mongoose.model('Hansard', HansardSchema);
