@@ -1,11 +1,14 @@
+/* eslint-disable */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import SearchBar from './SearchBar';
 
 const Navbar = () => (
-  <nav className="pa3 pa4-ns">
+  <nav className="pa3 pa4-ns" style={{backgroundColor: 'blue'}}>
     <Link to="/" className="link dim black b f6 f5-ns dib mr3" title="Home">
       In Their Own Words!
     </Link>
+    <SearchBar/>
     <Link to="/signup" className="link dim gray f6 f5-ns dib mr3" title="signup">
       Sign Up
     </Link>
@@ -14,6 +17,9 @@ const Navbar = () => (
     </Link>
     <Link to="/test" className="link dim gray f6 f5-ns dib mr3" title="Shortcut for testing">
       Test!
+    </Link>
+    <Link to="/User" className="link dim gray f6 f5-ns dib mr3" title="User Page">
+      User Page
     </Link>
   </nav>
 );

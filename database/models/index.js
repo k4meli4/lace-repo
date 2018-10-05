@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = {
   Hansard: require('./Hansard').default,
   Bills: require('./Bills'),

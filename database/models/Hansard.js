@@ -1,3 +1,4 @@
+/* eslint-disable */
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -7,8 +8,6 @@ const HansardSchema = Schema({
     type: String,
   },
   speech: {
-    type: String,
-  },
 });
 
 const Hansard = mongoose.model('Hansard', HansardSchema);
