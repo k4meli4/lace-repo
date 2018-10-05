@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SocialFeed = () => (
-  <article className="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+  <article id='' className="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
     <div className="tc">
       <h1 className="f4">Social Feed</h1>
       <hr className="mw3 bb bw1 b--black-10" />
