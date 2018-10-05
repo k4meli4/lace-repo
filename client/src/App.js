@@ -8,6 +8,7 @@ import Landing from './components/Landing';
 import SelectedDash from './components/SelectedDash';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import listMPPS from './components/AllMPPS';
 // styling
 import './App.css';
 
@@ -26,6 +27,7 @@ class App extends Component {
           <Route exact path="/test" component={SelectedDash} />
           <Route exact path="/login" component={Login} state={this.state.login}/>
           <Route exact path="/signup" component={Signup} state={this.state.login}/>
+          <Route exact path="/test/all" component={listMPPS} state={this.state.login}/>
         </div>
       </BrowserRouter>
       </div>
