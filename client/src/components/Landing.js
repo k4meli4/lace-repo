@@ -6,6 +6,9 @@ import TwitterFeed from './TwitterFeed';
 import FacebookFeed from './FacebookFeed';
 import './Landing.css';
 
+
+const Landing = () => <h1>Hello Landing! </h1>;
+=======
 class Landing extends Component {
     
     state = {
@@ -75,5 +78,6 @@ class Landing extends Component {
     }
 
 }
+
 
 export default Landing;
