@@ -18,6 +18,7 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
+
 let billsRouter = express.Router();
 billsRouter = require('./database/scraping/Bills')(billsRouter);
 
