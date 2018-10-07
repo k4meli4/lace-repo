@@ -4,6 +4,9 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // const db = require('./database/models');
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const keys = require('./config/keys');
 
 // Initialize Express
 const app = express();
@@ -45,6 +48,21 @@ mongoose.connect('mongodb://localhost/lace-repo');
 // 8) remidner, scrape mppUrl first. To scrape eachMPP: type http://localhost:8080/eachMPP/scrape in browser
 // 9) to scrape hansard: type http://localhost:8080/hansard/scrape in browser
 // 10) view collection in MongoDB in the lace-repo database
+
+//  google oauth stuff
+// '/auth/google/callback' is the callback route being used for handle user data coming back from google
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: keys.googleClientID,
+      clientSecret: keys.googleClientSecret,
+      callbackURL: '/auth/google/callback',
+    },
+    accessToken => {
+      console.log(accessToken);
+    }
+  )
+);
 
 app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));

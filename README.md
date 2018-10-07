@@ -1,7 +1,5 @@
 # In Their Own Voices
 
-https://itow-project.herokuapp.com/
-
 <a href="https://itow-project.herokuapp.com/" target="_blank">Live Preview</a>
 
 [Image]
