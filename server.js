@@ -50,9 +50,7 @@ app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
-
 // Listen on port 3000
 app.listen(PORT, () => {
   console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
 });
-
