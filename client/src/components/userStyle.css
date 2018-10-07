@@ -1,0 +1,11 @@
+.label:after{
+    content:'Following';
+    border: solid gray 1px;
+    padding: 7px;
+}
+
+.label:hover:after{
+    content:'Unfollow';
+    background: lightslategray;
+    border: solid gray 1px;
+}
