@@ -4,6 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // const db = require('./database/models');
+const keys = require('./config/keys');
 require('./services/passport');
 
 // Initialize Express
@@ -19,6 +20,8 @@ if (process.env.NODE_ENV === 'production') {
 
 // passport routes
 require('./routes/authRoutes')(app);
+
+mongoose.connect(keys.mongoURI);
 // authRoutes(app);
 
 let billsRouter = express.Router();
@@ -37,7 +40,9 @@ app.use('/bills', billsRouter);
 app.use('/eachMPP', eachMPPRouter);
 app.use('/mppUrl', mppUrlRouter);
 app.use('/hansard', hansardRouter);
-mongoose.connect('mongodb://localhost/lace-repo');
+// mongoose.connect('mongodb://localhost/lace-repo');
+
+// connecting to mlab
 // database is called lace-repo, you can see from 'mongoose.connect' code above
 // Scraping steps:
 // **uncomment all the db files, sorry es6 compile issues (will ask Uzair)
