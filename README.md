@@ -20,7 +20,7 @@ How does one get to the politicians words - without filters. We give you the pol
 
 ## Technical Specs
 
-[txt here]
+React.js | Node.js | MongoDB | Passport.js | Externals APIs
 
 ### Commands
 
