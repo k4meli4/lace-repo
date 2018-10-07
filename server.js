@@ -4,9 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // const db = require('./database/models');
-const passport = require('passport');
-const GoogleStrategy = require('passport-google-oauth20').Strategy;
-const keys = require('./config/keys');
+require('./services/passport');
 
 // Initialize Express
 const app = express();
@@ -18,6 +16,10 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
+
+// passport routes
+require('./routes/authRoutes')(app);
+// authRoutes(app);
 
 let billsRouter = express.Router();
 billsRouter = require('./database/scraping/Bills')(billsRouter);
@@ -49,39 +51,6 @@ mongoose.connect('mongodb://localhost/lace-repo');
 // 8) remidner, scrape mppUrl first. To scrape eachMPP: type http://localhost:8080/eachMPP/scrape in browser
 // 9) to scrape hansard: type http://localhost:8080/hansard/scrape in browser
 // 10) view collection in MongoDB in the lace-repo database
-
-//  google oauth stuff
-// '/auth/google/callback' is the callback route being used for handle user data coming back from google
-passport.use(
-  new GoogleStrategy(
-    {
-      clientID: keys.googleClientID,
-      clientSecret: keys.googleClientSecret,
-      callbackURL: '/auth/google/callback',
-    },
-    (accessToken, refreshToken, profile, done) => {
-      console.log('access token', accessToken);
-      console.log('refresh Token', refreshToken);
-      console.log('profile ', profile);
-      console.log(done);
-    }
-  )
-);
-
-// PASSPORT STUFF
-// this router handler will try to auth the user using passport and passing the passport strategy (defined above as googleStrategy} - CA notes
-// code internal to googel oauth20 has some logic that thats authentics with a string of google will use this GoogleStrategy. -CA notes
-// the scope is asking google to give access to the user profile and email. this is defined types, see docs for more -CA notes
-app.get(
-  '/auth/google',
-  passport.authenticate('google', {
-    scope: ['profile', 'email'],
-  })
-);
-
-app.get('/auth/google/callback', passport.authenticate('google'));
-
-// END OF PASSPORT STUFF
 
 app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
