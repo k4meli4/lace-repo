@@ -5,6 +5,22 @@ import Footer from './Footer';
 import TwitterFeed from './TwitterFeed';
 import FacebookFeed from './FacebookFeed';
 import './Landing.css';
+window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+  
+    return t;
+  }(document, "script", "twitter-wjs"));
 
 
 const Landing = () => <h1>Hello Landing! </h1>;
@@ -32,7 +48,6 @@ class Landing extends Component {
             TwitterClass: '',
             FacebookClass: 'notShown'
         })
-       
     }
 
     render() {
@@ -60,7 +75,7 @@ class Landing extends Component {
                 <div className="postalCodeSearch" style={{marginTop: "0px", marginBottom: "0px", height: "150px", backgroundColor: 'blue'}}>
                     <h3>Not Sure who your MPP is?</h3>
                     <input id="search" type="search" placeholder="search politicans"></input>
-                    <button onClick={console.log("hello it's the postal code button")}>
+                    <button>
                         <i className="fa fa-search"></i>
                     </button> 
                 </div>

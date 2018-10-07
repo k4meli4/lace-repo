@@ -32,7 +32,6 @@ app.use('/eachMPP', eachMPPRouter);
 app.use('/mppUrl', mppUrlRouter);
 app.use('/hansard', hansardRouter);
 mongoose.connect('mongodb://localhost/lace-repo');
-
 // database is called lace-repo, you can see from 'mongoose.connect' code above
 // Scraping steps:
 // **uncomment all the db files, sorry es6 compile issues (will ask Uzair)
@@ -51,7 +50,9 @@ app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
 });
 
+
 // Listen on port 3000
 app.listen(PORT, () => {
   console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
 });
+
