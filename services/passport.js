@@ -1,6 +1,10 @@
+/* eslint-disable */
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const mongoose = require('mongoose');
 const keys = require('../config/keys');
+
+const User = mongoose.model('users');
 
 //  google oauth stuff
 // '/auth/google/callback' is the callback route being used for handle user data coming back from google
@@ -13,10 +17,11 @@ passport.use(
       callbackURL: '/auth/google/callback',
     },
     (accessToken, refreshToken, profile, done) => {
-      console.log('access token', accessToken);
-      console.log('refresh Token', refreshToken);
-      console.log('profile ', profile);
-      console.log(done);
+      new User({ googleId: profile.id }).save();
+      // console.log('access token', accessToken);
+      // console.log('refresh Token', refreshToken);
+      // console.log('profile ', profile);
+      // console.log(done);
     }
   )
 );

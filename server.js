@@ -5,8 +5,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 // const db = require('./database/models');
 const keys = require('./config/keys');
-require('./services/passport');
 require('./database/models/User');
+require('./services/passport');
 
 // End Of Dependencies
 
