@@ -26,16 +26,18 @@ export default class SelectedMPP extends Component {
     position: 'Premier',
     number: '416-325-1941',
     picture: 'https://www.ola.org/sites/default/files/member/profile-photo/doug_ford.jpg',
+    twitter: 'https://twitter.com/fordnation?lang=en'
   };
 
   render() {
-    const { name, position, number, picture } = this.state;
+    const { name, position, number, picture, twitter} = this.state;
     return (
       <div>
         <MppInfo name={name} position={position} number={number} picture={picture} />
         <div className="outterDiv center w-80" style={styles.layout}>
+          
           <div className="innerDiv-left">
-            <SocialFeed />
+            <SocialFeed twitter={twitter}/>
             <EventFeed />
           </div>
           <div className="innerDiv-right w-80 ">

@@ -1,15 +1,12 @@
 import React from 'react';
 
-const SocialFeed = () => (
-  <article className="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+const SocialFeed = (props) => (
+  <article className="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10" style={{maxHeight: "200px",overflow: 'scroll'}}>
     <div className="tc">
-      <h1 className="f4">Social Feed</h1>
-      <hr className="mw3 bb bw1 b--black-10" />
+      {/* <h1 className="f4">Social Feed</h1>
+      <hr className="mw3 bb bw1 b--black-10" /> */}
     </div>
-    <p className="lh-copy measure center f6 black-70">
-      Quite affectionate and outgoing. She loves to get chin scratches and will roll around on the floor waiting for you
-      give her more of them.
-    </p>
+    <a class="twitter-timeline" href={props.twitter}>Tweets by Doug Ford</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </article>
 );
 

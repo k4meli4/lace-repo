@@ -8,7 +8,7 @@ const TwitterFeed = (props) => (
             overflow: 'scroll'
         }
     }>
-        <a class="twitter-timeline" href="https://twitter.com/chancetherapper?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <a class="twitter-timeline" href="https://twitter.com/andretqt/lists/project">Tweets by TwitterDev</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 )
 
