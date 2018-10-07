@@ -1,7 +1,7 @@
-import { defaultExt } from "upath";
+// import { defaultExt } from 'upath';
 
 const Twitter = {
   //
-}
+};
 
 export default Twitter;
