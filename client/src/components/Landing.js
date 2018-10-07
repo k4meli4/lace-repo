@@ -23,7 +23,7 @@ window.twttr = (function(d, s, id) {
 }(document, "script", "twitter-wjs"));
 
 
-const Landing = () => <h1>Hello Landing! </h1>;
+// const Landing = () => <h1>Hello Landing! </h1>;
 class Landing extends Component {
 
     state = {
@@ -82,7 +82,7 @@ class Landing extends Component {
                         <h2>Legislature Today</h2>
                     </div>
                     <div className="billsToday" style={{width: '50%', height: '100%', backgroundColor: 'orange'}}>
-                        <h2>Bills Today</h2>
+                        <h2>Recent Bills</h2>
                     </div>
                 </div>
                 <Footer/>

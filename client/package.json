@@ -15,13 +15,12 @@
     "twitter": "^1.7.1"
   },
   "scripts": {
-    "start": "react-script start",
-    "build": "react-script build",
-    "test": "react-script test --env=jsdom",
-    "eject": "react-script eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react-app-env": "^1.2.2",
     "tachyons": "^4.10.0"
   }
 }
