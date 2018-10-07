@@ -6,6 +6,9 @@ const mongoose = require('mongoose');
 // const db = require('./database/models');
 const keys = require('./config/keys');
 require('./services/passport');
+require('./database/models/User');
+
+// End Of Dependencies
 
 // Initialize Express
 const app = express();
@@ -21,7 +24,10 @@ if (process.env.NODE_ENV === 'production') {
 // passport routes
 require('./routes/authRoutes')(app);
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(
+  keys.mongoURI,
+  { useNewUrlParser: true }
+);
 // authRoutes(app);
 
 let billsRouter = express.Router();
