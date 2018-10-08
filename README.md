@@ -18,12 +18,12 @@ How does one get to the politicians words - without filters. We give you the pol
 
 ## Technical Specs
 
-React.js | Node.js | MongoDB | Passport.js | Externals APIs
+React.js | Node.js | MongoDB | Passport.js with Google-Oauth-20 | Externals APIs | Redux |
 
 ### Commands
 
-- npm run intall
-- npm start
+- yarn run intall
+- yarn start
 
 ### KLACE Team
 

@@ -4,7 +4,7 @@
   "private": true,
   "proxy": {
     "/auth/google": {
-      "target":"http://localhost:8080"
+      "target": "http://localhost:8080"
     },
     "/api/*": {
       "target": "http://localhost:8080"
@@ -17,8 +17,10 @@
     "newsapi": "^2.4.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0",
+    "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
+    "redux": "^4.0.0",
     "twitter": "^1.7.1"
   },
   "scripts": {
