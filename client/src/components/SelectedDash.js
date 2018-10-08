@@ -1,5 +1,6 @@
+/* eslint-disable */
 import React, { Component } from 'react';
-import NewsAPI from 'newsapi';
+// import NewsAPI from 'newsapi';
 import MppInfo from './dashComponents/Mppinfo';
 import SocialFeed from './dashComponents/SocialFeed';
 import EventFeed from './dashComponents/EventFeed';
@@ -7,7 +8,7 @@ import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 //
-const newsapi = new NewsAPI('api_key');
+// const newsapi = new NewsAPI('api_key');
 
 const styles = {
   layout: {
@@ -32,7 +33,6 @@ export default class SelectedMPP extends Component {
     picture: 'https://www.ola.org/sites/default/files/member/profile-photo/doug_ford.jpg',
     // tUsername: 'fordnation',
   };
-  
   // componentDidMount() {
   //   this.loadHansard();
   // }
@@ -44,8 +44,6 @@ export default class SelectedMPP extends Component {
     .catch(err => console.log(err));
   };
   
-  
-
   // componentDidMount() {
   //   // getTweets(this.state.tUsername);
   //   newsapi.v2

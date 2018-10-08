@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 // import MppInfo from './dashComponents/Mppinfo';
 // import userStyle from './userStyle.css';
