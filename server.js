@@ -12,9 +12,12 @@ const mongoose = require('mongoose');
 const eachMPP = require('./database/models/eachMPP');
 const hansard = require('./database/models/Hansard');
 const mppqueenparks = require('./database/models/mppQueenPark');
+// const db = require('./database/models');
 const keys = require('./config/keys');
 require('./database/models/User');
 require('./services/passport');
+
+// End Of Dependencies
 
 // Initialize Express
 const app = express();
@@ -89,10 +92,9 @@ app.use('/api/hansard/:name', (req, res) => {
 
 // const result = array.map(a => a.name);
 
-// for (let m = 0; m < result.length; m += 1) {
-//   const last = result[m].substring(result[m].lastIndexOf(' ') + 1);
-
-// }
+for (let m = 0; m < result.length; m += 1) {
+  const last = result[m].substring(result[m].lastIndexOf(' ') + 1);
+}
 
 // mppqueenparks
 //   .find({ $text: { $search: 'anand' } })
