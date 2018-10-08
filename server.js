@@ -1,7 +1,7 @@
 /* eslint-disable */
 // Dependencies
-import seed from './database/seeds1/mppqueenparks';
-import array from './docs/larray_eachmpps';
+// import seed from './database/seeds1/mppqueenparks';
+// import array from './docs/larray_eachmpps';
 
 const express = require('express');
 const cookieSession = require('cookie-session');
@@ -12,6 +12,10 @@ const mongoose = require('mongoose');
 const eachMPP = require('./database/models/eachMPP');
 const hansard = require('./database/models/Hansard');
 const mppqueenparks = require('./database/models/mppQueenPark');
+const keys = require('./config/keys');
+require('./database/models/User');
+require('./services/passport');
+
 // Initialize Express
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -70,6 +74,7 @@ app.use('/api/mppName/:name', (req, res) => {
       res.status(422).json(err);
     });
 });
+
 app.use('/api/hansard/:name', (req, res) => {
   hansard
     .find({ $text: { $search: 'ford' } })
@@ -82,12 +87,12 @@ app.use('/api/hansard/:name', (req, res) => {
     });
 });
 
-const result = array.map(a => a.name);
+// const result = array.map(a => a.name);
 
-for (let m = 0; m < result.length; m += 1) {
-  const last = result[m].substring(result[m].lastIndexOf(' ') + 1);
-  
-}
+// for (let m = 0; m < result.length; m += 1) {
+//   const last = result[m].substring(result[m].lastIndexOf(' ') + 1);
+
+// }
 
 // mppqueenparks
 //   .find({ $text: { $search: 'anand' } })
