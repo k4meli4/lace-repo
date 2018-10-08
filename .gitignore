@@ -3,6 +3,8 @@
 # dependencies
 /node_modules
 /client/node_modules
+dev.js
+/config/dev.js
 
 # testing
 /coverage

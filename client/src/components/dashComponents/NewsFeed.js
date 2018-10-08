@@ -6,7 +6,7 @@ styles.rightA = {
   'margin-right': '0px',
 };
 
-const NewsFeed = ({ customStyle }) => (
+const NewsFeed = ({ customStyle, props }) => (
   <article style={customStyle} className="center br3 hidden ba b--black-10 mv4 w-90">
     <h1 className="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">News Feed</h1>
     <div className="pa3 bt b--black-10">
