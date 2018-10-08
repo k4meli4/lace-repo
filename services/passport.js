@@ -34,25 +34,19 @@ passport.use(
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
       callbackURL: '/auth/google/callback',
+      proxy: true
     },
-    (accessToken, refreshToken, profile, done) => {
-      User.findOne({ googleId: profile.id })
-      .then(existingUser => {
-        if (existingUser){
-          // user is already in db
-          console.log('This user has signed in with this id before. No New db record');
-          done(null, existingUser);
-        } else {
-          // user is not in db
-          new User({ googleId: profile.id })
-          .save()
-          .then(user => done(null, user));
-        }
-      })
-      // console.log('access token', accessToken);
-      // console.log('refresh Token', refreshToken);
-      // console.log('profile ', profile);
-      // console.log(done);
+
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await User.findOne({ googleId: profile.id })
+      if (existingUser){
+      // user is already in db
+        console.log('This user has signed in with this id before. No New db record');
+        return done(null, existingUser);
+      }
+      // user is not in db
+        const user = await new User({ googleId: profile.id }).save()
+        done(null, user);
     }
   )
 );

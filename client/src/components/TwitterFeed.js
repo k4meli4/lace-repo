@@ -12,5 +12,5 @@ const TwitterFeed = (props) => (
     </div>
 )
 
-export default TwitterFeed; 
+export default TwitterFeed;
 
