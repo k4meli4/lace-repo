@@ -1,5 +1,5 @@
 // Dependencies
-import seed from './database/seeds1/mppqueenparks';
+// import seed from './database/seeds1/mppqueenparks';
 import array from './docs/larray_eachmpps';
 
 const express = require('express');
@@ -12,6 +12,13 @@ const key = require('./config/keys');
 const eachMPP = require('./database/models/eachMPP');
 const hansard = require('./database/models/Hansard');
 const mppqueenparks = require('./database/models/mppQueenPark');
+// const db = require('./database/models');
+const keys = require('./config/keys');
+require('./database/models/User');
+require('./services/passport');
+
+// End Of Dependencies
+
 // Initialize Express
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -70,6 +77,7 @@ app.use('/api/mppName/:name', (req, res) => {
       res.status(422).json(err);
     });
 });
+
 app.use('/api/hansard/:name', (req, res) => {
   hansard
     .find({ $text: { $search: 'ford' } })
