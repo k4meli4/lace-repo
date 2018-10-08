@@ -1,5 +1,7 @@
 # In Their Own Voices
 
+[![Build Status](https://travis-ci.com/LACE-Team/lace-repo.svg?branch=master)](https://travis-ci.com/LACE-Team/lace-repo)
+
 <a href="https://itow-project.herokuapp.com/" target="_blank">Live Preview</a>
 
 [Image]
