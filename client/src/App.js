@@ -29,13 +29,8 @@ class App extends Component {
         <Navbar />
           <Route exact path="/" component={Landing} />
           <Route exact path="/test" component={SelectedDash} />
-<<<<<<< HEAD
-          <Route exact path="/login" component={SelectedDash} />
-          <Route exact path="/signup" component={SelectedDash} />
-=======
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
->>>>>>> da07cec16079a0b7ba4c5548402f9c1e19fe6076
           <Route exact path="/user"
           render={(props) =>
             fakeData.map(follow => (
