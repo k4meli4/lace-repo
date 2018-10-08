@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "blanket": "^1.2.3",
     "body-parser": "^1.18.3",
     "cheerio": "^1.0.0-rc.2",
     "cheerio-tableparser": "^1.0.1",

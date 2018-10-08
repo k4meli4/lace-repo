@@ -1,5 +1,7 @@
 # In Their Own Voices
 
+[![Build Status](https://travis-ci.com/LACE-Team/lace-repo.svg?branch=master)](https://travis-ci.com/LACE-Team/lace-repo)
+
 <a href="https://itow-project.herokuapp.com/" target="_blank">Live Preview</a>
 
 [Image]
@@ -20,12 +22,12 @@ For the purpose of this demonstration Members elected from the Ontario Liberal P
 
 ## Technical Specs
 
-React.js | Node.js | MongoDB | Passport.js | Externals APIs
+React.js | Node.js | MongoDB | Passport.js with Google-Oauth-20 | Externals APIs | Redux |
 
 ### Commands
 
-- npm run intall
-- npm start
+- yarn run intall
+- yarn start
 
 ### KLACE Team
 
