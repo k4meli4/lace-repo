@@ -3,15 +3,15 @@ import React, { Component } from 'react';
 import API from '../utils/API';
 
 class SearchBar extends Component {
-     state = { value: '' };        
+    state = { value: '' };
 
     handleChange(event) {
         this.setState({ value: event.target.value });
-
     }
 
     handleSubmit(event) {
         event.preventDefault();
+        window.location ='/MPP/'+ this.state.value;
         API.findByName(this.state.value)
             .then(res => console.log(res))
             .catch(err => console.log(err));
