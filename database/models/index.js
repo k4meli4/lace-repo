@@ -1,10 +1,10 @@
 /* eslint-disable */
 module.exports = {
   Hansard: require('./Hansard').default,
-  Bills: require('./Bills'),
+  Bills: require('./Bills').default,
   eachMPP: require('./eachMPP').default,
-  MPPurls: require('./MPPurl'),
-  mppAll: require('./mppAll').default,
+  MPPurls: require('./MPPurl').default,
+  mppAll: require('./mppAll'),
   mppMinistry: require('./mppMinistry'),
   mppQueenPark: require('./mppQueenPark'),
   mppConstituency: require('./mppConstituency'),

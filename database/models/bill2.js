@@ -22,5 +22,10 @@ const bill2Schema = new Schema({
 });
 
 const bill2 = mongoose.model('bill2', bill2Schema);
-
+bill2
+  .find({})
+  .then(vote => {
+    console.log(`my${vote}`);
+  })
+  .catch(err => console.log(err));
 module.exports = bill2;

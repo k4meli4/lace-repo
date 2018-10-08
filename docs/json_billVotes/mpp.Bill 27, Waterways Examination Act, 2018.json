@@ -1,5 +1,5 @@
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebc65"), 
+    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e7d"), 
     "Member" : "Anand, Deepak", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
@@ -9,17 +9,17 @@
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebc67"), 
+    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e90"), 
     "Member" : "Baber, Roman", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebc68"), 
+    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e83"),
     "Member" : "Babikian, Aris", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebc69"), 
+    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e8b"),
     "Member" : "Bailey, Bob", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
@@ -39,12 +39,12 @@
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebc6d"), 
+    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e81"),  
     "Member" : "Calandra, Paul", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebc6e"), 
+    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e78"), 
     "Member" : "Cho, Hon. Raymond Sung Joon", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
@@ -54,32 +54,32 @@
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebc70"), 
-    "Member" : "Clark, Hon. Steve", 
+    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e9e"), 
+    "Member" : "Hon. Steve  Clark", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebc71"), 
+    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e92"), 
     "Member" : "Coe, Lorne", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc72"), 
-    "Member" : "Crawford, Stephen", 
+    "Member" : "Stephen  Crawford  (Oakville)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc73"), 
-    "Member" : "Cuzzetto, Rudy", 
+    "Member" : "Rudy Cuzzetto", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebc74"), 
+    "_id" : ObjectId("5bbabdd3b5dbd8518cd21e70"), 
     "Member" : "Downey, Doug", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebc75"), 
+    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e97"),
     "Member" : "Dunlop, Jill", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
@@ -90,7 +90,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc77"), 
-    "Member" : "Fedeli, Hon. Victor", 
+    "Member" : "Hon. Victor Fedeli", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -155,7 +155,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc84"), 
-    "Member" : "Ke, Vincent", 
+    "Member" : "Vincent  Ke  (Don Valley North)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -180,7 +180,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc89"), 
-    "Member" : "MacLeod, Hon. Lisa", 
+    "Member" : "Hon. Lisa  MacLeod  (Nepean)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -190,7 +190,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc8b"), 
-    "Member" : "Martow, Gila", 
+    "Member" : "Gila  Martow  (Thornhill)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -200,7 +200,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc8d"), 
-    "Member" : "McKenna, Jane", 
+    "Member" : "Jane  McKenna  (Burlington)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -210,17 +210,17 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc8f"), 
-    "Member" : "Miller, Norman", 
+    "Member" : "Norman  Miller  (Parry Sound—Muskoka)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc90"), 
-    "Member" : "Mitas, Christina Maria", 
+    "Member" : "Christina Maria Mitas  (Scarborough Centre)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc91"), 
-    "Member" : "Mulroney, Hon. Caroline", 
+    "Member" : "Hon. Caroline  Mulroney  (York—Simcoe)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -230,27 +230,27 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc93"), 
-    "Member" : "Oosterhoff, Sam", 
+    "Member" : "Sam  Oosterhoff  (Niagara West)  Oosterhoff  (Niagara West)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc94"), 
-    "Member" : "Pang, Billy", 
+    "Member" : "Billy  Pang  (Markham—Unionville)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc95"), 
-    "Member" : "Park, Lindsey", 
+    "Member" : "Lindsey  Park  (Durham)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc96"), 
-    "Member" : "Parsa, Michael", 
+    "Member" : "Michael  Parsa  (Aurora—Oak Ridges—Richmond Hill)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc97"), 
-    "Member" : "Pettapiece, Randy", 
+    "Member" : "Randy  Pettapiece  (Perth—Wellington)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -260,7 +260,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebc99"), 
-    "Member" : "Piccini, David", 
+    "Member" : "David  Piccini  (Northumberland—Peterborough South)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -300,12 +300,12 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebca1"), 
-    "Member" : "Scott, Hon. Laurie", 
+    "Member" : "Hon. Laurie  Scott  (Haliburton—Kawartha Lakes—Brock)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebca2"), 
-    "Member" : "Simard, Amanda", 
+    "Member" : "Amanda  Simard  (Glengarry—Prescott—Russell)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -319,7 +319,7 @@
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebca5"), 
+    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e87"),  
     "Member" : "Smith, Hon. Todd", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
@@ -370,7 +370,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebcaf"), 
-    "Member" : "Yakabuski, John", 
+    "Member" : "Hon. John  Yakabuski  (Renfrew—Nipissing—Pembroke)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -384,32 +384,32 @@
     "First Reading, August 9, 2018: Carried on division 18-0" : null
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebcb2"), 
+    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e72"), 
     "Member" : "Andrew, Jill", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebcb3"), 
+    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e74"), 
     "Member" : "Armstrong, Teresa J", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebcb4"), 
+    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e85"), 
     "Member" : "Arthur, Ian", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebcb5"), 
-    "Member" : "Begum, Doly", 
+    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e99"), 
+    "Member" : "Doly  Begum", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebcb6"), 
-    "Member" : "Bell, Jessica", 
+     "_id" : ObjectId("5bbabdd4b5dbd8518cd21e7b"),  
+    "Member" : "Jessica  Bell", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebcb7"), 
+     "_id" : ObjectId("5bbabdd4b5dbd8518cd21e7f"),  
     "Member" : "Berns-McGown, Rima", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "Aye"
 }
@@ -424,7 +424,7 @@
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebcba"), 
+    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e95"), 
     "Member" : "Burch, Jeff", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "Aye"
 }
@@ -435,11 +435,11 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebcbc"), 
-    "Member" : "French, Jennifer K.", 
+    "Member" : "Jennifer K. French", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebcbd"), 
+    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e9b"), 
     "Member" : "Gates, Wayne", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
@@ -449,13 +449,13 @@
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
-    "_id" : ObjectId("5bb5985b610dfe27a01ebcbf"), 
+    "_id" : ObjectId("5bbabdd6b5dbd8518cd21ea3"), 
     "Member" : "Glover, Chris", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebcc0"), 
-    "Member" : "Gretzky, Lisa", 
+    "Member" : "Lisa  Gretzky  (Windsor West)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -490,7 +490,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebcc7"), 
-    "Member" : "Lindo, Laura Mae", 
+    "Member" : "Laura Mae  Lindo  (Kitchener Centre)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -505,17 +505,17 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebcca"), 
-    "Member" : "Monteith-Farrell, Judith", 
+    "Member" : "Judith  Monteith-Farrell  (Thunder Bay—Atikokan)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "Aye"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebccb"), 
-    "Member" : "Morrison, Suze", 
+    "Member" : "Suze  Morrison  (Toronto Centre)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "Aye"
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebccc"), 
-    "Member" : "Natyshak, Taras", 
+    "Member" : "Taras  Natyshak  (Essex)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -525,7 +525,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebcce"), 
-    "Member" : "Sattler, Peggy", 
+    "Member" : "Peggy  Sattler  (London West)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -560,7 +560,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebcd5"), 
-    "Member" : "Taylor, Monique", 
+    "Member" : "Monique  Taylor  (Hamilton Mountain)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : "No Recorded Vote"
 }
 { 
@@ -620,7 +620,7 @@
 }
 { 
     "_id" : ObjectId("5bb5985b610dfe27a01ebce1"), 
-    "Member" : "Lalonde, Marie-France", 
+    "Member" : "Marie-France  Lalonde  (Orléans)", 
     "First Reading, August 9, 2018: Carried on division 18-0" : null
 }
 { 

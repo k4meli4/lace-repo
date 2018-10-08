@@ -39,6 +39,7 @@ const mppConstituencySchema = new Schema({
   PostalCode: {
     type: String,
     required: true,
+    text: true,
   },
   EmailAddress: {
     type: String,
@@ -53,10 +54,13 @@ const mppConstituencySchema = new Schema({
   },
 });
 // This creates our model from the above schema, using mongoose's model method
-const mppConstituency = mongoose.model('mppConstituency', mppConstituencySchema);
+const mppconstituencies = mongoose.model('mppconstituencies', mppConstituencySchema);
 
-module.exports = mppConstituency;
+// mppconstituencies
+//   .find({})
+//   .then(vote => {
+//     console.log(`my${vote}`);
+//   })
+//   .catch(err => console.log(err));
 
-mppConstituency.find({}, (err, docs) => {
-  console.log(docs);
-});
+module.exports = mppconstituencies;

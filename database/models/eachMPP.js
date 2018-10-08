@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -10,13 +8,14 @@ const CareerDetailSchema = new Schema({
   positions: [String],
 });
 // schema for eachMPP (
-const eachMPPSchema = new Schema({
+const eachmppSchema = new Schema({
   url: {
     type: String,
   },
   name: {
     type: String,
     required: true,
+    text: true,
   },
   photo: {
     type: String,
@@ -40,9 +39,10 @@ const eachMPPSchema = new Schema({
   ridingMap: {
     type: String,
   },
+  telephone: [{ type: Schema.Types.ObjectId, ref: 'mppqueenparks' }],
 });
 
 // This creates our model from the above schema, using mongoose's model method
-const eachMPP = mongoose.model('eachMPP', eachMPPSchema);
+const eachmpps = mongoose.model('eachmpps', eachmppSchema);
 
-module.exports = eachMPP;
+module.exports = eachmpps;

@@ -26,5 +26,11 @@ const bill5Schema = new Schema({
 });
 
 const bill5 = mongoose.model('bill5', bill5Schema);
+// bill5
+//   .find({})
+//   .then(vote => {
+//     console.log(`my${vote}`);
+//   })
+//   .catch(err => console.log(err))
 
 module.exports = bill5;

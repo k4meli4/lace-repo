@@ -1,6 +1,6 @@
-import { Schema as _Schema, model } from 'mongoose';
+const mongoose = require('mongoose');
 
-const Schema = _Schema;
+const Schema = mongoose.Schema;
 
 const mppAllSchema = new Schema({
   Honorific: {
@@ -39,6 +39,7 @@ const mppAllSchema = new Schema({
   PostalCode: {
     type: String,
     required: true,
+    text: true,
   },
   EmailAddress: {
     type: String,
@@ -53,6 +54,11 @@ const mppAllSchema = new Schema({
   },
 });
 // This creates our model from the above schema, using mongoose's model method
-const mppAll = model('mppAll', mppAllSchema);
-
-export default mppAll;
+const mppalls = mongoose.model('mppalls', mppAllSchema);
+mppalls
+  .find({})
+  .then(vote => {
+    console.log(`my${vote}`);
+  })
+  .catch(err => console.log(err));
+module.exports = mppalls;
