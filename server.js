@@ -1,3 +1,4 @@
+/* eslint-disable */
 // Dependencies
 import seed from './database/seeds1/mppqueenparks';
 import array from './docs/larray_eachmpps';
@@ -8,19 +9,9 @@ const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-<<<<<<< HEAD
 const eachMPP = require('./database/models/eachMPP');
 const hansard = require('./database/models/Hansard');
 const mppqueenparks = require('./database/models/mppQueenPark');
-=======
-// const db = require('./database/models');
-const keys = require('./config/keys');
-require('./database/models/User');
-require('./services/passport');
-
-// End Of Dependencies
-
->>>>>>> da07cec16079a0b7ba4c5548402f9c1e19fe6076
 // Initialize Express
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -67,7 +58,6 @@ app.use('/bills', billsRouter);
 app.use('/eachmpp', eachmppRouter);
 app.use('/mppUrl', mppUrlRouter);
 app.use('/hansard', hansardRouter);
-<<<<<<< HEAD
 app.use('/api/mppName/:name', (req, res) => {
   eachMPP
     .find({ $text: { $search: req.params.name } })
@@ -135,18 +125,16 @@ mppqueenparks
 
 mongoose.connect('mongodb://localhost/lace-repo');
 
-=======
 // mongoose.connect('mongodb://localhost/lace-repo');
 
 // connecting to mlab
 // database is called lace-repo, you can see from 'mongoose.connect' code above
 // Scraping steps:
-// **uncomment all the db files, sorry es6 compile issues (will ask Uzair)
+
 // 1) connect to your mongoDB
 // 2) yarn start (this is development start, uses nodemon)
 // 3) let React app load (loads on 3000)
 // 4) open a new tab in your browser
->>>>>>> da07cec16079a0b7ba4c5548402f9c1e19fe6076
 // 5a) to scrape bills: type http://localhost:8080/bills/scrape in browser
 // 6) you'll get a "Scrape Complete" if things worked
 // 7) must scrape mppUrl before each MPP. To scrape mppurl: type http://localhost:8080/mppUrl/scrape in browser

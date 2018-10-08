@@ -6,7 +6,6 @@ import EventFeed from './dashComponents/EventFeed';
 import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
-import API from '../utils/API';
 //
 const newsapi = new NewsAPI('api_key');
 
@@ -46,6 +45,24 @@ export default class SelectedMPP extends Component {
   };
   
   
+
+  // componentDidMount() {
+  //   // getTweets(this.state.tUsername);
+  //   newsapi.v2
+  //     .topHeadlines({
+  //       q: this.state.name,
+  //       // category: 'politics',
+  //       // country: 'ca',
+  //       // language: 'en',
+  //       pageSize: 10,
+  //     })
+  //     .then(response => {
+  //       response.totalResults === 0 ? console.log('no res') : console.log(response);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // }
 
   // componentDidMount() {
   //   // getTweets(this.state.tUsername);
