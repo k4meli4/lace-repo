@@ -40,7 +40,7 @@ passport.use(
       .then(existingUser => {
         if (existingUser){
           // user is already in db
-          comsole.log('This user has signed in with this id before. No New db record');
+          console.log('This user has signed in with this id before. No New db record');
           done(null, existingUser);
         } else {
           // user is not in db
