@@ -1,5 +1,7 @@
 // Dependencies
 const express = require('express');
+const cookieSession = require('cookie-session');
+const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
@@ -20,6 +22,16 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
+
+// the setup for passport to use the cookiesssss
+app.use(
+  cookieSession({
+    maxAge: 30 * 24 * 60 * 60 * 1000,
+    keys: [keys.cookieKey],
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // passport routes
 require('./routes/authRoutes')(app);
