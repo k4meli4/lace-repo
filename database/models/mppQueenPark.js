@@ -9,10 +9,11 @@ const mppQueenParkSchema = new Schema({
   Name: {
     type: String,
     required: true,
+    text: true,
   },
   OfficeType: {
     type: String,
-    required: true,
+    text: true,
   },
   Department: {
     type: String,
@@ -39,10 +40,10 @@ const mppQueenParkSchema = new Schema({
   PostalCode: {
     type: String,
     required: true,
+    text: true,
   },
   EmailAddress: {
     type: String,
-    required: true,
   },
   Telephone: {
     type: String,
@@ -53,6 +54,6 @@ const mppQueenParkSchema = new Schema({
   },
 });
 // This creates our model from the above schema, using mongoose's model method
-const mppQueenPark = mongoose.model('mppQueenPark', mppQueenParkSchema);
+const mppqueenparks = mongoose.model('mppqueenparks', mppQueenParkSchema);
 
-module.exports = mppQueenPark;
+module.exports = mppqueenparks;

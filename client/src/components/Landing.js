@@ -6,14 +6,12 @@ import TwitterFeed from './TwitterFeed';
 import FacebookFeed from './FacebookFeed';
 import './Landing.css';
 
-
-const Landing = () => <h1>Hello Landing! </h1>;
-=======
 class Landing extends Component {
     
     state = {
         TwitterClass: '',
-        FacebookClass: 'notShown'
+        FacebookClass: 'notShown',
+        value: ''
     };
 
     FacebookButton = (e) => {
@@ -59,7 +57,7 @@ class Landing extends Component {
                 </div>
                 <div className="postalCodeSearch" style={{marginTop: "0px", marginBottom: "0px", height: "150px", backgroundColor: 'blue'}}>
                     <h3>Not Sure who your MPP is?</h3>
-                    <input id="search" type="search" placeholder="search politicans"></input>
+                    <input id="search" type="search" value={this.state.value} onChange={event => this.handleChange(event)}placeholder="search politicans"></input>
                     <button onClick={console.log("hello it's the postal code button")}>
                         <i className="fa fa-search"></i>
                     </button> 

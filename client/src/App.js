@@ -16,6 +16,7 @@ import listMPPS from './components/AllMPPS';
 
 // styling
 import './App.css';
+import SearchBar from './components/SearchBar';
 
 class App extends Component {
   state = {
@@ -30,7 +31,6 @@ class App extends Component {
         <Navbar />
           <Route exact path="/" component={Landing} />
           <Route exact path="/test" component={SelectedDash} />
-
           <Route exact path="/login" component={SelectedDash} />
           <Route exact path="/signup" component={SelectedDash} />
           <Route exact path="/user"

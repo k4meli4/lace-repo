@@ -39,6 +39,7 @@ const mppMinistrySchema = new Schema({
   PostalCode: {
     type: String,
     required: true,
+    text: true,
   },
   EmailAddress: {
     type: String,
@@ -53,6 +54,11 @@ const mppMinistrySchema = new Schema({
   },
 });
 // This creates our model from the above schema, using mongoose's model method
-const mppMinistry = mongoose.model('mppMinistry', mppMinistrySchema);
-
-module.exports = mppMinistry;
+const mppministries = mongoose.model('mppministries', mppMinistrySchema);
+// mppministries
+//   .find({})
+//   .then(vote => {
+//     console.log(`my${vote}`);
+//   })
+//   .catch(err => console.log(err));
+module.exports = mppministries;

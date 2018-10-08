@@ -1,5 +1,5 @@
 { 
-    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e7d"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebb59"), 
     "Member" : "Anand, Deepak", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
@@ -15,7 +15,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "No vote recorded"
 }
 { 
-    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e90"),
+    "_id" : ObjectId("5bb59815610dfe27a01ebb5b"), 
     "Member" : "Baber, Roman", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
@@ -23,7 +23,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e83"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebb5c"), 
     "Member" : "Babikian, Aris", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
@@ -31,7 +31,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e8b"),
+    "_id" : ObjectId("5bb59815610dfe27a01ebb5d"), 
     "Member" : "Bailey, Bob", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
@@ -63,7 +63,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e81"),  
+    "_id" : ObjectId("5bb59815610dfe27a01ebb61"), 
     "Member" : "Calandra, Paul", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "No Recorded Vote", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
@@ -71,7 +71,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e78"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebb62"), 
     "Member" : "Cho, Hon. Raymond Sung Joon", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "No Recorded Vote", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
@@ -87,15 +87,15 @@
     "Third Reading - August 14: Carried on division 71-39" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e9e"), 
-    "Member" : "Hon. Steve  Clark", 
+    "_id" : ObjectId("5bb59815610dfe27a01ebb64"), 
+    "Member" : "Clark, Hon. Steve", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
     "Third Reading - August 14: Carried on division 71-39" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e92"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebb65"), 
     "Member" : "Coe, Lorne", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
@@ -104,7 +104,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb66"), 
-    "Member" : "Stephen  Crawford  (Oakville)", 
+    "Member" : "Crawford, Stephen", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -112,14 +112,14 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb67"), 
-    "Member" : "Rudy Cuzzetto", 
+    "Member" : "Cuzzetto, Rudy", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
     "Third Reading - August 14: Carried on division 71-39" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bbabdd3b5dbd8518cd21e70"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebb68"), 
     "Member" : "Downey, Doug", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
@@ -127,7 +127,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e97"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebb69"), 
     "Member" : "Dunlop, Jill", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
@@ -144,7 +144,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb6b"), 
-    "Member" : "Hon. Victor Fedeli", 
+    "Member" : "Fedeli, Hon. Victor", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "No Recorded Vote", 
@@ -248,7 +248,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb78"), 
-    "Member" : "Vincent  Ke  (Don Valley North)", 
+    "Member" : "Ke, Vincent", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -288,7 +288,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb7d"), 
-    "Member" : "Hon. Lisa  MacLeod  (Nepean)", 
+    "Member" : "MacLeod, Hon. Lisa", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -304,7 +304,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb7f"), 
-    "Member" : "Gila  Martow  (Thornhill)", 
+    "Member" : "Martow, Gila", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -320,7 +320,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb81"), 
-    "Member" : "Jane  McKenna  (Burlington)", 
+    "Member" : "McKenna, Jane", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -336,7 +336,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb83"), 
-    "Member" : "Norman  Miller  (Parry Sound—Muskoka)", 
+    "Member" : "Miller, Norman", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -344,7 +344,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb84"), 
-    "Member" : "Christina Maria Mitas  (Scarborough Centre)", 
+    "Member" : "Mitas, Christina Maria", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "No Recorded Vote", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -352,7 +352,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb85"), 
-    "Member" : "Hon. Caroline  Mulroney  (York—Simcoe)", 
+    "Member" : "Mulroney, Hon. Caroline", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -368,7 +368,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb87"), 
-    "Member" : "Sam  Oosterhoff  (Niagara West)", 
+    "Member" : "Oosterhoff, Sam", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -376,7 +376,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb88"), 
-    "Member" : "Billy  Pang  (Markham—Unionville)", 
+    "Member" : "Pang, Billy", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -384,7 +384,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb89"), 
-    "Member" : "Lindsey  Park  (Durham)", 
+    "Member" : "Park, Lindsey", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -392,7 +392,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb8a"), 
-    "Member" : "Michael  Parsa  (Aurora—Oak Ridges—Richmond Hill)", 
+    "Member" : "Parsa, Michael", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -400,7 +400,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb8b"), 
-    "Member" : "Randy  Pettapiece  (Perth—Wellington)", 
+    "Member" : "Pettapiece, Randy", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -416,7 +416,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb8d"), 
-    "Member" : "David  Piccini  (Northumberland—Peterborough South)", 
+    "Member" : "Piccini, David", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "No Recorded Vote", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -480,7 +480,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb95"), 
-    "Member" : "Hon. Laurie  Scott  (Haliburton—Kawartha Lakes—Brock)", 
+    "Member" : "Scott, Hon. Laurie", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "No Recorded Vote", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -488,7 +488,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebb96"), 
-    "Member" : "Amanda  Simard  (Glengarry—Prescott—Russell)", 
+    "Member" : "Simard, Amanda", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -511,7 +511,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "Aye"
 }
 { 
-    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e87"),  
+    "_id" : ObjectId("5bb59815610dfe27a01ebb99"), 
     "Member" : "Smith, Hon. Todd", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
@@ -592,7 +592,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebba3"), 
-    "Member" : "Hon. John  Yakabuski  (Renfrew—Nipissing—Pembroke)", 
+    "Member" : "Yakabuski, John", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Aye", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Aye", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Aye", 
@@ -615,7 +615,7 @@
     "Third Reading - August 14: Carried on division 71-39" : null
 }
 { 
-    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e72"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebba6"), 
     "Member" : "Andrew, Jill", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "No Recorded Vote", 
@@ -623,7 +623,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "Nay"
 }
 { 
-    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e74"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebba7"), 
     "Member" : "Armstrong, Teresa J", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
@@ -631,7 +631,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "Nay"
 }
 { 
-    "_id" : ObjectId("5bbabdd4b5dbd8518cd21e85"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebba8"), 
     "Member" : "Arthur, Ian", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
@@ -639,23 +639,23 @@
     "Third Reading - August 14: Carried on division 71-39" : "Nay"
 }
 { 
-    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e99"), 
-    "Member" : "Doly  Begum", 
+    "_id" : ObjectId("5bb59815610dfe27a01ebba9"), 
+    "Member" : "Begum, Doly", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Nay", 
     "Third Reading - August 14: Carried on division 71-39" : "Nay"
 }
 { 
-     "_id" : ObjectId("5bbabdd4b5dbd8518cd21e7b"),  
-    "Member" : "Jessica  Bell", 
+    "_id" : ObjectId("5bb59815610dfe27a01ebbaa"), 
+    "Member" : "Bell, Jessica", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Nay", 
     "Third Reading - August 14: Carried on division 71-39" : "Nay"
 }
 { 
-     "_id" : ObjectId("5bbabdd4b5dbd8518cd21e7f"),  
+    "_id" : ObjectId("5bb59815610dfe27a01ebbab"), 
     "Member" : "Berns-McGown, Rima", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
@@ -679,7 +679,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "Nay"
 }
 { 
-    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e95"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebbae"), 
     "Member" : "Burch, Jeff", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "No Recorded Vote", 
@@ -696,14 +696,14 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebbb0"), 
-    "Member" : "Jennifer K. French", 
+    "Member" : "French, Jennifer K.", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Nay", 
     "Third Reading - August 14: Carried on division 71-39" : "Nay"
 }
 { 
-    "_id" : ObjectId("5bbabdd5b5dbd8518cd21e9b"), 
+    "_id" : ObjectId("5bb59815610dfe27a01ebbb1"), 
     "Member" : "Gates, Wayne", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
@@ -719,7 +719,7 @@
     "Third Reading - August 14: Carried on division 71-39" : "Nay"
 }
 { 
-    "_id" : ObjectId("5bbabdd6b5dbd8518cd21ea3"),
+    "_id" : ObjectId("5bb59815610dfe27a01ebbb3"), 
     "Member" : "Glover, Chris", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
@@ -728,7 +728,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebbb4"), 
-    "Member" : "Lisa  Gretzky  (Windsor West)", 
+    "Member" : "Gretzky, Lisa", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "No Recorded Vote", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "No Recorded Vote", 
@@ -784,7 +784,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebbbb"), 
-    "Member" : "Laura Mae  Lindo  (Kitchener Centre)", 
+    "Member" : "Lindo, Laura Mae", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Nay", 
@@ -816,7 +816,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebbbf"), 
-    "Member" : "Judith  Monteith-Farrell  (Thunder Bay—Atikokan)", 
+    "Member" : "Monteith-Farrell, Judith", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Nay", 
@@ -824,7 +824,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebbc0"), 
-    "Member" : "Suze  Morrison  (Toronto Centre)", 
+    "Member" : "Morrison, Suze", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Nay", 
@@ -832,7 +832,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebbc1"), 
-    "Member" : "Taras  Natyshak  (Essex)", 
+    "Member" : "Natyshak, Taras", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "No Recorded Vote", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "No Recorded Vote", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "No Recorded Vote", 
@@ -848,7 +848,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebbc3"), 
-    "Member" : "Peggy  Sattler  (London West)", 
+    "Member" : "Sattler, Peggy", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "No Recorded Vote", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "No Recorded Vote", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "No Recorded Vote", 
@@ -904,7 +904,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebbca"), 
-    "Member" : "Monique  Taylor  (Hamilton Mountain)", 
+    "Member" : "Taylor, Monique", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "No Recorded Vote", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "Nay", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Nay", 
@@ -1000,7 +1000,7 @@
 }
 { 
     "_id" : ObjectId("5bb59815610dfe27a01ebbd6"), 
-    "Member" : "Marie-France  Lalonde  (Orléans)", 
+    "Member" : "Lalonde, Marie-France", 
     "First Reading - July 30, 2018: Carried on Division 60-40" : "Nay", 
     "Time Allocation - August 14, 2018: Carried on division 70-38" : "No Recorded Vote", 
     "Second Reading - August 14, 2018: Carried on division 68-40" : "Nay", 
