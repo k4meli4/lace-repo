@@ -4,10 +4,9 @@ import SearchBar from './SearchBar';
 import React from 'react';
 
 const Navbar = () => (
-  
-      <nav className="pa3 pa4-ns" style={{ backgroundColor: 'blue' }}>
-        <Link to="/" className="link dim black b f6 f5-ns dib mr3" title="Home">
-          In Their Own Words!
+  <nav className="pa3 pa4-ns">
+    <Link to="/" className="link dim black b f6 f5-ns dib mr3" title="Home">
+      In Their Own Words!
     </Link>
         <SearchBar/>
         <Link to="/signup" className="link dim gray f6 f5-ns dib mr3" title="signup">
