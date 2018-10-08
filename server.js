@@ -1,6 +1,7 @@
+/* eslint-disable */
 // Dependencies
-import seed from './database/seeds1/mppqueenparks';
-import array from './docs/larray_eachmpps';
+// import seed from './database/seeds1/mppqueenparks';
+// import array from './docs/larray_eachmpps';
 
 const express = require('express');
 const cookieSession = require('cookie-session');
@@ -76,6 +77,7 @@ app.use('/api/mppName/:name', (req, res) => {
       res.status(422).json(err);
     });
 });
+
 app.use('/api/hansard/:name', (req, res) => {
   hansard
     .find({ $text: { $search: 'ford' } })
@@ -88,7 +90,7 @@ app.use('/api/hansard/:name', (req, res) => {
     });
 });
 
-const result = array.map(a => a.name);
+// const result = array.map(a => a.name);
 
 for (let m = 0; m < result.length; m += 1) {
   const last = result[m].substring(result[m].lastIndexOf(' ') + 1);
@@ -135,7 +137,7 @@ mongoose.connect('mongodb://localhost/lace-repo');
 // connecting to mlab
 // database is called lace-repo, you can see from 'mongoose.connect' code above
 // Scraping steps:
-// **uncomment all the db files, sorry es6 compile issues (will ask Uzair)
+
 // 1) connect to your mongoDB
 // 2) yarn start (this is development start, uses nodemon)
 // 3) let React app load (loads on 3000)

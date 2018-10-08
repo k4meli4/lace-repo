@@ -61,6 +61,21 @@ class Landing extends Component {
     render() {
         return (
             <div>
+
+                <div className="postalCodeSearch" style={{marginTop: "0px", marginBottom: "0px", height: "auto", backgroundColor: 'blue'}}>
+                    <h3>Not Sure who your MPP is?</h3>
+                    <SearchBar />
+                </div>
+                <div className='' style={{width: '100%', display: '-webkit-box', height: '365px', marginBottom: '0px'}}>
+                    <div className='legislatureToday' style={ style.panelLayout}>
+                        <h2>Legislature Today</h2>
+                        <div> [Content Here]</div>
+                    </div>
+                    <div className="billsToday" style={ style.panelLayout}>
+                        <h2>Recent Bills</h2>
+                        <div> [Content Here]</div>
+                    </div>
+                </div>
                 <div
                     className="feeds"
                     style={{
@@ -77,27 +92,6 @@ class Landing extends Component {
                             <button style={{ width: "50%" }} onClick = {this.TwitterButton}>Twitter</button>
                             <button style={{ width: "50%" }} onClick = {this.FacebookButton}>Facebook</button>
                         </div>
-                    </div>
-                </div>
-                <div className="postalCodeSearch" style={{marginTop: "0px", marginBottom: "0px", height: "150px", backgroundColor: 'blue'}}>
-                    <h3>Not Sure who your MPP is?</h3>
-<<<<<<< HEAD
-                    <input id="search" type="search" value={this.state.value} onChange={event => this.handleChange(event)}placeholder="search politicans"></input>
-                    <button onClick={console.log("hello it's the postal code button")}>
-                        <i className="fa fa-search"></i>
-                    </button> 
-=======
-                    <SearchBar />
->>>>>>> da07cec16079a0b7ba4c5548402f9c1e19fe6076
-                </div>
-                <div className='' style={{width: '100%', display: '-webkit-box', height: '365px', marginBottom: '0px'}}>
-                    <div className='legislatureToday' style={ style.panelLayout}>
-                        <h2>Legislature Today</h2>
-                        <div> [Content Here]</div>
-                    </div>
-                    <div className="billsToday" style={ style.panelLayout}>
-                        <h2>Recent Bills</h2>
-                        <div> [Content Here]</div>
                     </div>
                 </div>
                 <Footer/>

@@ -1,3 +1,4 @@
+/* eslint-disable */
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -55,12 +56,5 @@ const mppConstituencySchema = new Schema({
 });
 // This creates our model from the above schema, using mongoose's model method
 const mppconstituencies = mongoose.model('mppconstituencies', mppConstituencySchema);
-
-// mppconstituencies
-//   .find({})
-//   .then(vote => {
-//     console.log(`my${vote}`);
-//   })
-//   .catch(err => console.log(err));
 
 module.exports = mppconstituencies;

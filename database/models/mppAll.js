@@ -1,3 +1,4 @@
+/* eslint-disable */
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -61,4 +62,5 @@ mppalls
     console.log(`my${vote}`);
   })
   .catch(err => console.log(err));
+
 module.exports = mppalls;

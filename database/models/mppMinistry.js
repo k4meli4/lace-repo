@@ -1,3 +1,4 @@
+/* eslint-disable */
 const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
@@ -55,10 +56,5 @@ const mppMinistrySchema = new Schema({
 });
 // This creates our model from the above schema, using mongoose's model method
 const mppministries = mongoose.model('mppministries', mppMinistrySchema);
-// mppministries
-//   .find({})
-//   .then(vote => {
-//     console.log(`my${vote}`);
-//   })
-//   .catch(err => console.log(err));
+
 module.exports = mppministries;
