@@ -1,4 +1,3 @@
-/* eslint-disable */
 // Dependencies
 import seed from './database/seeds1/mppqueenparks';
 import array from './docs/larray_eachmpps';
@@ -9,6 +8,7 @@ const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+const key = require('./config/keys');
 const eachMPP = require('./database/models/eachMPP');
 const hansard = require('./database/models/Hansard');
 const mppqueenparks = require('./database/models/mppQueenPark');
@@ -24,22 +24,22 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // the setup for passport to use the cookiesssss
-app.use(
-  cookieSession({
-    maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey],
-  })
-);
-app.use(passport.initialize());
-app.use(passport.session());
+// app.use(
+//   cookieSession({
+//     maxAge: 30 * 24 * 60 * 60 * 1000,
+//     keys: [keys.cookieKey],
+//   })
+// );
+// app.use(passport.initialize());
+// app.use(passport.session());
 
-// passport routes
-require('./routes/authRoutes')(app);
+// // passport routes
+// require('./routes/authRoutes')(app);
 
-mongoose.connect(
-  keys.mongoURI,
-  { useNewUrlParser: true }
-);
+// mongoose.connect(
+//   keys.mongoURI,
+//   { useNewUrlParser: true }
+// );
 // authRoutes(app);
 
 let billsRouter = express.Router();
@@ -83,27 +83,26 @@ app.use('/api/hansard/:name', (req, res) => {
 });
 
 const result = array.map(a => a.name);
-
 for (let m = 0; m < result.length; m += 1) {
   const last = result[m].substring(result[m].lastIndexOf(' ') + 1);
-  
+  last.forEach(element => {
+    mppqueenparks
+      .find({ $text: { $search: element } })
+      .then(dbmodel =>
+        eachMPP.findOneAndUpdate(
+          { $text: { $search: element } },
+          { telephone: dbmodel[0]._id },
+          { fields: 'telephone', new: true }
+        )
+      )
+      .then(dbQp => {
+        console.log(dbQp);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
 }
-
-// mppqueenparks
-//   .find({ $text: { $search: 'anand' } })
-//   .then(dbmodel =>
-//     eachMPP.findOneAndUpdate(
-//       { $text: { $search: 'anand' } },
-//       { telephone: dbmodel[0]._id },
-//       { fields: 'telephone', new: true }
-//     )
-//   )
-//   .then(dbQp => {
-//     console.log(dbQp);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
 
 // mppqueenparks
 //   .create(seed)
