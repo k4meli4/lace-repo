@@ -14,7 +14,9 @@ For decades a diversity of opinion and commentary contributed to a robust politi
 
 "In their own Voices" aims to allow readers to form their own opinions based on the words that come out of the politicians mouths, without any filters or commentary as their are plenty of other sources for this commentary. Citizens should be able to analyze political messages for themselves and engage in informed conversation with their provincially elected representatives.
 
-How does one get to the politicians words - without filters. We give you the politicians' facebook and twitter feeds and their parliamentary record - their official speeches, votes and news releases. All of this information is available to you in real-time
+How does one get to the politicians words - without filters. We give you the politicians' facebook and twitter feeds and their parliamentary record - their official speeches, votes and news releases. All of this information is available to you in real-time.
+
+For the purpose of this demonstration Members elected from the Ontario Liberal Party will reflect this even though they are not an offical party as they failed to gain the minimum number of seats.  The same reasoning was applied to the Green Party.
 
 ## Technical Specs
 

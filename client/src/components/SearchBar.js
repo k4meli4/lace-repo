@@ -21,13 +21,15 @@ class SearchBar extends Component {
     render() {
         return (
             <div className="searchbar" style={{ display: 'inline-flex' }}>
-                <input type='text' placeholder="search politicans" onChange={event => this.handleChange(event)}></input>
-                <button onClick={event => this.handleSubmit(event)}>
+                <input type='text' placeholder="search politicans"  className="input-reset ba b--black-20  mb2 db w-100 gray f6 f5-ns dib "onChange={event => this.handleChange(event)}></input>
+                <button className=" mb2 mr3" onClick={event => this.handleSubmit(event)}>
                     <i className="fa fa-search"></i>
                 </button>
             </div>
         )
     }
 }
+
+
 
 export default SearchBar;
