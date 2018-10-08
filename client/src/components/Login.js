@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
   render() {
@@ -42,15 +43,15 @@ class Login extends Component {
               value="Login"
             />
           </div>
-          <div className="lh-copy mt3">
-            <a href="#0" className="f6 link dim black db">
-              Login!
-            </a>
-            <a href="#0" className="f6 link dim black db">
-              Forgot your password?
-            </a>
-          </div>
         </form>
+        <div className='mv3'>
+          <Link to="/signup" className="link dim gray f6 f5-ns dib mr3" title="User Page">
+            Create an Account
+          </Link>
+          <a href="/auth/google" className="link dim gray f6 f5-ns dib mr3" title="User Page">
+            Login With Google
+        </a>
+        </div>
       </div>
     );
   }
