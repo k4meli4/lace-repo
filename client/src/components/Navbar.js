@@ -1,7 +1,10 @@
 /* eslint-disable */
+import React from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
-import React from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions';
+import LogControl from './LogControl';
 
 const Navbar = () => (
   <nav className="pa3 pa4-ns">
@@ -9,6 +12,7 @@ const Navbar = () => (
       In Their Own Words!
     </Link>
     <SearchBar/>
+    {/* <LogControl /> */}
     <a href="/auth/google" className="link dim gray f6 f5-ns dib mr3" title="login">
       Login with Google
     </a>
