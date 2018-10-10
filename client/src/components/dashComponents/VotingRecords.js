@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-
+/* eslint-disable */
 const styles = {};
 
 styles.rightA = {
@@ -11,8 +11,11 @@ const VotingRecords = ({ customStyle }) => (
   <article style={customStyle} className="center br3 hidden ba b--black-10 mv4 w-90">
     <h1 className="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">Voting Records</h1>
     <div className="pa3 bt b--black-10">
-      <a target='_blank' rel="noopener noreferrer" href="https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-2">Bill 2, Urgent Priorities Act, 2018"</a>
-      <Table responsive bordered condensed className='f6 black-70' >
+      <a target='_blank'
+        rel="noopener noreferrer"
+        href="https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-2">
+        Bill 2, Urgent Priorities Act, 2018"</a>
+      <Table responsive bordered condensed className="f6 black-70" >
         <thead>
           <tr>
             <th>Date</th>
@@ -42,7 +45,10 @@ const VotingRecords = ({ customStyle }) => (
           </tr>
         </tbody>
       </Table>
-      <a target='_blank' rel="noopener noreferrer" href="https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-5'">Bill 5, Better Local Government Act, 2018 </a>
+      <a target='_blank'
+        rel="noopener noreferrer"
+        href="https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-5'">
+        Bill 5, Better Local Government Act, 2018 </a>
       <Table responsive bordered condensed className="f6 black-70">
         <thead>
           <tr>
@@ -79,7 +85,10 @@ const VotingRecords = ({ customStyle }) => (
           </tr>
         </tbody>
       </Table>
-      <a target='_blank' rel="noopener noreferrer" href="https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-27">Bill 27, Waterways Examination Act, 2018</a>
+      <a target='_blank'
+        rel="noopener noreferrer"
+        href="https://www.ola.org/en/legislative-business/bills/parliament-42/session-1/bill-27">
+        Bill 27, Waterways Examination Act, 2018</a>
       <Table responsive bordered condensed className='f6 black-70'>
         <thead>
           <tr>
