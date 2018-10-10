@@ -27,6 +27,7 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
+mongoose.connect('mongodb://localhost/lace-repo');
 // the setup for passport to use the cookiesssss
 app.use(
   cookieSession({
@@ -128,7 +129,6 @@ mppqueenparks
     console.log(err.message);
   });
 
-mongoose.connect('mongodb://localhost/lace-repo');
 
 // mongoose.connect('mongodb://localhost/lace-repo');
 

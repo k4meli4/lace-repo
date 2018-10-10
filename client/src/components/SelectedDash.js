@@ -82,8 +82,7 @@ export default class SelectedMPP extends Component {
   // }
 
   render() {
-    const { name, position, number, picture, twitter} = this.state;
-    const { name, position, url, picture } = this.state;
+    const { name, position, number, picture, twitter, url} = this.state;
     return (
       <div>
         <MppInfo name={name} position={position} url={url} picture={picture} />
