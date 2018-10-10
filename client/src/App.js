@@ -20,9 +20,9 @@ import './App.css';
 // import SearchBar from './components/SearchBar';
 
 class App extends Component {
-  // componentDidMount() {
-	// 	this.props.fetchUser();
-	// }
+  componentDidMount() {
+		this.props.fetchUser();
+	}
 
   render() {
     return (
@@ -51,5 +51,9 @@ class App extends Component {
   }
 }
 
-export default App;
-// export default connect(null, actions)(App);
+// function mapStateToProps(state){
+//   return{ auth: state.auth};
+// }
+// export default App;
+// export default connect(mapStateToProps)(App);
+export default connect(null, actions)(App);

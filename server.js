@@ -9,9 +9,9 @@ const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const eachMPP = require('./database/models/eachMPP');
-const hansard = require('./database/models/Hansard');
-const mppqueenparks = require('./database/models/mppQueenPark');
+// const eachMPP = require('./database/models/eachMPP');
+// const hansard = require('./database/models/Hansard');
+// const mppqueenparks = require('./database/models/mppQueenPark');
 const keys = require('./config/keys');
 require('./database/models/User');
 require('./services/passport');
@@ -36,57 +36,58 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
-
 // passport routes
 require('./routes/authRoutes')(app);
+//
 require('./routes/mppRoutes')(app);
+
 
 mongoose.connect(
   keys.mongoURI,
   { useNewUrlParser: true }
-);
-// authRoutes(app);
+  );
+  // authRoutes(app);
 
-let billsRouter = express.Router();
-billsRouter = require('./database/scraping/Bills')(billsRouter);
+//   let billsRouter = express.Router();
+//   billsRouter = require('./database/scraping/Bills')(billsRouter);
 
-let eachmppRouter = express.Router();
-eachmppRouter = require('./database/scraping/eachMPP')(eachmppRouter);
+//   let eachmppRouter = express.Router();
+//   eachmppRouter = require('./database/scraping/eachMPP')(eachmppRouter);
 
-let mppUrlRouter = express.Router();
-mppUrlRouter = require('./database/scraping/MPPurls')(mppUrlRouter);
+//   let mppUrlRouter = express.Router();
+//   mppUrlRouter = require('./database/scraping/MPPurls')(mppUrlRouter);
 
-let hansardRouter = express.Router();
-hansardRouter = require('./database/scraping/Hansard')(hansardRouter);
+//   let hansardRouter = express.Router();
+//   hansardRouter = require('./database/scraping/Hansard')(hansardRouter);
 
-app.use('/bills', billsRouter);
-app.use('/eachmpp', eachmppRouter);
-app.use('/mppUrl', mppUrlRouter);
-app.use('/hansard', hansardRouter);
-app.use('/api/mppName/:name', (req, res) => {
-  eachMPP
-    .find({ $text: { $search: req.params.name } })
-    .then(dbModel => {
-      res.json(dbModel);
-      console.log(dbModel);
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(422).json(err);
-    });
-});
+// app.use('/bills', billsRouter);
+// app.use('/eachmpp', eachmppRouter);
+// app.use('/mppUrl', mppUrlRouter);
+// app.use('/hansard', hansardRouter);
+// app.use('/api/mppName/:name', (req, res) => {
+//   eachMPP
+//     .find({ $text: { $search: req.params.name } })
+//     .then(dbModel => {
+//       res.json(dbModel);
+//       console.log(dbModel);
+//     })
+//     .catch(err => {
+//       console.error(err);
+//       res.status(422).json(err);
+//     });
+// });
 
-app.use('/api/hansard/:name', (req, res) => {
-  hansard
-    .find({ $text: { $search: 'ford' } })
-    .then(speech => {
-      res.json(speech);
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(422).json(err);
-    });
-});
+// app.use('/api/hansard/:name', (req, res) => {
+//   hansard
+//     .find({ $text: { $search: 'ford' } })
+//     .then(speech => {
+//       res.json(speech);
+//     })
+//     .catch(err => {
+//       console.error(err);
+//       res.status(422).json(err);
+//     });
+// });
 
 // const result = array.map(a => a.name);
 
@@ -120,14 +121,14 @@ app.use('/api/hansard/:name', (req, res) => {
 //     console.log(err.message);
 //   });
 
-mppqueenparks
-  .find({ $text: { $search: 'smith' } })
-  .then(dbLibrary => {
-    console.log(dbLibrary);
-  })
-  .catch(err => {
-    console.log(err.message);
-  });
+// mppqueenparks
+//   .find({ $text: { $search: 'smith' } })
+//   .then(dbLibrary => {
+//     console.log(dbLibrary);
+//   })
+//   .catch(err => {
+//     console.log(err.message);
+//   });
 
 mongoose.connect('mongodb://localhost/lace-repo');
 

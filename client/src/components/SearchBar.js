@@ -12,14 +12,15 @@ class SearchBar extends Component {
     handleSubmit(event) {
         event.preventDefault();
         window.location ='/MPP/'+ this.state.value;
-        API.findByName(this.state.value)
-            .then(res => console.log(res))
-            .catch(err => console.log(err));
+        // API.findByName(this.state.value)
+        //     .then(res => console.log(res))
+        //     .catch(err => console.log(err));
     };
     handleKeyPress(event) {
         if (event.key === 'Enter') {
-        console.log('enter key pressed')
-        window.location ='/MPP/'+ this.state.value;
+            event.preventDefault();
+            console.log('enter key pressed')
+            window.location ='/MPP/'+ this.state.value;
         }
     }
     // re-route to MPP dashboard

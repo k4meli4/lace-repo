@@ -8,6 +8,9 @@
     },
     "/api/*": {
       "target": "http://localhost:8080"
+    },
+    "/MPP/*": {
+      "target": "http://localhost:8080"
     }
   },
   "dependencies": {
@@ -21,6 +24,8 @@
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
     "redux": "^4.0.0",
+    "redux-form": "^7.4.2",
+    "redux-thunk": "^2.3.0",
     "twitter": "^1.7.1"
   },
   "scripts": {

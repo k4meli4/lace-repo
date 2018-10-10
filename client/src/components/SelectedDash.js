@@ -7,6 +7,7 @@ import EventFeed from './dashComponents/EventFeed';
 import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
+import API from '../utils/API';
 //
 // const newsapi = new NewsAPI('api_key');
 
@@ -31,11 +32,15 @@ export default class SelectedMPP extends Component {
     position: 'Premier',
     url: 'https://www.ola.org/en/members/all/doug-ford',
     picture: 'https://www.ola.org/sites/default/files/member/profile-photo/doug_ford.jpg',
-    // tUsername: 'fordnation',
   };
   // componentDidMount() {
   //   this.loadHansard();
   // }
+  onComponentMount(){
+    API.findByName(this.state.value)
+    .then(res => console.log(res))
+    .catch(err => console.log(err));
+  }
 
   loadHansard = () => {
     API.getHansard(this.state.speech)
@@ -43,42 +48,6 @@ export default class SelectedMPP extends Component {
       this.setState({ hansard: res.data, speech: '' }))
     .catch(err => console.log(err));
   };
-
-  // componentDidMount() {
-  //   // getTweets(this.state.tUsername);
-  //   newsapi.v2
-  //     .topHeadlines({
-  //       q: this.state.name,
-  //       // category: 'politics',
-  //       // country: 'ca',
-  //       // language: 'en',
-  //       pageSize: 10,
-  //     })
-  //     .then(response => {
-  //       response.totalResults === 0 ? console.log('no res') : console.log(response);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // }
-
-  // componentDidMount() {
-  //   // getTweets(this.state.tUsername);
-  //   newsapi.v2
-  //     .topHeadlines({
-  //       q: this.state.name,
-  //       // category: 'politics',
-  //       // country: 'ca',
-  //       // language: 'en',
-  //       pageSize: 10,
-  //     })
-  //     .then(response => {
-  //       response.totalResults === 0 ? console.log('no res') : console.log(response);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // }
 
   render() {
     const { name, position, url, picture } = this.state;
@@ -93,7 +62,7 @@ export default class SelectedMPP extends Component {
           <div className="innerDiv-right w-80 ">
             <NewsFeed customStyle={styles.rightA} />
             <VotingRecords customStyle={styles.rightA} />
-            <SpeechFeed customStyle={styles.rightA} />
+            <SpeechFeed customStyle={styles.rightA} speech={this.state.hansard}/>
           </div>
         </div>
       </div>
