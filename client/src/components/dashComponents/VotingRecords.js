@@ -1,6 +1,7 @@
+/* eslint-disable */
 import React from 'react';
 import { Table } from 'react-bootstrap';
-/* eslint-disable */
+
 const styles = {};
 
 styles.rightA = {
