@@ -9,7 +9,7 @@
     "/api/*": {
       "target": "http://localhost:8080"
     },
-    "/MPP/*": {
+    "/*": {
       "target": "http://localhost:8080"
     }
   },

@@ -13,13 +13,14 @@ import UserDash from './components/UserDash';
 import fakeData from './fakedata';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import listMPPS from './components/AllMPPS';
+// import listMPPS from './components/AllMPPS';
 
 // styling
 import './App.css';
 // import SearchBar from './components/SearchBar';
 
 class App extends Component {
+
   componentDidMount() {
 		this.props.fetchUser();
 	}
@@ -43,7 +44,7 @@ class App extends Component {
               )
             }
           />
-          <Route path="/MPP/*" component={SelectedDash} />
+          <Route path="/mpp/*" component={SelectedDash} />
         </div>
       </BrowserRouter>
       </div>
@@ -51,9 +52,5 @@ class App extends Component {
   }
 }
 
-// function mapStateToProps(state){
-//   return{ auth: state.auth};
-// }
-// export default App;
-// export default connect(mapStateToProps)(App);
+
 export default connect(null, actions)(App);

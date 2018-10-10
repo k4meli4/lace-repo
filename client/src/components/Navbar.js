@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+// import * as actions from '../actions';
 
 
 class Navbar extends Component {
@@ -16,20 +16,14 @@ class Navbar extends Component {
       return (
         <a href="/auth/google"
           className="link dim gray f6 f5-ns dib mr3"
-          title="login"
-          // onClick={() => this.props.fetchUser(false)}
-          >
-          Login With Google
+          title="login">Login With Google
         </a>
         )
       default:
         return(
           <a href="/api/logout"
           className="link dim gray f6 f5-ns dib mr3"
-          title="login"
-          // onClick={() => this.props.fetchUser(true)}
-          >
-            Logout
+          title="login">Logout
           </a>
         )
     }

@@ -1,15 +1,12 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-// import NewsAPI from 'newsapi';
 import MppInfo from './dashComponents/Mppinfo';
 import SocialFeed from './dashComponents/SocialFeed';
 import EventFeed from './dashComponents/EventFeed';
 import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
-import API from '../utils/API';
-//
-// const newsapi = new NewsAPI('api_key');
+
 
 const styles = {
   layout: {
@@ -33,14 +30,10 @@ export default class SelectedMPP extends Component {
     url: 'https://www.ola.org/en/members/all/doug-ford',
     picture: 'https://www.ola.org/sites/default/files/member/profile-photo/doug_ford.jpg',
   };
+
   // componentDidMount() {
   //   this.loadHansard();
   // }
-  onComponentMount(){
-    API.findByName(this.state.value)
-    .then(res => console.log(res))
-    .catch(err => console.log(err));
-  }
 
   loadHansard = () => {
     API.getHansard(this.state.speech)
@@ -62,11 +55,10 @@ export default class SelectedMPP extends Component {
           <div className="innerDiv-right w-80 ">
             <NewsFeed customStyle={styles.rightA} />
             <VotingRecords customStyle={styles.rightA} />
-            <SpeechFeed customStyle={styles.rightA} speech={this.state.hansard}/>
+            <SpeechFeed customStyle={styles.rightA} />
           </div>
         </div>
       </div>
     );
   }
 }
-// commit me
