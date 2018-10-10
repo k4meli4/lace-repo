@@ -36,7 +36,6 @@
     "eslint-plugin-react": "^7.11.1",
     "mocha": "^5.2.0",
     "nodemon": "^1.11.0",
-    "react-bootstrap": "^0.32.4",
     "webpack-dev-server": "^3.1.9"
   },
   "dependencies": {
@@ -56,8 +55,13 @@
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
     "prettier": "^1.14.2",
+    "prop-types": "^15.6.2",
     "querystring": "^0.2.0",
+    "react": "^16.5.2",
+    "react-bootstrap": "^0.32.4",
     "react-bootstrap-tabs": "^1.0.2",
-    "request": "^2.88.0"
+    "react-dom": "^16.5.2",
+    "request": "^2.88.0",
+    "webpack": "^4.20.2"
   }
 }
