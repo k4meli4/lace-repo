@@ -5,7 +5,7 @@ import { Table } from 'react-bootstrap';
 const styles = {};
 
 styles.rightA = {
-  'margin-right': '0px',
+  marginRight: '0px',
 };
 
 const VotingRecords = ({ customStyle }) => (

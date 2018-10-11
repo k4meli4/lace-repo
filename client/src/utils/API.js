@@ -30,19 +30,7 @@ export default {
       const picture = res.data[0].photo
       const name = res.data[0].name
       const position = res.data[0].careerDetails[0].positions
-      // console.log(url);
-      // console.log(picture);
-      // console.log(name);
-      // console.log(position);
-      const stateObj = {
-        url: url,
-        picture: picture,
-        name: name,
-        position: position
-      };
-      return stateObj;
-  
-    });  
+      console.log(url, picture, name, position)
+    });
   }
 }
-  

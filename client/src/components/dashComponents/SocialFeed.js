@@ -1,12 +1,25 @@
 import React from 'react';
 
-const SocialFeed = (props) => (
-  <article id="" className="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+const styles = {
+  layout: {
+    height: '500px',
+    'overflow-x': 'hidden',
+    'overflow-y': 'scroll',
+  },
+};
+
+const SocialFeed = () => (
+  <article id="" style={styles.layout} className="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
     <div className="tc">
-      {/* <h1 className="f4">Social Feed</h1>
-      <hr className="mw3 bb bw1 b--black-10" /> */}
+      {/* <h1 className="f4">Social Feed</h1> */}
+      <hr className="mw3 bb bw1 b--black-10" />
     </div>
-    <a class="twitter-timeline" href={props.twitter}>Tweets by Doug Ford</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <div className="lh-copy measure center f6 black-70">
+      <a className="twitter-timeline" href="https://twitter.com/fordnation?lang=en">
+        Tweets by TwitterDev
+      </a>{' '}
+      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8" />
+    </div>
   </article>
 );
 
