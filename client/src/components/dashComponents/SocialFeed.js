@@ -3,7 +3,7 @@ import React from 'react';
 const styles = {
   layout: {
     height: '500px',
-    'overflowX': 'hidden',
+    overflowX: 'hidden',
     overflowY: 'scroll',
   },
 };

@@ -8,6 +8,7 @@ import EventFeed from './dashComponents/EventFeed';
 import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
+import demoList from "./list/mppSocial";
 
 
 const styles = {
