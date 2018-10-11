@@ -69,6 +69,7 @@ app.use('/api/mppName/:name', (req, res) => {
     .then(dbModel => {
       res.json(dbModel);
       console.log(dbModel);
+      console.log('yeahhhh boi')
     })
     .catch(err => {
       console.error(err);

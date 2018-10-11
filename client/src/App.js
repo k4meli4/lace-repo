@@ -27,19 +27,19 @@ class App extends Component {
       <BrowserRouter>
         <div>
         <Navbar />
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/test" component={SelectedDash} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
-          <Route exact path="/user"
-          render={(props) =>
-            fakeData.map(follow => (
-              <UserDash {...props}
-                item={follow}
-                />)
-              )
-            }
-          />
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/test" component={SelectedDash} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={Signup} />
+        <Route exact path="/user"
+        render={(props) =>
+          fakeData.map(follow => (
+            <UserDash {...props}
+              item={follow}
+              />)
+            )
+          }
+        />
         </div>
       </BrowserRouter>
       </div>

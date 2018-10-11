@@ -32,54 +32,17 @@ export default class SelectedMPP extends Component {
     url: 'https://www.ola.org/en/members/all/doug-ford',
     picture: 'https://www.ola.org/sites/default/files/member/profile-photo/doug_ford.jpg',
     twitter: 'https://twitter.com/fordnation?lang=en'
-    // tUsername: 'fordnation',
-  };
-  // componentDidMount() {
-  //   this.loadHansard();
-  // }
-  
-  loadHansard = () => {
-    API.getHansard(this.state.speech)
-    .then(res => 
-      this.setState({ hansard: res.data, speech: '' }))
-    .catch(err => console.log(err));
   };
   
-  // componentDidMount() {
-  //   // getTweets(this.state.tUsername);
-  //   newsapi.v2
-  //     .topHeadlines({
-  //       q: this.state.name,
-  //       // category: 'politics',
-  //       // country: 'ca',
-  //       // language: 'en',
-  //       pageSize: 10,
-  //     })
-  //     .then(response => {
-  //       response.totalResults === 0 ? console.log('no res') : console.log(response);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // }
-
-  // componentDidMount() {
-  //   // getTweets(this.state.tUsername);
-  //   newsapi.v2
-  //     .topHeadlines({
-  //       q: this.state.name,
-  //       // category: 'politics',
-  //       // country: 'ca',
-  //       // language: 'en',
-  //       pageSize: 10,
-  //     })
-  //     .then(response => {
-  //       response.totalResults === 0 ? console.log('no res') : console.log(response);
-  //     })
-  //     .catch(err => {
-  //       console.log(err);
-  //     });
-  // }
+  
+  // loadHansard = () => {
+  //   API.getHansard(this.state.speech)
+  //   .then(res => 
+  //     this.setState({ hansard: res.data, speech: '' }))
+  //   .catch(err => console.log(err));
+  // };
+  
+  
 
   render() {
     const { name, position, number, picture, twitter, url} = this.state;

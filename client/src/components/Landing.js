@@ -79,21 +79,12 @@ class Landing extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="postalCodeSearch" style={{marginTop: "0px", marginBottom: "0px", height: "auto", backgroundColor: 'blue'}}>
+                <div className="postalCodeSearch" style={{marginTop: "0px", marginBottom: "0px", height: "auto", backgroundColor: 'lightblue'}}>
                     <h3>Not Sure who your MPP is?</h3>
-                    <SearchBar />
+                    <a href='https://voterinformationservice.elections.on.ca/en/election/search?mode=postalCode' target='blank'>
+                        Click here to search by postal code
+                    </a>
                 </div>
-                {/* <div className='' style={{width: '100%', display: '-webkit-box', height: '365px', marginBottom: '0px'}}>
-                    <div className='legislatureToday' style={ style.panelLayout}>
-                        <h2>Legislature Today</h2>
-                        <div> [Content Here]</div>
-                    </div>
-                    <div className="billsToday" style={ style.panelLayout}>
-                        <h2>Recent Bills</h2>
-                        <div> [Content Here]</div>
-                    </div>
-                </div> */}
-                
                 <Footer/>
             </div>
         )
