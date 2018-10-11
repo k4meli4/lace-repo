@@ -12,11 +12,11 @@ const styles = {
   },
 };
 
-const Mppinfo = ({ picture, name, position, number }) => (
+const Mppinfo = ({ photo, name, position, number }) => (
   <div className="container center" style={styles.layout}>
     <article style={styles.fixedHeight} className="mw5 bg-white pa3 pa4-ns ba b--black-10">
       <div className="tc">
-        <img src={picture} className="br-100 h4 w4 dib ba b--black-05 pa2" alt="selected MPP" />
+        <img src={photo} className="br-100 h4 w4 dib ba b--black-05 pa2" alt="selected MPP" />
         <h1 className="f3 mb2">{name}</h1>
         <h2 className="f5 fw4 gray mt0">Position: something</h2>
       </div>
