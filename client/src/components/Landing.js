@@ -31,7 +31,6 @@ const style = {
     }
 }
 
-// const Landing = () => <h1>Hello Landing! </h1>;
 class Landing extends Component {
 
     state = {

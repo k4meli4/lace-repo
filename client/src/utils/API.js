@@ -26,8 +26,7 @@ export default {
       const picture = res.data[0].photo
       const name = res.data[0].name
       const position = res.data[0].careerDetails[0].positions
-      console.log(url, picture, name, position)      
-    });  
+      console.log(url, picture, name, position)
+    });
   }
 }
-  
