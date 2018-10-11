@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 
 const styles = {};
@@ -8,7 +9,6 @@ styles.rightA = {
 
 class SpeechFeed extends Component {
   // const SpeechFeed = ({ customStyle, props }) => (
-
   render() {
     return (
       <article style={this.props.customStyle} className="center  br3 hidden ba b--black-10 mv4 w-90">

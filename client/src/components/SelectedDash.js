@@ -1,5 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import axios from 'axios';
+
 import MppInfo from './dashComponents/Mppinfo';
 import SocialFeed from './dashComponents/SocialFeed';
 import EventFeed from './dashComponents/EventFeed';
@@ -25,28 +27,42 @@ const styles = {
 
 export default class SelectedMPP extends Component {
   state = {
-    name: 'Doug Ford',
-    position: 'Premier',
-    url: 'https://www.ola.org/en/members/all/doug-ford',
-    picture: 'https://www.ola.org/sites/default/files/member/profile-photo/doug_ford.jpg',
+    name: '',
+    position: '',
+    url: '',
+    photo: ' ',
+    party:'',
+    dateOfService:'',
+    currentRiding:'',
+    ridingMap:''
   };
-
   // componentDidMount() {
   //   this.loadHansard();
   // }
 
-  loadHansard = () => {
-    API.getHansard(this.state.speech)
-    .then(res =>
-      this.setState({ hansard: res.data, speech: '' }))
-    .catch(err => console.log(err));
-  };
+  // loadHansard = () => {
+  //   API.getHansard(this.state.speech)
+  //   .then(res =>
+  //     this.setState({ hansard: res.data, speech: '' }))
+  //   .catch(err => console.log(err));
+  // };
+
+
+  componentDidMount(){
+    let url = window.location.href;
+      axios.get(url)
+      .then(res => {
+        console.log('ths is the res from get ', res.data)
+      })
+      .catch(err => console.log(err))
+  }
+
 
   render() {
-    const { name, position, url, picture } = this.state;
+    const { name, position, url, photo } = this.state;
     return (
       <div>
-        <MppInfo name={name} position={position} url={url} picture={picture} />
+        <MppInfo name={name} position={position} url={url} photo={photo} />
         <div className="outterDiv center w-80" style={styles.layout}>
           <div className="innerDiv-left">
             <SocialFeed />

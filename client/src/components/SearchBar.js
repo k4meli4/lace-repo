@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React, { Component } from 'react';
+import axios from 'axios'
 // import API from '../utils/API';
 
 class SearchBar extends Component {
@@ -11,15 +12,28 @@ class SearchBar extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        window.location ='/mpp/'+ this.state.value;
+        axios.post(`/api/mppName/${this.state.value}`)
+        .then(res => {
+            console.log(res.data)
+            window.location ='/mpp/'+ this.state.value;
+        })
     };
+
     handleKeyPress(event) {
         if (event.key === 'Enter') {
             event.preventDefault();
             console.log('enter key pressed')
-            window.location ='/mpp/'+ this.state.value;
+
+            axios.post(`/api/mppName/${this.state.value}`)
+            .then(res => {
+                console.log(res.data)
+                window.location ='/mpp/'+ this.state.value;
+            })
+
         }
     }
+
+
     // re-route to MPP dashboard
 
     render() {
