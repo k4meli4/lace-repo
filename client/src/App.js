@@ -44,7 +44,7 @@ class App extends Component {
               )
             }
           />
-          <Route path="/mpp/*" component={SelectedDash} />
+          <Route path="/mpp/:mppName" component={SelectedDash} />
         </div>
       </BrowserRouter>
       </div>
