@@ -50,9 +50,21 @@ export default class SelectedMPP extends Component {
 
   componentDidMount(){
     let url = window.location.href;
-      axios.get(url)
+      axios.get('/api/mppName/ford',{
+        name: name
+      })
       .then(res => {
-        console.log('ths is the res from get ', res.data)
+        console.log('ths is the res from get ', res.data[0])
+        this.setState({
+          name: res.data[0].name,
+          position: res.data[0].careerDetails.positions,
+          url: res.data[0].url,
+          photo:res.data[0].photo,
+          party:res.data[0].party,
+          dateOfService:res.data[0].dateOfService,
+          currentRiding:res.data[0].currentRiding,
+          ridingMap:res.data[0].ridingMap
+        })
       })
       .catch(err => console.log(err))
   }
