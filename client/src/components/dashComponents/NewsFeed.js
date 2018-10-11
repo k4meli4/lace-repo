@@ -1,9 +1,9 @@
 import React from 'react';
-
+/* eslint-disable */
 const styles = {};
 
 styles.rightA = {
-  'marginRight': '0px',
+  marginRight: '0px',
 };
 
 const NewsFeed = ({ customStyle, props }) => (

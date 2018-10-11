@@ -11,18 +11,19 @@ import SelectedDash from './components/SelectedDash';
 import GenDash from './components/GenDash';
 import UserDash from './components/UserDash';
 import fakeData from './fakedata';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import listMPPS from './components/AllMPPS';
+// import Login from './components/Login';
+// import Signup from './components/Signup';
+// import listMPPS from './components/AllMPPS';
 
 // styling
 import './App.css';
 // import SearchBar from './components/SearchBar';
 
 class App extends Component {
-  // componentDidMount() {
-	// 	this.props.fetchUser();
-	// }
+
+  componentDidMount() {
+		this.props.fetchUser();
+	}
 
   render() {
     return (
@@ -32,8 +33,8 @@ class App extends Component {
         <Navbar />
           <Route exact path="/" component={Landing} />
           <Route exact path="/test" component={GenDash} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
+          {/* <Route exact path="/login" component={Login} /> */}
+          {/* <Route exact path="/signup" component={Signup} /> */}
           <Route exact path="/user"
           render={(props) =>
             fakeData.map(follow => (
@@ -43,7 +44,7 @@ class App extends Component {
               )
             }
           />
-          <Route path="/MPP/*" component={SelectedDash} />
+          <Route path="/mpp/*" component={SelectedDash} />
         </div>
       </BrowserRouter>
       </div>
@@ -51,5 +52,5 @@ class App extends Component {
   }
 }
 
-export default App;
-// export default connect(null, actions)(App);
+
+export default connect(null, actions)(App);
