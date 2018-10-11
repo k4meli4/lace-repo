@@ -45,24 +45,12 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 // passport routes
-<<<<<<< HEAD
 require('./routes/authRoutes')(app);
-//
-// require('./routes/mppRoutes')(app);
-
 
 mongoose.connect(
   keys.mongoURI,
   { useNewUrlParser: true }
-  );
-=======
-// require('./routes/authRoutes')(app);
-
-// mongoose.connect(
-//   keys.mongoURI,
-//   { useNewUrlParser: true }
-// );
->>>>>>> 70c7ed2e59ca7cbd27ffeee643efeec0a47ff001
+);
 // authRoutes(app);
 
   let billsRouter = express.Router();
@@ -81,11 +69,7 @@ app.use('/bills', billsRouter);
 app.use('/eachmpp', eachmppRouter);
 app.use('/mppUrl', mppUrlRouter);
 app.use('/hansard', hansardRouter);
-<<<<<<< HEAD
-
-=======
 // //this finds MPP from search bar, direct link
->>>>>>> 70c7ed2e59ca7cbd27ffeee643efeec0a47ff001
 app.use('/api/mppName/:name', (req, res) => {
   eachMPP
     .find({ $text: { $search: req.params.name } })
@@ -111,49 +95,6 @@ app.use('/api/hansard/:name', (req, res) => {
       res.status(422).json(err);
     });
 });
-<<<<<<< HEAD
-
-// const result = array.map(a => a.name);
-
-// for (let m = 0; m < result.length; m += 1) {
-//   const last = result[m].substring(result[m].lastIndexOf(' ') + 1);
-
-// }
-
-// mppqueenparks
-//   .find({ $text: { $search: 'anand' } })
-//   .then(dbmodel =>
-//     eachMPP.findOneAndUpdate(
-//       { $text: { $search: 'anand' } },
-//       { telephone: dbmodel[0]._id },
-//       { fields: 'telephone', new: true }
-//     )
-//   )
-//   .then(dbQp => {
-//     console.log(dbQp);
-//   })
-//   .catch(err => {
-//     console.log(err);
-//   });
-
-// mppqueenparks
-//   .create(seed)
-//   .then(dbLibrary => {
-//     console.log(dbLibrary);
-//   })
-//   .catch(err => {
-//     console.log(err.message);
-//   });
-
-// mppqueenparks
-//   .find({ $text: { $search: 'smith' } })
-//   .then(dbLibrary => {
-//     console.log(dbLibrary);
-//   })
-//   .catch(err => {
-//     console.log(err.message);
-//   });
-=======
 // this finds votes by MPP for bills 2, 5, 27,typed in Search bar, pulled from URL
 app.use('./api/mppVotes/:name', (req, res) => {
   billVotes
@@ -178,7 +119,6 @@ app.use('/api/recentBills', (req, res) => {
       res.status(422).json(err);
     });
 });
->>>>>>> 70c7ed2e59ca7cbd27ffeee643efeec0a47ff001
 
 mongoose.connect('mongodb://localhost/lace-repo');
 

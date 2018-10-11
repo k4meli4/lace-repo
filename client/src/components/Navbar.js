@@ -51,6 +51,5 @@ class Navbar extends Component {
 function mapStateToProps(state){
   return{ auth: state.auth};
 }
-// export default App;
+
 export default connect(mapStateToProps)(Navbar);
-// export default Navbar;

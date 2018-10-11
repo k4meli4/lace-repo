@@ -11,8 +11,8 @@ import SelectedDash from './components/SelectedDash';
 import GenDash from './components/GenDash';
 import UserDash from './components/UserDash';
 import fakeData from './fakedata';
-import Login from './components/Login';
-import Signup from './components/Signup';
+// import Login from './components/Login';
+// import Signup from './components/Signup';
 // import listMPPS from './components/AllMPPS';
 
 // styling
@@ -33,8 +33,8 @@ class App extends Component {
         <Navbar />
           <Route exact path="/" component={Landing} />
           <Route exact path="/test" component={GenDash} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={Signup} />
+          {/* <Route exact path="/login" component={Login} /> */}
+          {/* <Route exact path="/signup" component={Signup} /> */}
           <Route exact path="/user"
           render={(props) =>
             fakeData.map(follow => (
