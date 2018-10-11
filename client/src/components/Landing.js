@@ -74,21 +74,6 @@ class Landing extends Component {
     render() {
         return (
             <div>
-                <div className="postalCodeSearch" style={{ marginTop: "0px", marginBottom: "0px", height: "auto", backgroundColor: 'blue' }}>
-                    <h3>Not Sure who your MPP is?</h3>
-                    <SearchBar />
-                </div>
-                <div className='' style={{ width: '100%', display: '-webkit-box', height: '365px', marginBottom: '0px' }}>
-                    <div className='legislatureToday' style={style.panelLayout}>
-                        <h2>Legislature Today</h2>
-                        <div> [Content Here]</div>
-                    </div>
-                    <div className="billsToday" style={style.panelLayout}>
-                        <h2>Recent Bills</h2>
-                        {/* < BillsFeed recentBill={recentBill} /> */}
-
-                    </div>
-                </div>
                 <div
                     className="feeds"
                     style={{
