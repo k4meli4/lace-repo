@@ -3,8 +3,8 @@ import React from 'react';
 const styles = {
   layout: {
     height: '500px',
-    'overflow-x': 'hidden',
-    'overflow-y': 'scroll',
+    overflowX: 'hidden',
+    overflowY: 'scroll',
   },
 };
 

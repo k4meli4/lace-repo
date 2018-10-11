@@ -8,6 +8,7 @@ import EventFeed from './dashComponents/EventFeed';
 import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
+import demoList from "./list/mppSocial";
 
 
 const styles = {
@@ -27,6 +28,7 @@ const styles = {
 
 export default class SelectedMPP extends Component {
   state = {
+    mppLockup: this.props.match.params.mppName,
     name: '',
     position: '',
     url: '',
@@ -55,7 +57,7 @@ export default class SelectedMPP extends Component {
 
   componentDidMount(){
     let url = window.location.href;
-      axios.get('/api/mppName/ford',{
+      axios.get(`/api/mppName/${this.state.mppLockup}`,{
         name: name
       })
       .then(res => {
@@ -72,6 +74,7 @@ export default class SelectedMPP extends Component {
         })
       })
       .catch(err => console.log(err))
+      // console.log(this.props.match.params.mppName)
   }
 
 
