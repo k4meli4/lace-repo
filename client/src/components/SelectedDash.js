@@ -31,18 +31,60 @@ export default class SelectedMPP extends Component {
     position: 'Premier',
     url: 'https://www.ola.org/en/members/all/doug-ford',
     picture: 'https://www.ola.org/sites/default/files/member/profile-photo/doug_ford.jpg',
-    twitter: 'https://twitter.com/fordnation?lang=en'
+    // tUsername: 'fordnation',
+    hansard: []
   };
   
-  
-  // loadHansard = () => {
-  //   API.getHansard(this.state.speech)
-  //   .then(res => 
-  //     this.setState({ hansard: res.data, speech: '' }))
-  //   .catch(err => console.log(err));
-  // };
-  
-  
+  //load on Speech Feed
+  loadHansard = () => {
+    API.getHansard(this.state.speech)
+    .then(res => 
+      this.setState({ hansard: res.data}))
+    .catch(err => console.log(err));
+  };
+  //load on Voting Records page
+  loadVotesByMpp = () => {
+    API.getVotesByMpp(this.state.votes)
+    .then(res => 
+      this.setState({ votes: res.data}))
+    .catch(err => console.log(err));
+  };
+
+  // componentDidMount() {
+  //   // getTweets(this.state.tUsername);
+  //   newsapi.v2
+  //     .topHeadlines({
+  //       q: this.state.name,
+  //       // category: 'politics',
+  //       // country: 'ca',
+  //       // language: 'en',
+  //       pageSize: 10,
+  //     })
+  //     .then(response => {
+  //       response.totalResults === 0 ? console.log('no res') : console.log(response);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // }
+
+  // componentDidMount() {
+  //   // getTweets(this.state.tUsername);
+  //   newsapi.v2
+  //     .topHeadlines({
+  //       q: this.state.name,
+  //       // category: 'politics',
+  //       // country: 'ca',
+  //       // language: 'en',
+  //       pageSize: 10,
+  //     })
+  //     .then(response => {
+  //       response.totalResults === 0 ? console.log('no res') : console.log(response);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // }
 
   render() {
     const { name, position, number, picture, twitter, url} = this.state;
@@ -54,11 +96,12 @@ export default class SelectedMPP extends Component {
           <div className="innerDiv-left">
             <SocialFeed twitter={twitter}/>
             <EventFeed />
+            <SpeechFeed customStyle={styles.rightA} />
           </div>
           <div className="innerDiv-right w-80 ">
             <NewsFeed customStyle={styles.rightA} />
             <VotingRecords customStyle={styles.rightA} />
-            <SpeechFeed customStyle={styles.rightA} />
+           
           </div>
         </div>
       </div>
