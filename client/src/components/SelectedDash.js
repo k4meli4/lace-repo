@@ -34,19 +34,24 @@ export default class SelectedMPP extends Component {
     party:'',
     dateOfService:'',
     currentRiding:'',
-    ridingMap:''
+    ridingMap:'',
+    hansard: []
   };
-  // componentDidMount() {
-  //   this.loadHansard();
-  // }
 
-  // loadHansard = () => {
-  //   API.getHansard(this.state.speech)
-  //   .then(res =>
-  //     this.setState({ hansard: res.data, speech: '' }))
-  //   .catch(err => console.log(err));
-  // };
-
+    //load on Speech Feed
+    loadHansard = () => {
+      API.getHansard(this.state.speech)
+      .then(res =>
+        this.setState({ hansard: res.data}))
+      .catch(err => console.log(err));
+    };
+    //load on Voting Records page
+    loadVotesByMpp = () => {
+      API.getVotesByMpp(this.state.votes)
+      .then(res =>
+        this.setState({ votes: res.data}))
+      .catch(err => console.log(err));
+    };
 
   componentDidMount(){
     let url = window.location.href;
@@ -79,11 +84,11 @@ export default class SelectedMPP extends Component {
           <div className="innerDiv-left">
             <SocialFeed />
             <EventFeed />
+            <SpeechFeed customStyle={styles.rightA} />
           </div>
           <div className="innerDiv-right w-80 ">
             <NewsFeed customStyle={styles.rightA} />
             <VotingRecords customStyle={styles.rightA} />
-            <SpeechFeed customStyle={styles.rightA} />
           </div>
         </div>
       </div>
