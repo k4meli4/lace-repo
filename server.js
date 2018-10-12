@@ -120,7 +120,7 @@ app.use('/api/recentBills', (req, res) => {
     });
 });
 
-mongoose.connect('mongodb://localhost/lace-repo');
+// mongoose.connect('mongodb://localhost/lace-repo');
 
 // connecting to mlab
 // database is called lace-repo, you can see from 'mongoose.connect' code above
