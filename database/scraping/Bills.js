@@ -2,7 +2,7 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
 const cheerioTableParser = require('cheerio-tableparser');
-const bills = require('../models/bills');
+const bills = require('../models/Bills');
 
 const billsRouter = router => {
   router.get('/scrape', (req, res) => {
