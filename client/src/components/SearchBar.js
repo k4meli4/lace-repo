@@ -32,8 +32,6 @@ class SearchBar extends Component {
 
         }
     }
-
-
     // re-route to MPP dashboard
 
     render() {

@@ -9,6 +9,7 @@ import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 import demoList from "./list/mppSocial";
+import API from '../utils/API';
 
 
 const styles = {
@@ -30,14 +31,17 @@ export default class SelectedMPP extends Component {
   state = {
     mppLockup: this.props.match.params.mppName,
     name: '',
-    position: '',
+    position: [],
     url: '',
     photo: ' ',
     party:'',
     dateOfService:'',
     currentRiding:'',
     ridingMap:'',
-    hansard: []
+    hansard: [],
+    votes:[],
+    number: '',
+    email: '',
   };
 
     //load on Speech Feed
@@ -49,11 +53,13 @@ export default class SelectedMPP extends Component {
     };
     //load on Voting Records page
     loadVotesByMpp = () => {
-      API.getVotesByMpp(this.state.votes)
+      API.getVotesByMpp(this.state.speech)
       .then(res =>
+        console.log('here ' + res.data),
         this.setState({ votes: res.data}))
       .catch(err => console.log(err));
     };
+   
 
   componentDidMount(){
     let url = window.location.href;
@@ -61,28 +67,31 @@ export default class SelectedMPP extends Component {
         name: name
       })
       .then(res => {
-        console.log('ths is the res from get ', res.data[0])
+        console.log('ths is the res from get ', res.data[0].addressEmailId.Telephone),
         this.setState({
           name: res.data[0].name,
-          position: res.data[0].careerDetails.positions,
+          position: res.data[0].careerDetails[0].position.join('\n'),
           url: res.data[0].url,
           photo:res.data[0].photo,
           party:res.data[0].party,
           dateOfService:res.data[0].dateOfService,
           currentRiding:res.data[0].currentRiding,
-          ridingMap:res.data[0].ridingMap
+          ridingMap:res.data[0].ridingMap,
+          number: res.data[0].addressEmailId.Telephone,
+          email: res.data[0].addressEmailId.EmailAddress       
         })
+        
       })
       .catch(err => console.log(err))
-      // console.log(this.props.match.params.mppName)
+      // console.log(this.props.match.params.mppName)    
   }
-
-
+ 
   render() {
-    const { name, position, url, photo } = this.state;
+    const { name, position, url, photo, number, email} = this.state;
     return (
       <div>
-        <MppInfo name={name} position={position} url={url} photo={photo} />
+        <MppInfo name={name} 
+         position={position} url={url} photo={photo} number={number} email = {email}/>
         <div className="outterDiv center w-80" style={styles.layout}>
           <div className="innerDiv-left">
             <SocialFeed />

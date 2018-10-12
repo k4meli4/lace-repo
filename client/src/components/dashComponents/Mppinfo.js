@@ -12,7 +12,7 @@ const styles = {
   },
 };
 
-const Mppinfo = ({ photo, name, position, number }) => (
+const Mppinfo = ({ photo, name, position, number, email }) => (
   <div className="container center" style={styles.layout}>
     <article style={styles.fixedHeight} className="mw5 bg-white pa3 pa4-ns ba b--black-10">
       <div className="tc">
@@ -30,12 +30,14 @@ const Mppinfo = ({ photo, name, position, number }) => (
           <strong>{name}</strong>
         </p>
         <p>
-          Current Position:
+          Current Position(s):
+          <ul>
           <strong>{position}</strong>
+          </ul>
         </p>
         <p>
-          Contact number:
-          <strong>{number}</strong>
+          <strong>{number}</strong><br></br>
+          <strong>{email}</strong>
         </p>
       </div>
     </article>
