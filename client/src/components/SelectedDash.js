@@ -87,11 +87,13 @@ export default class SelectedMPP extends Component {
 
     getNews(){
       newsapi.v2
-      .topHeadlines({
-        q: this.state.mppLockup,
-        category: 'politics',
+      .everything({
+        q: this.state.name,
+        // sources: 'bbc-news,the-verge',
+        // domains: 'bbc.co.uk,techcrunch.com',
         language: 'en',
-        country: 'ca'
+        sortBy: 'relevancy',
+        page: 2
       })
       .then(response => {
         response.totalResults === 0 ? console.log('no res') : console.log('this is the news ',response);
@@ -104,7 +106,7 @@ export default class SelectedMPP extends Component {
 
   componentDidMount(){
     this.mppSearch()
-    // this.getNews()
+    this.getNews()
   }
 
 

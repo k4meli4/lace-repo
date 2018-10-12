@@ -18,7 +18,10 @@ const Mppinfo = ({ photo, name, position, telephone, currentRiding, party, parli
       <div className="tc">
         <img src={photo} className="br-100 h4 w4 dib ba b--black-05 pa2" alt="selected MPP" />
         <h1 className="f3 mb2">{name}</h1>
-        <h3 className="f5 fw4 gray mt0">Current Riding:{currentRiding}</h3>
+        <h3 className="f5 fw4 gray mt0">
+          Current Riding:
+          {currentRiding}
+        </h3>
       </div>
     </article>
 
