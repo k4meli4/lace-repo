@@ -5,13 +5,6 @@ import SearchBar from './SearchBar';
 import { connect } from 'react-redux';
 // import * as actions from '../actions';
 
-<<<<<<< HEAD
-const Navbar = () => (
-  <nav className="pa3 pa4-ns" style={{backgroundColor: 'lightblue'}}>
-    <Link to="/" className="link dim black b f6 f5-ns dib mr3" title="Home">
-      In Their Own Words!
-    </Link>
-=======
 
 class Navbar extends Component {
 
@@ -42,7 +35,6 @@ class Navbar extends Component {
         <Link to="/" className="link dim black b f6 f5-ns dib mr3" title="Home">
         In Their Own Words!
         </Link>
->>>>>>> 9f4d815a6515a293cc329b0b12b99169ac1880a7
         <SearchBar/>
         {this.renderButton()}
         <Link to="/test" className="link dim gray f6 f5-ns dib mr3" title="Shortcut for testing">

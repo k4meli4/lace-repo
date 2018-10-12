@@ -83,7 +83,7 @@ export default class SelectedMPP extends Component {
         <div className="outterDiv center w-80" style={styles.layout}>
           
           <div className="innerDiv-left">
-            <SocialFeed twitter={twitter}/>
+            {/* <SocialFeed twitter={twitter}/> */}
             <EventFeed />
             <SpeechFeed customStyle={styles.rightA} />
           </div>
