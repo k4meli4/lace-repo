@@ -4,7 +4,7 @@ import './TwitterStyle.css'
 const TwitterFeed = (props) => (
     <div className={props.className} style={
         {
-            maxHeight: "200px",
+            maxHeight: "489px",
             overflow: 'scroll'
         }
     }>
