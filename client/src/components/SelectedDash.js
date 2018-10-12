@@ -40,7 +40,10 @@ export default class SelectedMPP extends Component {
     dateOfService:'',
     currentRiding:'',
     ridingMap:'',
-    hansard: []
+    hansard: [],
+    votes:'',
+    parliamentNumber: '',
+    telephone:'',
   };
 
     //load on Speech Feed
@@ -73,8 +76,11 @@ export default class SelectedMPP extends Component {
           party:res.data[0].party,
           dateOfService:res.data[0].dateOfService,
           currentRiding:res.data[0].currentRiding,
-          ridingMap:res.data[0].ridingMap
+          ridingMap:res.data[0].ridingMap,
+          parliamentNumber: res.data[0].careerDetails[0].parliamentNumber,
+          telephone:res.data[0].addressEmailId.Telephone
         })
+        console.log(this.state.telephone)
       })
       .catch(err => console.log(err))
     }
@@ -98,19 +104,19 @@ export default class SelectedMPP extends Component {
 
   componentDidMount(){
     this.mppSearch()
-    this.getNews()
+    // this.getNews()
   }
 
 
   render() {
-    const { name, position, url, photo, currentRiding, party } = this.state;
+    const { name, position, url, photo, currentRiding, party, parliamentNumber, telephone } = this.state;
     return (
       <div>
-        <MppInfo name={name} position={position} url={url} photo={photo} currentRiding={currentRiding} party={party} />
+        <MppInfo name={name} position={position} url={url} photo={photo} currentRiding={currentRiding} party={party} parliamentNumber={parliamentNumber} telephone={telephone} />
         <div className="outterDiv center w-80" style={styles.layout}>
-          
+
           <div className="innerDiv-left">
-            {/* <SocialFeed twitter={twitter}/> */}
+            <SocialFeed />
             <EventFeed />
             <SpeechFeed customStyle={styles.rightA} />
           </div>

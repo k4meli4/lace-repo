@@ -12,7 +12,7 @@ const styles = {
   },
 };
 
-const Mppinfo = ({ photo, name, position, number, currentRiding, party }) => (
+const Mppinfo = ({ photo, name, position, telephone, currentRiding, party, parliamentNumber }) => (
   <div className="container center" style={styles.layout}>
     <article style={styles.fixedHeight} className="mw5 bg-white pa3 pa4-ns ba b--black-10">
       <div className="tc">
@@ -27,19 +27,22 @@ const Mppinfo = ({ photo, name, position, number, currentRiding, party }) => (
       <div className="pa3 bt b--black-10">
         <p>
           Name:
-          <strong>{name}</strong>
+          <strong> {name}</strong>
+        </p>
+        <p>
+          Parliament#:
+          <strong> {parliamentNumber}</strong>
         </p>
         <p>
           Current Position:
-          <strong>{position}</strong>
+          <strong> {position}</strong>
         </p>
         <p>
-          Contact number:
-          <strong>{number}</strong>
+          Party:
+          <strong> {party}</strong>
         </p>
         <p>
-          Contact party:
-          <strong>{party}</strong>
+          <strong> {telephone}</strong>
         </p>
       </div>
     </article>
@@ -47,5 +50,3 @@ const Mppinfo = ({ photo, name, position, number, currentRiding, party }) => (
 );
 
 export default Mppinfo;
-
-// commit me
