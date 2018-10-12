@@ -35,7 +35,8 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-mongoose.connect('mongodb://localhost/lace-repo');
+// mongoose.connect('mongodb://localhost/lace-repo');
+
 // the setup for passport to use the cookiesssss
 app.use(
   cookieSession({
@@ -121,7 +122,6 @@ app.use('/api/recentBills', (req, res) => {
       res.status(422).json(err);
     });
 });
-
 
 // connecting to mlab
 // database is called lace-repo, you can see from 'mongoose.connect' code above

@@ -9,6 +9,9 @@ import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 import demoList from "./list/mppSocial";
+const NewsAPI = require('newsapi')
+import NEWS_KEY from '../newsKey';
+const newsapi = new NewsAPI(NEWS_KEY);
 
 const styles = {
   layout: {
@@ -37,7 +40,9 @@ export default class SelectedMPP extends Component {
     currentRiding:'',
     ridingMap:'',
     hansard: [],
-    twitter: 'https://twitter.com/john_vanthof?lang=en'
+    votes:'',
+    parliamentNumber: '',
+    telephone:'',
   };
 
     //load on Speech Feed
@@ -55,8 +60,8 @@ export default class SelectedMPP extends Component {
       .catch(err => console.log(err));
     };
 
-  componentDidMount(){
-    let url = window.location.href;
+    // let url = window.location.href;
+    mppSearch(){
       axios.get(`/api/mppName/${this.state.mppLockup}`,{
         name: name
       })
@@ -64,35 +69,55 @@ export default class SelectedMPP extends Component {
         console.log('ths is the res from get ', res.data[0])
         this.setState({
           name: res.data[0].name,
-          position: res.data[0].careerDetails.positions,
+          position: res.data[0].careerDetails[0].positions,
           url: res.data[0].url,
           photo:res.data[0].photo,
           party:res.data[0].party,
           dateOfService:res.data[0].dateOfService,
           currentRiding:res.data[0].currentRiding,
-          ridingMap:res.data[0].ridingMap
+          ridingMap:res.data[0].ridingMap,
+          parliamentNumber: res.data[0].careerDetails[0].parliamentNumber,
+          telephone:res.data[0].addressEmailId.Telephone
         })
-        demoList.forEach(person => person.name === this.state.name ? 
-          this.setState({twitter: person.twitter}) 
-          : console.log('no match')
-        );
-        console.log(this.state) //state updates but change is not rendered. Social Feed component should be rendered with new prop
-
+        console.log(this.state.telephone)
       })
-      .catch(err => console.log(err))     
-      
+      .catch(err => console.log(err))
+    }
+
+    getNews(){
+      newsapi.v2
+      .everything({
+        q: this.state.name,
+        // sources: 'bbc-news,the-verge',
+        // domains: 'bbc.co.uk,techcrunch.com',
+        language: 'en',
+        sortBy: 'relevancy',
+        page: 2
+      })
+      .then(response => {
+        response.totalResults === 0 ? console.log('no res') : console.log('this is the news ',response);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+
+    }
+
+  componentDidMount(){
+    this.mppSearch()
+    this.getNews()
   }
 
 
   render() {
-    const { name, position, url, photo, twitter } = this.state;
+    const { name, position, url, photo, currentRiding, party, parliamentNumber, telephone } = this.state;
     return (
       <div>
-        <MppInfo name={name} position={position} url={url} photo={photo} />
+        <MppInfo name={name} position={position} url={url} photo={photo} currentRiding={currentRiding} party={party} parliamentNumber={parliamentNumber} telephone={telephone} />
         <div className="outterDiv center w-80" style={styles.layout}>
-          
+
           <div className="innerDiv-left">
-            <SocialFeed twitter={twitter}/>
+            <SocialFeed />
             <EventFeed />
             <SpeechFeed customStyle={styles.rightA} />
           </div>
