@@ -35,10 +35,6 @@ class SearchBar extends Component {
             })
         }
     }
-<<<<<<< HEAD
-    // re-route to MPP dashboard
-=======
->>>>>>> 857291e70b0efbaf9639a9763d84c8bfa66c708f
 
     render() {
         return (

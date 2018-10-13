@@ -74,24 +74,6 @@ class Landing extends Component {
     render() {
         return (
             <div>
-<<<<<<< HEAD
-                <div className="postalCodeSearch" style={{ marginTop: "0px", marginBottom: "0px", height: "auto", backgroundColor: 'blue' }}>
-                    <h3>Not Sure who your MPP is?</h3>
-                    <SearchBar />
-                </div>
-                <div className='' style={{ width: '100%', display: '-webkit-box', height: '365px', marginBottom: '0px' }}>
-                    <div className='legislatureToday' style={style.panelLayout}>
-                        <h2>Legislature Today</h2>
-                        <div> [Content Here]</div>
-                    </div>
-                    <div className="billsToday" style={style.panelLayout}>
-                        <h2>Recent Bills</h2>
-                        < BillsFeed recentBill={this.state.recentBill} />
-
-                    </div>
-                </div>
-=======
->>>>>>> 857291e70b0efbaf9639a9763d84c8bfa66c708f
                 <div
                     className="feeds"
                     style={{
@@ -115,6 +97,12 @@ class Landing extends Component {
                     <a href='https://voterinformationservice.elections.on.ca/en/election/search?mode=postalCode' target='blank'>
                         Click here to search by postal code
                     </a>
+                </div>
+                <div className='' style={{ width: '100%', display: '-webkit-box', height: '365px', marginBottom: '0px' }}>
+                    </div>
+                    <div className="billsToday" style={style.panelLayout}>
+                        <h2>Recent Bills</h2>
+                        < BillsFeed recentBill={this.state.recentBill} />
                 </div>
                 <Footer/>
             </div>
