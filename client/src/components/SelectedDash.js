@@ -9,10 +9,10 @@ import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 import demoList from "./list/mppSocial";
-import AwesomeComponent from './Loader'
-const NewsAPI = require('newsapi')
-import NEWS_KEY from '../newsKey';
-const newsapi = new NewsAPI(NEWS_KEY);
+// const NewsAPI = require('newsapi')
+// import NEWS_KEY from '../newsKey';
+// const newsapi = new NewsAPI(NEWS_KEY);
+import Loader from './Loader'
 
 const styles = {
   layout: {
@@ -36,108 +36,97 @@ export default class SelectedMPP extends Component {
     position: [],
     url: '',
     photo: ' ',
-    party:'',
-    dateOfService:'',
-    currentRiding:'',
-    ridingMap:'',
+    party: '',
+    dateOfService: '',
+    currentRiding: '',
+    ridingMap: '',
     hansard: [],
-    votes:[],
+    votes: [],
     parliamentNumber: '',
-    telephone:'',
+    telephone: '',
     twitter: '',
+    isLoading: true,
   };
 
-    // //load on Speech Feed
-    // loadHansard = () => {
-    //   // API.getHansard(this.state.name)
-    //   axios.get(`/api/hansard/${this.state.mppLockup}`,{
-    //     name: name
-    //   })
-    //   .then(res =>{
-    //       // console.log('ths is the res from speed ', res.data)
-    //       this.setState({vote:res.data})
-    //     })
-    //   .catch(err => console.log(err));
-    // };
-    //load on Voting Records page
-    loadVotesByMpp = () => {
-      API.getVotesByMpp(this.state.speech)
+  //load on Voting Records page
+  loadVotesByMpp = () => {
+    API.getVotesByMpp(this.state.speech)
       .then(res =>
         //console.log('here ' + res.data),
-        this.setState({ votes: res.data}))
+        this.setState({ votes: res.data }))
       .catch(err => console.log(err));
-    };   
+  };
 
-    // let url = window.location.href;
-    mppSearch(){
-      axios.get(`/api/mppName/${this.state.mppLockup}`,{
-        name: name
-      })
+  // let url = window.location.href;
+  mppSearch() {
+    axios.get(`/api/mppName/${this.state.mppLockup}`, {
+      name: name
+    })
       .then(res => {
         //console.log('ths is the res from get ', res.data[0].addressEmailId.Telephone),
         this.setState({
           name: res.data[0].name,
           position: res.data[0].careerDetails[0].positions.join('\n'),
           url: res.data[0].url,
-          photo:res.data[0].photo,
-          party:res.data[0].party,
-          dateOfService:res.data[0].dateOfService,
-          currentRiding:res.data[0].currentRiding,
-          ridingMap:res.data[0].ridingMap,
+          photo: res.data[0].photo,
+          party: res.data[0].party,
+          dateOfService: res.data[0].dateOfService,
+          currentRiding: res.data[0].currentRiding,
+          ridingMap: res.data[0].ridingMap,
           parliamentNumber: res.data[0].careerDetails[0].parliamentNumber,
-          telephone:res.data[0].addressEmailId.Telephone
+          telephone: res.data[0].addressEmailId.Telephone
         })
-        // console.log(this.state.telephone)
       })
       .catch(err => console.log(err))
-    }
+  }
 
-    getNews(){
-      newsapi.v2.everything({
-        q: this.state.name,
-        // category: 'general',
-        language: 'en',
-        // country: 'ca',
-      // newsapi.v2
-      // .everything({
-      //   // q: this.state.name,
-      //   q:this.state.mppLockup,
-        sources: 'google-news-ca',
-        sortBy: 'relevancy',
-        page: 1
-      })
-      .then(response => {
-        response.totalResults === 0 ? console.log('no res') : console.log('this is the news ',response);
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    }
+  // getNews(){
+  //   newsapi.v2.everything({
+  //     q: this.state.name,
+  //     // category: 'general',
+  //     language: 'en',
+  //     // country: 'ca',
+  //   // newsapi.v2
+  //   // .everything({
+  //   //   // q: this.state.name,
+  //   //   q:this.state.mppLockup,
+  //     sources: 'google-news-ca',
+  //     sortBy: 'relevancy',
+  //     page: 1
+  //   })
+  //   .then(response => {
+  //     response.totalResults === 0 ? console.log('no res') : console.log('this is the news ',response);
+  //   })
+  //   .catch(err => {
+  //     console.log(err);
+  //   });
+  // }
 
-  getTwitter(){
+  getTwitter() {
     // const twitterURL =
     demoList.forEach(tName => {
-      if (tName.name === this.state.name){
+      if (tName.name === this.state.name) {
         // console.log('this is the foreach name ',tName.name)
         // console.log('this is the state name ',this.state.name)
-          return this.setState({twitter:tName.twitter})
-          // console.log(tName.name);
-        }
-      })
-    }
+        return this.setState({ twitter: tName.twitter })
+        // console.log(tName.name);
+      }
+    })
+  }
 
-    componentDidMount(){
-      this.mppSearch();
-      setTimeout(() => {
-        this.getTwitter();
-      }, 500);
-      // this.loadHansard();
+  componentDidMount() {
+    this.mppSearch();
+    setTimeout(() => {
+      this.getTwitter();
+    }, 500);
+    setTimeout(() => this.setState({ isLoading: false }), 3000);
+
   }
 
   render() {
-
-    // if (this.state.name.length > 0) {
-    //   setTimeout( () => {
+    if (this.state.isLoading) {
+      return <Loader />
+    }
     const { name, position, url, photo, currentRiding, party, parliamentNumber, telephone, twitter, mppLockup } = this.state;
     return (
       <div>
@@ -155,7 +144,7 @@ export default class SelectedMPP extends Component {
         </div>
       </div>
     );
-  // }, 500)
+    // }, 500)
   }
   // return (
   //   < AwesomeComponent/>
