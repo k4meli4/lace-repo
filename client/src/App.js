@@ -18,25 +18,32 @@ import Loader from './components/Loader'
 // import listMPPS from './components/AllMPPS';
 
 // styling
-import './App.css';
 // import SearchBar from './components/SearchBar';
+
 
 class App extends Component {
 
+  componentWillMount() {
+    if(window.location.pathname === '/') {
+      require('./logo.css');
+    } else {
+      require('./App.css');
+    }
+  }
+
   componentDidMount() {
 		this.props.fetchUser();
-	}
+  }
+
 
   render() {
     return (
       <div className="App">
           <BrowserRouter>
         <div>
-        <Navbar />
+          <Navbar />
           <Route exact path="/" component={Logo} />
           <Route exact path="/test" component={Landing} />
-          {/* <Route exact path="/login" component={Login} /> */}
-          {/* <Route exact path="/signup" component={Signup} /> */}
           <Route exact path="/user"
           render={(props) =>
             fakeData.map(follow => (

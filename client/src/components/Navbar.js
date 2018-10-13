@@ -6,9 +6,9 @@ import { connect } from 'react-redux';
 // import * as actions from '../actions';
 const style = {
   navStyle: {
-    'backgroundColor': '#064373',
-    'borderBottomStyle': 'solid',
-    'borderBottomColor': 'crimson'
+    // 'backgroundColor': '#064373',
+    // 'borderBottomStyle': 'solid',
+    // 'borderBottomColor': 'crimson'
   }
 }
 
@@ -38,14 +38,14 @@ class Navbar extends Component {
   render(){
     return(
       <nav className="pa3 pa4-ns" style={style.navStyle}>
-        <Link to="/" className="link dim black b f6 f5-ns dib mr3" title="Home">
+        <Link to="/" className="link dim  b f6 f5-ns dib mr3" title="Home">
         In Their Own Words!
         </Link>
         <SearchBar/>
         {this.renderButton()}
-        <Link to="/test" className="link dim gray f6 f5-ns dib mr3" title="Shortcut for testing">
+        {/* <Link to="/test" className="link dim gray f6 f5-ns dib mr3" title="Shortcut for testing">
           Test!
-        </Link>
+        </Link> */}
         <Link to="/User" className="link dim gray f6 f5-ns dib mr3" title="User Page">
           User Page
         </Link>

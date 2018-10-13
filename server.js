@@ -5,16 +5,16 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
-
+//
 const mongoose = require('mongoose');
 const arrayNames = require('./database/seeds/arrayNames');
-const eachMPP = require('./database/models/eachMPP');
-const hansard = require('./database/models/Hansard');
+// const eachMPP = require('./database/models/eachMPP');
+// const hansard = require('./database/models/Hansard');
 const mppconstituenciesSeed = require('./database/seeds/mppconstituencies');
 const mppconstituencies = require('./database/models/mppConstituency');
-const billVotes = require('./database/models/billVotes');
+// const billVotes = require('./database/models/billVotes');
 const billVotesSeed = require('./database/seeds/billVotes');
-const bills = require('./database/models/Bills');
+// const bills = require('./database/models/Bills');
 const votingStatsSeed = require('./database/seeds/votingStats');
 const votingStats = require('./database/models/votingStats');
 const keys = require('./config/keys');
@@ -48,78 +48,13 @@ app.use(passport.initialize());
 app.use(passport.session());
 // passport routes
 require('./routes/authRoutes')(app);
+require('./routes/mppRoutes')(app);
 
 mongoose.connect(
   keys.mongoURI,
   { useNewUrlParser: true }
 );
-// authRoutes(app);
 
-let billsRouter = express.Router();
-billsRouter = require('./database/scraping/Bills')(billsRouter);
-
-let eachmppRouter = express.Router();
-eachmppRouter = require('./database/scraping/eachMPP')(eachmppRouter);
-
-let mppUrlRouter = express.Router();
-mppUrlRouter = require('./database/scraping/MPPurls')(mppUrlRouter);
-
-let hansardRouter = express.Router();
-hansardRouter = require('./database/scraping/Hansard')(hansardRouter);
-
-app.use('/bills', billsRouter);
-app.use('/eachmpp', eachmppRouter);
-app.use('/mppUrl', mppUrlRouter);
-app.use('/hansard', hansardRouter);
-// //this finds MPP from search bar, direct link
-app.use('/api/mppName/:name', (req, res) => {
-  eachMPP
-    .find({ $text: { $search: req.params.name } })
-    .populate('addressEmailId')
-    .then(dbModel => {
-      res.json(dbModel);
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(422).json(err);
-    });
-});
-// //this finds speeches by name typed in Search Bar, pulled from URL
-app.use('/api/hansard/:name', (req, res) => {
-  hansard
-    .find({ $text: { $search: req.params.name } })
-    .then(speech => {
-      res.json(speech);
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(422).json(err);
-    });
-});
-// this finds votes by MPP for bills 2, 5, 27,typed in Search bar, pulled from URL
-app.use('/api/mppVotes/:name', (req, res) => {
-  billVotes
-    .find({ $text: { $search: 'ford' } }, req.query)
-    .then(votes => {
-      res.json(votes);
-    })
-    .catch(err => {
-      console.log(err.message);
-      res.status(422).json(err);
-    });
-});
-// this finds recent bills to display on landing page, October selected
-app.use('/api/recentBills', (req, res) => {
-  bills
-    .find({ $text: { $search: 'october' } }, req.query)
-    .then(recent => {
-      res.json(recent);
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(422).json(err);
-    });
-});
 
 // connecting to mlab
 // database is called lace-repo, you can see from 'mongoose.connect' code above
