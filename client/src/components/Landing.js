@@ -38,7 +38,7 @@ class Landing extends Component {
         FacebookClass: 'notShown',
         value: '',
         // recentBill: [],
-        // speech: []       
+        // speech: []
 
     };
     // componentDidMount() {
@@ -69,6 +69,8 @@ class Landing extends Component {
             FacebookClass: 'notShown'
         })
     }
+
+    // scroll = setInterval(function(){ window.scrollBy(0,1000); }, 2000);
 
     render() {
         return (
