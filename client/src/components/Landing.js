@@ -5,7 +5,8 @@ import Footer from './Footer';
 import TwitterFeed from './TwitterFeed';
 import FacebookFeed from './FacebookFeed';
 import './Landing.css';
-import BillsFeed from './dashComponents/billsFeed';
+import BillsFeed from './dashComponents/BillsFeed';
+import API from '../utils/API';
 
 window.twttr = (function (d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0],
@@ -37,20 +38,21 @@ class Landing extends Component {
         TwitterClass: '',
         FacebookClass: 'notShown',
         value: '',
-        // recentBill: [],
-        // speech: []
+
+        recentBill: [],
+        // speech: []       
 
     };
-    // componentDidMount() {
-    //   this.loadRecentBills;
-    // }
-    // loadRecentBills = () => {
-    //     API.getRecentBills()
-    //         .then(res =>
-    //             this.setState({ recentBill: res.data}))
-    //             console.log(res)
-    //         .catch(err => console.log(err));
-    // };
+    componentDidMount() {
+      this.loadRecentBills();
+    }
+    loadRecentBills = () => {
+        API.getRecentBills()
+            .then(res => {
+                this.setState({ recentBill: res.data})
+            })
+            .catch(err => console.log(err));
+    };
 
     FacebookButton = (e) => {
         e.preventDefault();
@@ -98,6 +100,12 @@ class Landing extends Component {
                     <a href='https://voterinformationservice.elections.on.ca/en/election/search?mode=postalCode' target='blank'>
                         Click here to search by postal code
                     </a>
+                </div>
+                <div className='' style={{ width: '100%', display: '-webkit-box', height: '365px', marginBottom: '0px' }}>
+                    </div>
+                    <div className="billsToday" style={style.panelLayout}>
+                        <h2>Recent Bills</h2>
+                        < BillsFeed recentBill={this.state.recentBill} />
                 </div>
                 <Footer/>
             </div>

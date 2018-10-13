@@ -9,9 +9,12 @@ import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 import demoList from "./list/mppSocial";
+
 const NewsAPI = require('newsapi')
 import NEWS_KEY from '../newsKey';
 const newsapi = new NewsAPI(NEWS_KEY);
+
+
 
 const styles = {
   layout: {
@@ -32,7 +35,7 @@ export default class SelectedMPP extends Component {
   state = {
     mppLockup: this.props.match.params.mppName,
     name: '',
-    position: '',
+    position: [],
     url: '',
     photo: ' ',
     party:'',
@@ -60,11 +63,13 @@ export default class SelectedMPP extends Component {
     // };
     //load on Voting Records page
     loadVotesByMpp = () => {
-      API.getVotesByMpp(this.state.votes)
+      API.getVotesByMpp(this.state.speech)
       .then(res =>
+        console.log('here ' + res.data),
         this.setState({ votes: res.data}))
       .catch(err => console.log(err));
     };
+   
 
     // let url = window.location.href;
     mppSearch(){
@@ -72,7 +77,7 @@ export default class SelectedMPP extends Component {
         name: name
       })
       .then(res => {
-        // console.log('ths is the res from get ', res.data[0])
+        console.log('ths is the res from get ', res.data[0].addressEmailId.Telephone),
         this.setState({
           name: res.data[0].name,
           position: res.data[0].careerDetails[0].positions,
