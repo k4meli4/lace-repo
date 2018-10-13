@@ -13,7 +13,6 @@ const NewsAPI = require('newsapi')
 import NEWS_KEY from '../newsKey';
 const newsapi = new NewsAPI(NEWS_KEY);
 
-
 const styles = {
   layout: {
     display: 'flex',
@@ -41,18 +40,24 @@ export default class SelectedMPP extends Component {
     currentRiding:'',
     ridingMap:'',
     hansard: [],
-    votes:'',
+    votes:[],
     parliamentNumber: '',
     telephone:'',
+    twitter: '',
   };
 
-    //load on Speech Feed
-    loadHansard = () => {
-      API.getHansard(this.state.speech)
-      .then(res =>
-        this.setState({ hansard: res.data}))
-      .catch(err => console.log(err));
-    };
+    // //load on Speech Feed
+    // loadHansard = () => {
+    //   // API.getHansard(this.state.name)
+    //   axios.get(`/api/hansard/${this.state.mppLockup}`,{
+    //     name: name
+    //   })
+    //   .then(res =>{
+    //       // console.log('ths is the res from speed ', res.data)
+    //       this.setState({vote:res.data})
+    //     })
+    //   .catch(err => console.log(err));
+    // };
     //load on Voting Records page
     loadVotesByMpp = () => {
       API.getVotesByMpp(this.state.votes)
@@ -67,7 +72,7 @@ export default class SelectedMPP extends Component {
         name: name
       })
       .then(res => {
-        console.log('ths is the res from get ', res.data[0])
+        // console.log('ths is the res from get ', res.data[0])
         this.setState({
           name: res.data[0].name,
           position: res.data[0].careerDetails[0].positions,
@@ -80,7 +85,7 @@ export default class SelectedMPP extends Component {
           parliamentNumber: res.data[0].careerDetails[0].parliamentNumber,
           telephone:res.data[0].addressEmailId.Telephone
         })
-        console.log(this.state.telephone)
+        // console.log(this.state.telephone)
       })
       .catch(err => console.log(err))
     }
@@ -105,26 +110,39 @@ export default class SelectedMPP extends Component {
       .catch(err => {
         console.log(err);
       });
-
     }
 
-  componentDidMount(){
-    this.mppSearch()
-    this.getNews()
+  getTwitter(){
+    // const twitterURL =
+    demoList.forEach(tName => {
+      if (tName.name === this.state.name){
+        // console.log('this is the foreach name ',tName.name)
+        // console.log('this is the state name ',this.state.name)
+          return this.setState({twitter:tName.twitter})
+          // console.log(tName.name);
+        }
+      })
+    }
+
+    componentDidMount(){
+      this.mppSearch();
+      setTimeout(() => {
+        this.getTwitter();
+      }, 500);
+      // this.loadHansard();
   }
 
-
   render() {
-    const { name, position, url, photo, currentRiding, party, parliamentNumber, telephone } = this.state;
+    const { name, position, url, photo, currentRiding, party, parliamentNumber, telephone, twitter, mppLockup } = this.state;
     return (
       <div>
         <MppInfo name={name} position={position} url={url} photo={photo} currentRiding={currentRiding} party={party} parliamentNumber={parliamentNumber} telephone={telephone} />
         <div className="outterDiv center w-80" style={styles.layout}>
 
           <div className="innerDiv-left">
-            <SocialFeed />
+            <SocialFeed twitter={twitter} />
             <EventFeed />
-            <SpeechFeed customStyle={styles.rightA} />
+            <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
           </div>
           <div className="innerDiv-right w-80 ">
             <NewsFeed customStyle={styles.rightA} />
