@@ -11,7 +11,7 @@ const override = css`
     border-color: red;
     `;
  
-class AwesomeComponent extends React.Component {
+class Loader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,11 +22,11 @@ class AwesomeComponent extends React.Component {
   render() {
     return (
       <div className="sweet-loading">
-        <ScaleLoader className={override} sizeUnit={"px"} size={150} color={'#123abc'} loading={this.state.loading}
+        <ScaleLoader className={override} sizeUnit={"px"} size={200} color={'#123abc'} loading={this.state.loading}
         />
       </div> 
     )
   }
 }
 
-export default AwesomeComponent
+export default Loader
