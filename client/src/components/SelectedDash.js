@@ -69,7 +69,7 @@ export default class SelectedMPP extends Component {
         this.setState({ votes: res.data}))
       .catch(err => console.log(err));
     };
-   
+
 
     // let url = window.location.href;
     mppSearch(){
@@ -147,11 +147,11 @@ export default class SelectedMPP extends Component {
           <div className="innerDiv-left">
             <SocialFeed twitter={twitter} />
             <EventFeed />
-            <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
+            <NewsFeed customStyle={styles.rightA} />
           </div>
           <div className="innerDiv-right w-80 ">
-            <NewsFeed customStyle={styles.rightA} />
             <VotingRecords customStyle={styles.rightA} />
+            <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
           </div>
         </div>
       </div>

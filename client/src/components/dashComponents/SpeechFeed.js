@@ -39,7 +39,7 @@ componentDidMount(){
       <div className="pa3 bt b--black-10">
       <ul>
         {votes.map(element => {
-          return <li className="f6 f5-ns lh-copy measure">{element.speech}</li>
+          return <li className="f6 ">{element.speech}</li>
         })}
       </ul>
       </div>
