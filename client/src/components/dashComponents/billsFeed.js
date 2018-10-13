@@ -16,5 +16,4 @@ function BillsFeed(props) {
     );
 }
 
-
 export default BillsFeed;
