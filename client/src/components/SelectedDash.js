@@ -13,6 +13,7 @@ const NewsAPI = require('newsapi')
 import NEWS_KEY from '../newsKey';
 const newsapi = new NewsAPI(NEWS_KEY);
 import Loader from './Loader'
+import {Animated} from "react-animated-css";
 
 const styles = {
   layout: {
@@ -130,7 +131,7 @@ export default class SelectedMPP extends Component {
     }
     const { name, position, url, photo, currentRiding, party, parliamentNumber, telephone, twitter, mppLockup } = this.state;
     return (
-      <div>
+      <Animated animationIn="fadeInRight" animationOut="fadeOutLeft" isVisible={true}>
         <MppInfo name={name} position={position} url={url} photo={photo} currentRiding={currentRiding} party={party} parliamentNumber={parliamentNumber} telephone={telephone} />
         <div className="outterDiv center w-80" style={styles.layout}>
           <div className="innerDiv-left">
@@ -143,7 +144,7 @@ export default class SelectedMPP extends Component {
             <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
           </div>
         </div>
-      </div>
+        </Animated>
     );
   }
 }
