@@ -2,7 +2,7 @@ const demoList = [
   {
     name: 'Hon. Doug Ford',
     facebook: 'https://www.facebook.com/FordNationDougFord/',
-    twitter: 'https://twitter.com/john_vanthof?lang=en',
+    twitter: 'https://twitter.com/fordnation?lang=en',
   },
   {
     name: 'Kathleen O. Wynne',
