@@ -40,6 +40,7 @@ class Landing extends Component {
         value: '',
 
         recentBill: [],
+       
         // speech: []       
 
     };
