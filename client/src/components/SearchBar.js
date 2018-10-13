@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 import axios from 'axios'
 // import API from '../utils/API';
 
+
 class SearchBar extends Component {
 
     state = {
         value: '',
         mppLookUp: '',
-        loading: false
     }
 
     handleChange(event) {
@@ -20,8 +20,8 @@ class SearchBar extends Component {
         console.log('search key pressed')
         axios.post(`/api/mppName/${this.state.value}`)
         .then(res => {
-            console.log(res.data)
-            window.location ='/mpp/'+ this.state.value;
+           window.location ='/mpp/'+ this.state.value;
+           this.loading = false
         })
     };
 
@@ -48,7 +48,9 @@ class SearchBar extends Component {
                 >
                 <i className="fa fa-search"></i>
                 </button>
+                
             </div>
+           
         )
     }
 }

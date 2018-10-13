@@ -25,18 +25,17 @@ class App extends Component {
 
   componentDidMount() {
 		this.props.fetchUser();
-	}
+  }
+
 
   render() {
     return (
       <div className="App">
           <BrowserRouter>
         <div>
-        <Navbar />
+          <Navbar />
           <Route exact path="/" component={Logo} />
           <Route exact path="/test" component={Landing} />
-          {/* <Route exact path="/login" component={Login} /> */}
-          {/* <Route exact path="/signup" component={Signup} /> */}
           <Route exact path="/user"
           render={(props) =>
             fakeData.map(follow => (

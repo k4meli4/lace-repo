@@ -13,8 +13,16 @@ class Logo extends Component {
     }, 2000);
   }
 
+  styles = {
+    layout:{
+      display:'flex',
+      justifyContent: 'center',
+      'align-items':'cente'
+    }
+  }
+
   render() {
-    return <img src={logo} alt="Logo" />;
+    return <img style={this.styles.layout} src={logo} alt="Logo" />;
   }
 }
 
