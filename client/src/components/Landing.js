@@ -7,6 +7,7 @@ import FacebookFeed from './FacebookFeed';
 import './Landing.css';
 import BillsFeed from './dashComponents/BillsFeed';
 import API from '../utils/API';
+import {Animated} from "react-animated-css";
 
 window.twttr = (function(d, s, id) {
   var js,
@@ -103,7 +104,7 @@ class Landing extends Component {
     }
 
     return (
-      <div>
+      <Animated animationIn="fadeInRight" animationOut="fadeOutLeft" isVisible={true}>
       <div className='partitionL' style={style.partitionL}>
       <div
           className="feeds"
@@ -160,7 +161,7 @@ class Landing extends Component {
           }}
         />
         <Footer />
-      </div>
+        </Animated>
     );
   }
 }
