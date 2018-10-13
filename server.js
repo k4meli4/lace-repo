@@ -55,17 +55,17 @@ mongoose.connect(
 );
 // authRoutes(app);
 
-  let billsRouter = express.Router();
-  billsRouter = require('./database/scraping/Bills')(billsRouter);
+let billsRouter = express.Router();
+billsRouter = require('./database/scraping/Bills')(billsRouter);
 
-  let eachmppRouter = express.Router();
-  eachmppRouter = require('./database/scraping/eachMPP')(eachmppRouter);
+let eachmppRouter = express.Router();
+eachmppRouter = require('./database/scraping/eachMPP')(eachmppRouter);
 
-  let mppUrlRouter = express.Router();
-  mppUrlRouter = require('./database/scraping/MPPurls')(mppUrlRouter);
+let mppUrlRouter = express.Router();
+mppUrlRouter = require('./database/scraping/MPPurls')(mppUrlRouter);
 
-  let hansardRouter = express.Router();
-  hansardRouter = require('./database/scraping/Hansard')(hansardRouter);
+let hansardRouter = express.Router();
+hansardRouter = require('./database/scraping/Hansard')(hansardRouter);
 
 app.use('/bills', billsRouter);
 app.use('/eachmpp', eachmppRouter);
@@ -79,7 +79,6 @@ app.use('/api/mppName/:name', (req, res) => {
     .then(dbModel => {
       res.json(dbModel);
       console.log(dbModel);
-      console.log('yeahhhh boi')
     })
     .catch(err => {
       console.error(err);
@@ -99,11 +98,11 @@ app.use('/api/hansard/:name', (req, res) => {
     });
 });
 // this finds votes by MPP for bills 2, 5, 27,typed in Search bar, pulled from URL
-app.use('./api/mppVotes/:name', (req, res) => {
+app.use('/api/mppVotes/:name', (req, res) => {
   billVotes
-    .find({ $text: { $search: req.params.name } })
+    .find({ $text: { $search: 'ford' } }, req.query)
     .then(votes => {
-      console.log(votes);
+      res.json(votes);
     })
     .catch(err => {
       console.log(err.message);
