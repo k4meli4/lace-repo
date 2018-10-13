@@ -20,7 +20,6 @@ import Loader from './components/Loader'
 // styling
 // import SearchBar from './components/SearchBar';
 
-
 class App extends Component {
 
   componentWillMount() {
