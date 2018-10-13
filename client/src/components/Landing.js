@@ -38,15 +38,9 @@ class Landing extends Component {
         TwitterClass: '',
         FacebookClass: 'notShown',
         value: '',
-
         recentBill: [],
-       
-        // speech: []       
 
     };
-    componentDidMount() {
-      this.loadRecentBills();
-    }
     loadRecentBills = () => {
         API.getRecentBills()
             .then(res => {
@@ -54,7 +48,9 @@ class Landing extends Component {
             })
             .catch(err => console.log(err));
     };
-
+    componentDidMount() {
+        this.loadRecentBills();       
+      }
     FacebookButton = (e) => {
         e.preventDefault();
         console.log("facebook buttonnnnnnn")
@@ -62,7 +58,6 @@ class Landing extends Component {
             TwitterClass: 'notShown',
             FacebookClass: ''
         })
-
     }
     TwitterButton = (e) => {
         e.preventDefault();
@@ -72,10 +67,12 @@ class Landing extends Component {
             FacebookClass: 'notShown'
         })
     }
-
     // scroll = setInterval(function(){ window.scrollBy(0,1000); }, 2000);
 
     render() {
+        if (this.state.isLoading) {
+            return <Loader />
+          }
         return (
             <div>
                 <div
