@@ -1,0 +1,12 @@
+.vStyle {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 284px;
+}
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  display: none;
+}

@@ -9,9 +9,9 @@ import NewsFeed from './dashComponents/NewsFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 import demoList from "./list/mppSocial";
-// const NewsAPI = require('newsapi')
-// import NEWS_KEY from '../newsKey';
-// const newsapi = new NewsAPI(NEWS_KEY);
+const NewsAPI = require('newsapi')
+import NEWS_KEY from '../newsKey';
+const newsapi = new NewsAPI(NEWS_KEY);
 import Loader from './Loader'
 
 const styles = {
@@ -57,6 +57,7 @@ export default class SelectedMPP extends Component {
       .catch(err => console.log(err));
   };
 
+
   // let url = window.location.href;
   mppSearch() {
     axios.get(`/api/mppName/${this.state.mppLockup}`, {
@@ -80,27 +81,27 @@ export default class SelectedMPP extends Component {
       .catch(err => console.log(err))
   }
 
-  // getNews(){
-  //   newsapi.v2.everything({
-  //     q: this.state.name,
-  //     // category: 'general',
-  //     language: 'en',
-  //     // country: 'ca',
-  //   // newsapi.v2
-  //   // .everything({
-  //   //   // q: this.state.name,
-  //   //   q:this.state.mppLockup,
-  //     sources: 'google-news-ca',
-  //     sortBy: 'relevancy',
-  //     page: 1
-  //   })
-  //   .then(response => {
-  //     response.totalResults === 0 ? console.log('no res') : console.log('this is the news ',response);
-  //   })
-  //   .catch(err => {
-  //     console.log(err);
-  //   });
-  // }
+  getNews(){
+    newsapi.v2.everything({
+      q: this.state.name,
+      // category: 'general',
+      language: 'en',
+      // country: 'ca',
+    // newsapi.v2
+    // .everything({
+    //   // q: this.state.name,
+    //   q:this.state.mppLockup,
+      sources: 'google-news-ca',
+      sortBy: 'relevancy',
+      page: 1
+    })
+    .then(response => {
+      response.totalResults === 0 ? console.log('no res') : console.log('this is the news ',response);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  }
 
   getTwitter() {
     // const twitterURL =
@@ -135,19 +136,14 @@ export default class SelectedMPP extends Component {
           <div className="innerDiv-left">
             <SocialFeed twitter={twitter} />
             <EventFeed />
-            <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
+            <NewsFeed customStyle={styles.rightA} />
           </div>
           <div className="innerDiv-right w-80 ">
-            <NewsFeed customStyle={styles.rightA} />
             <VotingRecords customStyle={styles.rightA} />
+            <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
           </div>
         </div>
       </div>
     );
-    // }, 500)
   }
-  // return (
-  //   < AwesomeComponent/>
-  // )
-  // }    
 }
