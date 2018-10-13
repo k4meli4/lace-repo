@@ -13,7 +13,6 @@ import demoList from "./list/mppSocial";
 // import NEWS_KEY from '../newsKey';
 // const newsapi = new NewsAPI(NEWS_KEY);
 
-
 const styles = {
   layout: {
     display: 'flex',
