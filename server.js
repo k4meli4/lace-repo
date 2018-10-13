@@ -56,22 +56,22 @@ mongoose.connect(
 );
 // authRoutes(app);
 
-let billsRouter = express.Router();
-billsRouter = require('./database/scraping/Bills')(billsRouter);
+// let billsRouter = express.Router();
+// billsRouter = require('./database/scraping/Bills')(billsRouter);
 
-let eachmppRouter = express.Router();
-eachmppRouter = require('./database/scraping/eachMPP')(eachmppRouter);
+// let eachmppRouter = express.Router();
+// eachmppRouter = require('./database/scraping/eachMPP')(eachmppRouter);
 
-let mppUrlRouter = express.Router();
-mppUrlRouter = require('./database/scraping/MPPurls')(mppUrlRouter);
+// let mppUrlRouter = express.Router();
+// mppUrlRouter = require('./database/scraping/MPPurls')(mppUrlRouter);
 
-let hansardRouter = express.Router();
-hansardRouter = require('./database/scraping/Hansard')(hansardRouter);
+// let hansardRouter = express.Router();
+// hansardRouter = require('./database/scraping/Hansard')(hansardRouter);
 
-app.use('/bills', billsRouter);
-app.use('/eachmpp', eachmppRouter);
-app.use('/mppUrl', mppUrlRouter);
-app.use('/hansard', hansardRouter);
+// app.use('/bills', billsRouter);
+// app.use('/eachmpp', eachmppRouter);
+// app.use('/mppUrl', mppUrlRouter);
+// app.use('/hansard', hansardRouter);
 // // //this finds MPP from search bar, direct link
 // app.use('/api/mppName/:name', (req, res) => {
 //   eachMPP
