@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React from 'react';
 import { Table } from 'react-bootstrap';
+import "./voting.css";
 
 const styles = {};
 
@@ -9,7 +10,7 @@ styles.rightA = {
 };
 
 const VotingRecords = ({ customStyle }) => (
-  <article style={customStyle} className="center br3 hidden ba b--black-10 mv4 w-90">
+  <article style={customStyle} className="center br3 hidden ba b--black-10 mv4 w-90 vStyle">
     <h1 className="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">Voting Records</h1>
     <div className="pa3 bt b--black-10">
       <a target='_blank'

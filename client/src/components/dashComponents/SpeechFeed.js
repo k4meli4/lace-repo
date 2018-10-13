@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import axios from 'axios';
+import "./voting.css";
 
 const styles = {};
 
@@ -34,12 +35,12 @@ componentDidMount(){
   render(){
     const { votes } = this.state;
     return(
-    <article style={styles.rightA} className="center  br3 hidden ba b--black-10 mv4 w-90">
+    <article style={styles.rightA} className="center br3 hidden ba b--black-10 mv4 w-90 vStyle">
       <h1 className="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">Speech Feed</h1>
       <div className="pa3 bt b--black-10">
       <ul>
         {votes.map(element => {
-          return <li className="f6 ">{element.speech}</li>
+          return <li className="f6 bb b--black pa1">{element.speech}</li>
         })}
       </ul>
       </div>
