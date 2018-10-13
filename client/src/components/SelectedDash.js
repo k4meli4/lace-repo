@@ -46,18 +46,18 @@ export default class SelectedMPP extends Component {
     twitter: '',
   };
 
-    //load on Speech Feed
-    loadHansard = () => {
-      // API.getHansard(this.state.name)
-      axios.get(`/api/hansard/${this.state.mppLockup}`,{
-        name: name
-      })
-      .then(res =>{
-          // console.log('ths is the res from speed ', res.data)
-          this.setState({vote:res.data})
-        })
-      .catch(err => console.log(err));
-    };
+    // //load on Speech Feed
+    // loadHansard = () => {
+    //   // API.getHansard(this.state.name)
+    //   axios.get(`/api/hansard/${this.state.mppLockup}`,{
+    //     name: name
+    //   })
+    //   .then(res =>{
+    //       // console.log('ths is the res from speed ', res.data)
+    //       this.setState({vote:res.data})
+    //     })
+    //   .catch(err => console.log(err));
+    // };
     //load on Voting Records page
     loadVotesByMpp = () => {
       API.getVotesByMpp(this.state.votes)
@@ -129,11 +129,11 @@ export default class SelectedMPP extends Component {
       setTimeout(() => {
         this.getTwitter();
       }, 500);
-      this.loadHansard();
+      // this.loadHansard();
   }
 
   render() {
-    const { name, position, url, photo, currentRiding, party, parliamentNumber, telephone, twitter, votes } = this.state;
+    const { name, position, url, photo, currentRiding, party, parliamentNumber, telephone, twitter, mppLockup } = this.state;
     return (
       <div>
         <MppInfo name={name} position={position} url={url} photo={photo} currentRiding={currentRiding} party={party} parliamentNumber={parliamentNumber} telephone={telephone} />
@@ -142,7 +142,7 @@ export default class SelectedMPP extends Component {
           <div className="innerDiv-left">
             <SocialFeed twitter={twitter} />
             <EventFeed />
-            <SpeechFeed votes={votes} customStyle={styles.rightA} />
+            <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
           </div>
           <div className="innerDiv-right w-80 ">
             <NewsFeed customStyle={styles.rightA} />
