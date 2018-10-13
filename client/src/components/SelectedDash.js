@@ -10,8 +10,8 @@ import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 import demoList from "./list/mppSocial";
 const NewsAPI = require('newsapi')
-import NEWS_KEY from '../newsKey';
-const newsapi = new NewsAPI(NEWS_KEY);
+// import NEWS_KEY from '../newsKey';
+// const newsapi = new NewsAPI(NEWS_KEY);
 import Loader from './Loader'
 import {Animated} from "react-animated-css";
 
