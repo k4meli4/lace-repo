@@ -4,7 +4,11 @@ import axios from 'axios'
 // import API from '../utils/API';
 
 class SearchBar extends Component {
-    state = { value: '' };
+
+    state = {
+        value: '',
+        mppLookUp: ''
+    }
 
     handleChange(event) {
         this.setState({ value: event.target.value });
@@ -12,6 +16,7 @@ class SearchBar extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        console.log('search key pressed')
         axios.post(`/api/mppName/${this.state.value}`)
         .then(res => {
             console.log(res.data)
@@ -23,23 +28,24 @@ class SearchBar extends Component {
         if (event.key === 'Enter') {
             event.preventDefault();
             console.log('enter key pressed')
-
             axios.post(`/api/mppName/${this.state.value}`)
             .then(res => {
                 console.log(res.data)
                 window.location ='/mpp/'+ this.state.value;
             })
-
         }
     }
+<<<<<<< HEAD
     // re-route to MPP dashboard
+=======
+>>>>>>> 857291e70b0efbaf9639a9763d84c8bfa66c708f
 
     render() {
         return (
             <div className="searchbar" style={{ display: 'inline-flex' }}>
                 <input type='text' placeholder="search politicans"  className="input-reset ba b--black-20  mb2 db w-100 gray f6 f5-ns dib "
                 onChange={event => this.handleChange(event)}
-                onKeyPress={ event => this.handleKeyPress(event)}
+                onKeyPress={event => this.handleKeyPress(event)}
                 />
                 <button className=" mb2 mr3"
                 onClick={event => this.handleSubmit(event)}

@@ -12,13 +12,16 @@ const styles = {
   },
 };
 
-const Mppinfo = ({ photo, name, position, number, email }) => (
+const Mppinfo = ({ photo, name, position, telephone, currentRiding, party, parliamentNumber }) => (
   <div className="container center" style={styles.layout}>
     <article style={styles.fixedHeight} className="mw5 bg-white pa3 pa4-ns ba b--black-10">
       <div className="tc">
         <img src={photo} className="br-100 h4 w4 dib ba b--black-05 pa2" alt="selected MPP" />
         <h1 className="f3 mb2">{name}</h1>
-        <h2 className="f5 fw4 gray mt0">Position: {position}</h2>
+        <h3 className="f5 fw4 gray mt0">
+          Current Riding:
+          {currentRiding}
+        </h3>
       </div>
     </article>
 
@@ -27,17 +30,22 @@ const Mppinfo = ({ photo, name, position, number, email }) => (
       <div className="pa3 bt b--black-10">
         <p>
           Name:
-          <strong>{name}</strong>
+          <strong> {name}</strong>
         </p>
         <p>
-          Current Position(s):
-          <ul>
-          <strong>{position}</strong>
-          </ul>
+          Parliament#:
+          <strong> {parliamentNumber}</strong>
         </p>
         <p>
-          <strong>{number}</strong><br></br>
-          <strong>{email}</strong>
+          Current Position:
+          <strong> {position}</strong>
+        </p>
+        <p>
+          Party:
+          <strong> {party}</strong>
+        </p>
+        <p>
+          <strong> {telephone}</strong>
         </p>
       </div>
     </article>
@@ -45,5 +53,3 @@ const Mppinfo = ({ photo, name, position, number, email }) => (
 );
 
 export default Mppinfo;
-
-// commit me
