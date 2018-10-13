@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import logo from '../images/logo.jpg';
+import {Animated} from "react-animated-css";
 
 // const tolanding = setTimeout(() => window.location +'/test', 5000);
 
@@ -16,14 +17,26 @@ class Logo extends Component {
   styles = {
     layout:{
       display:'flex',
+      // flexDirection:'column',
       justifyContent: 'center',
-      'align-items':'cente'
+      alignItems:'cente',
+      height:'100vh'
+    },
+    imgLogo:{
+      maxWidth:'1500px'
     }
   }
 
   render() {
-    return <img style={this.styles.layout} src={logo} alt="Logo" />;
+    return (
+      <div style={this.styles.layout}>
+        <Animated animationIn="fadeInRight" animationOut="fadeOutLeft" isVisible={true} style={{height:'100vh'}}>
+          <img className='center' style={this.styles.imgLogo} src={logo} alt="Logo" />
+        </Animated>
+      </div>
+    );
   }
 }
 
 export default Logo;
+

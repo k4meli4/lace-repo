@@ -18,10 +18,18 @@ import Loader from './components/Loader'
 // import listMPPS from './components/AllMPPS';
 
 // styling
-import './App.css';
 // import SearchBar from './components/SearchBar';
 
+
 class App extends Component {
+
+  componentWillMount() {
+    if(window.location.pathname === '/') {
+      require('./logo.css');
+    } else {
+      require('./App.css');
+    }
+  }
 
   componentDidMount() {
 		this.props.fetchUser();
