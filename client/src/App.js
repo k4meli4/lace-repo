@@ -22,7 +22,8 @@ import Loader from './components/Loader'
 
 class App extends Component {
 
-  componentWillMount() {
+  componentDidMount() {
+    this.props.fetchUser();
     if(window.location.pathname === '/') {
       require('./logo.css');
     } else {
@@ -30,31 +31,26 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
-		this.props.fetchUser();
-  }
-
-
   render() {
     return (
       <div className="App">
-          <BrowserRouter>
+        <BrowserRouter>
         <div>
-          <Navbar />
+          <Navbar id='navBar'/>
           <Route exact path="/" component={Logo} />
           <Route exact path="/test" component={Landing} />
           <Route exact path="/user"
-          render={(props) =>
-            fakeData.map(follow => (
-              <UserDash {...props}
-                item={follow}
-                />)
-              )
-            }
-          />
+            render={(props) =>
+              fakeData.map(follow => (
+                <UserDash {...props}
+                  item={follow}
+                  />)
+                )
+              }
+            />
           <Route path="/mpp/:mppName" component={SelectedDash} />
         </div>
-      </BrowserRouter>
+        </BrowserRouter>
       </div>
     );
   }

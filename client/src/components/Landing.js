@@ -131,7 +131,15 @@ class Landing extends Component {
           <BillsFeed recentBill={this.state.recentBill} />
         </div>
       </div>
-
+      <div
+          className=""
+          style={{
+            width: '100%',
+            display: '-webkit-box',
+            height: '150px',
+            marginBottom: '0px'
+          }}
+        />
         <div
           className="postalCodeSearch"
           style={{
@@ -151,7 +159,7 @@ class Landing extends Component {
             Click here to search by postal code
           </a>
         </div>
-        <div
+        {/* <div
           className=""
           style={{
             width: '100%',
@@ -159,7 +167,7 @@ class Landing extends Component {
             height: '365px',
             marginBottom: '0px'
           }}
-        />
+        /> */}
         <Footer />
         </Animated>
     );

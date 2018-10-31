@@ -14,8 +14,10 @@ class Logo extends Component {
       justifyContent: 'center',
       alignItems: 'cente',
       height: '100vh',
+      backgroundColor: '#010101',
     },
     imgLogo: {
+      width:'100vw',
       maxWidth: '1500px',
     },
   };
@@ -28,9 +30,11 @@ class Logo extends Component {
     }, 2000);
   }
 
+  // tolanding = setTimeout(() => window.location +'/test', 5000);
+
   render() {
     return (
-      <div style={this.styles.layout}>
+      <div style={this.styles.layout} >
         <Animated animationIn="fadeInRight" animationOut="fadeOutLeft" isVisible style={{ height: '100vh' }}>
           <img className="center" style={this.styles.imgLogo} src={logo} alt="Logo" />
         </Animated>
