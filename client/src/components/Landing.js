@@ -159,15 +159,6 @@ class Landing extends Component {
             Click here to search by postal code
           </a>
         </div>
-        {/* <div
-          className=""
-          style={{
-            width: '100%',
-            display: '-webkit-box',
-            height: '365px',
-            marginBottom: '0px'
-          }}
-        /> */}
         <Footer />
         </Animated>
     );
