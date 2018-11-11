@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Animated } from 'react-animated-css';
 import logo from '../images/logo.jpg';
+import './styling/logoDisplay.css';
 
 // const tolanding = setTimeout(() => window.location +'/test', 5000);
 
@@ -40,6 +41,7 @@ class Logo extends Component {
           animationOut="fadeOutLeft"
           isVisible
           style={{ height: '100vh' }}
+          id="isLogo"
         >
           <img
             className="center"
