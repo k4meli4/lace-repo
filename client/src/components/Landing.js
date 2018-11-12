@@ -29,7 +29,7 @@ window.twttr = (function(d, s, id) {
 const style = {
   panelLayout: {
     width: '50%',
-    // border: 'solid gray 2px'
+    border: 'solid gray 2px',
     textAlign: 'left'
   },
   feed: {
@@ -96,7 +96,6 @@ class Landing extends Component {
       FacebookClass: 'notShown'
     });
   };
-  // scroll = setInterval(function(){ window.scrollBy(0,1000); }, 2000);
 
   render() {
     if (this.state.isLoading) {
@@ -129,15 +128,7 @@ class Landing extends Component {
             <BillsFeed recentBill={this.state.recentBill} />
           </div>
         </div>
-        <div
-          className=""
-          style={{
-            width: '100%',
-            display: '-webkit-box',
-            height: '150px',
-            marginBottom: '0px'
-          }}
-        />
+
         <div
           className="postalCodeSearch"
           style={{
@@ -157,7 +148,7 @@ class Landing extends Component {
             Click here to search by postal code
           </a>
         </div>
-        <Footer />
+        {/* <Footer /> */}
       </Animated>
     );
   }

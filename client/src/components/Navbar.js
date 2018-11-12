@@ -7,8 +7,6 @@ import { connect } from 'react-redux';
 const style = {
   navStyle: {
     // 'backgroundColor': '#064373',
-    // 'borderBottomStyle': 'solid',
-    // 'borderBottomColor': 'crimson'
   }
 };
 
