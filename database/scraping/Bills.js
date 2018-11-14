@@ -7,12 +7,6 @@ const mongoose = require('mongoose');
 const Bills = require('../models/Bills');
 const keys = require('../../config/keys');
 
-// mongoose.connect('mongodb://localhost/lace-repo');
-
-mongoose.connect(
-  keys.mongoURI,
-  { useNewUrlParser: true }
-);
 const bills = require('../models/Bills');
 
 const billsRouter = router => {
@@ -22,7 +16,6 @@ const billsRouter = router => {
       cheerioTableParser($);
       $('.views-row').each((i, element) => {
         const result = {};
-        result.data = [];
         result.title = $(element)
           .find('h2')
           .text();
@@ -33,18 +26,28 @@ const billsRouter = router => {
         result.MPP = $(element)
           .find('p')
           .text();
-          result.data = $(element)
+        result.date = []
+        result.stage = []
+        result.activity = []
+        result.committee = []
+        const data = $(element)
           .find('table')
           .parsetable(false, false, true);
-        console.log(result.data);
+        for (let i = 0; i < data.length; i += 1) {
+          result.date = data[0].slice(1)
+          result.stage = data[1].slice(1)
+          result.activity = data[2].slice(1)
+          result.committe = data[3].slice(1)
+        }
+        
         if (result.title && result.URL) {
           bills
             .create(result)
             .then(dbBills => {
-              //console.log(dbBills);
+              console.log(dbBills);
             })
             .catch(err => res.json(err));
-        }
+         }
       });
       // Send a "Scrape Complete" message to the browser
       res.send('Scrape Complete');

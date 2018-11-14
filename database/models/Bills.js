@@ -16,10 +16,19 @@ const billsSchema = new Schema({
     type: String,
     required: true,
   },
-  data: {
-    type: String,
+  date: {
+    type: [String],
     required: true,
     text: true,
+  },
+  stage: {
+    type: [String],
+  },
+  activity: {
+    type: [String],
+  },
+  committee: {
+    type: [String],
   },
 });
 
