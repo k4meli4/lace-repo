@@ -12,7 +12,7 @@ const footerStyle = {
   justifyContent: 'center',
   paddingBottom: '10px',
   paddingTop: '10px',
-  color: 'white'
+  color: 'white',
   // borderTopStyle: 'solid',
   // borderTopColor: 'crimson'
 };

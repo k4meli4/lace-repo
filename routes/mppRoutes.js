@@ -63,7 +63,7 @@ module.exports = app => {
       });
   });
   // this finds recent bills to display on landing page, October selected
-  app.use('/api/recentBills', requireLogin, (req, res) => {
+  app.use('/api/recentBills', (req, res) => {
     bills
       .find({ $text: { $search: 'october' } }, req.query)
       .then(recent => {
