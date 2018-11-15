@@ -3,6 +3,7 @@ import React from 'react';
 import { Table } from 'react-bootstrap';
 
 function BillTable(props) {
+  console.log(props)
   const table = (
     props.specificBills.map((rows) =>
       <div
@@ -19,11 +20,12 @@ function BillTable(props) {
           </thead>
           <tbody>
             <tr>
-              <td>{rows.date}</td>
-              <td>{rows.stage}</td>
-              <td>{rows.activity}</td>
-              <td>{rows.votes}</td>
+              <td>{rows.date[0]}</td>
+              <td>{rows.stage[0]}</td>
+              <td>{rows.activity[0]}</td>
+              <td>{props.votes[-1]}</td>
             </tr>
+             
           </tbody>
         </Table>
       </div>
