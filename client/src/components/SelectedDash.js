@@ -62,7 +62,7 @@ export default class SelectedMPP extends Component {
         //console.log('ths is the res from get ', res.data[0].addressEmailId.Telephone),
         this.setState({
           name: res.data[0].name,
-          position: res.data[0].careerDetails[0].positions.join('\n'),
+          position: res.data[0].careerDetails[0].positions,
           url: res.data[0].url,
           photo: res.data[0].photo,
           party: res.data[0].party,
