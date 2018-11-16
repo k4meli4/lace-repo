@@ -23,7 +23,7 @@ class SpeechFeed extends Component {
         name: name
       })
       .then(res => {
-        // console.log('ths is the res from speed ', res.data)
+       
         this.setState({ hansard: res.data });
       })
       .catch(err => console.log(err));

@@ -35,7 +35,7 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          {/* <div> */}
+          <div>
           <Navbar id="navBar" />
           <Route exact path="/" component={Logo} />
           <Route exact path="/test" component={Landing} />
@@ -48,7 +48,7 @@ class App extends Component {
           />
           <Route path="/mpp/:mppName" component={SelectedDash} />
           <Footer />
-          {/* </div> */}
+          </div>
         </BrowserRouter>
       </div>
     );

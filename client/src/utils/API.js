@@ -24,7 +24,7 @@ export default {
     // })
   },
   getVotesByMpp: function(name) {
-    return axios.get('/api/mppVotes')
+    return axios.get('/api/mppVotes/' + name)
     // .then(res => {
     //   console.log(res.data)
     // })
