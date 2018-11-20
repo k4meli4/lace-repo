@@ -35,20 +35,20 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          {/* <div> */}
-          <Navbar id="navBar" />
-          <Route exact path="/" component={Logo} />
-          <Route exact path="/test" component={Landing} />
-          <Route
-            exact
-            path="/user"
-            render={props =>
-              fakeData.map(follow => <UserDash {...props} item={follow} />)
-            }
-          />
-          <Route path="/mpp/:mppName" component={SelectedDash} />
-          <Footer />
-          {/* </div> */}
+          <div class="acCointainer">
+            <Navbar id="navBar" />
+            <Route exact path="/" component={Logo} />
+            <Route exact path="/test" component={Landing} />
+            <Route
+              exact
+              path="/user"
+              render={props =>
+                fakeData.map(follow => <UserDash {...props} item={follow} />)
+              }
+            />
+            <Route path="/mpp/:mppName" component={SelectedDash} />
+            <Footer />
+          </div>
         </BrowserRouter>
       </div>
     );
