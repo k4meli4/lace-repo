@@ -52,16 +52,6 @@ export default class SelectedMPP extends Component {
     isLoading: true
   };
 
-  //load on Voting Records page
-  loadVotesByMpp = () => {
-    API.getVotesByMpp(this.state.speech)
-      .then(res =>
-        //console.log('here ' + res.data),
-        this.setState({ votes: res.data })
-      )
-      .catch(err => console.log(err));
-  };
-
   // let url = window.location.href;
   mppSearch() {
     axios
@@ -72,7 +62,7 @@ export default class SelectedMPP extends Component {
         //console.log('ths is the res from get ', res.data[0].addressEmailId.Telephone),
         this.setState({
           name: res.data[0].name,
-          position: res.data[0].careerDetails[0].positions.join('\n'),
+          position: res.data[0].careerDetails[0].positions,
           url: res.data[0].url,
           photo: res.data[0].photo,
           party: res.data[0].party,
@@ -158,7 +148,7 @@ export default class SelectedMPP extends Component {
             {/* <NewsFeed customStyle={styles.rightA} /> */}
           </div>
           <div className="innerDiv-right w-80 ">
-            <VotingRecords customStyle={styles.rightA} />
+            <VotingRecords votingRecords={VotingRecords} customStyle={styles.rightA} />
             <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
           </div>
         </div>

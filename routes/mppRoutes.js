@@ -53,7 +53,7 @@ module.exports = app => {
   // this finds votes by MPP for bills 2, 5, 27,typed in Search bar, pulled from URL
   app.use('/api/mppVotes/:name', requireLogin, (req, res) => {
     billVotes
-      .find({ $text: { $search: 'ford' } }, req.query)
+      .find({ $text: { $search: req.params.name } })
       .then(votes => {
         res.json(votes);
       })
@@ -65,9 +65,21 @@ module.exports = app => {
   // this finds recent bills to display on landing page, October selected
   app.use('/api/recentBills', (req, res) => {
     bills
-      .find({ $text: { $search: 'october' } }, req.query)
+      .find({ $text: { $search: 'november' } }, req.query)
       .then(recent => {
         res.json(recent);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(422).json(err);
+      });
+  });
+  // this finds recent bills to display on landing page, October selected
+  app.use('/api/specificBills', requireLogin, (req, res) => {
+    bills
+      .find({$or: [{ "title": "Bill 2, Urgent Priorities Act, 2018" }, { "title": "Bill 5, Better Local Government Act, 2018" },{ "title": "Bill 27, Waterways Examination Act, 2018" }]} , req.query)
+      .then(specific => {
+        res.json(specific);
       })
       .catch(err => {
         console.error(err);

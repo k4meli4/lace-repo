@@ -17,8 +17,14 @@ export default {
     //   console.log(res.data)
     // })
   },
+  getSpecificBills: function() {
+    return axios.get('/api/specificBills')
+    // .then(res => {
+    //   console.log(res.data)
+    // })
+  },
   getVotesByMpp: function(name) {
-    return axios.get('/api/mppVotes')
+    return axios.get('/api/mppVotes/' + name)
     // .then(res => {
     //   console.log(res.data)
     // })

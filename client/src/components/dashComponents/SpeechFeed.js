@@ -12,7 +12,7 @@ styles.rightA = {
 class SpeechFeed extends Component {
   state = {
     // mppLockup: this.props.match.params.mppName,
-    votes: []
+    hansard: []
   };
 
   //load on Speech Feed
@@ -23,8 +23,8 @@ class SpeechFeed extends Component {
         name: name
       })
       .then(res => {
-        // console.log('ths is the res from speed ', res.data)
-        this.setState({ votes: res.data });
+       
+        this.setState({ hansard: res.data });
       })
       .catch(err => console.log(err));
   };
@@ -34,7 +34,7 @@ class SpeechFeed extends Component {
   }
 
   render() {
-    const { votes } = this.state;
+    const { hansard } = this.state;
     return (
       <article
         style={styles.rightA}
@@ -45,7 +45,7 @@ class SpeechFeed extends Component {
         </h1>
         <div className="pa3 bt b--black-10">
           <ul>
-            {votes.map((element, index) => {
+            {hansard.map((element, index) => {
               return (
                 <li key={index} className="f6 bb b--black pa1">
                   {element.speech}
