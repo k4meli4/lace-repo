@@ -14,6 +14,7 @@ import fakeData from './fakedata';
 import Logo from './components/Logo';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
+import Appbar from './components/Appbar';
 // import Login from './components/Login';
 // import Signup from './components/Signup';
 // import listMPPS from './components/AllMPPS';
@@ -36,9 +37,11 @@ class App extends Component {
       <div className="App">
         <BrowserRouter>
           <div class="acCointainer">
-            <Navbar id="navBar" />
+            <Appbar />
+            {/* <Navbar id="navBar" /> */}
             <Route exact path="/" component={Logo} />
             <Route exact path="/test" component={Landing} />
+            {/* <Route exact path="/test" component={Dashboard} /> */}
             <Route
               exact
               path="/user"
