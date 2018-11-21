@@ -13,7 +13,7 @@ const footerStyle = {
   justifyContent: 'center',
   paddingBottom: '10px',
   paddingTop: '10px',
-  color: 'white'
+  color: 'white',
 };
 const Footer = () => <div style={footerStyle}>In Their Own Words &copy;</div>;
 

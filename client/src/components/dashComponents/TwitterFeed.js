@@ -5,11 +5,7 @@ const TwitterFeed = ({ twitter }) => (
     <a className="twitter-timeline" href={twitter}>
       Tweets by fordnation
     </a>{' '}
-    <script
-      async
-      src="https://platform.twitter.com/widgets.js"
-      charSet="utf-8"
-    />
+    <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8" />
   </article>
 );
 
