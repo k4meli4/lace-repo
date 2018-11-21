@@ -4,8 +4,6 @@ const footerStyle = {
   textAlign: 'center',
   position: 'absolute',
   bottom: '0px',
-  // width: '-webkit-fill-available',
-  bottom: '0',
   width: '100%',
   backgroundColor: '#009688',
   height: '40px',
