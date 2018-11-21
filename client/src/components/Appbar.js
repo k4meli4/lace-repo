@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -159,14 +160,16 @@ class PrimarySearchAppBar extends React.Component {
             >
               <MenuIcon />
             </IconButton>
-            <Typography
+            <Button
+              component={Link}
+              to="/"
               className={classes.title}
               variant="h6"
               color="inherit"
               noWrap
             >
               In Their Own Words!
-            </Typography>
+            </Button>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />
@@ -181,10 +184,10 @@ class PrimarySearchAppBar extends React.Component {
                 onKeyPress={event => this.handleKeyPress(event)}
               />
             </div>
-            {/* <Button color="inherit"> */}
             <Navbar id="navBar" />
-            {/* </Button> */}
-            <Button color="inherit">User</Button>
+            <Button color="inherit" component={Link} to="/User">
+              User
+            </Button>
           </Toolbar>
         </AppBar>
       </div>
@@ -195,8 +198,5 @@ class PrimarySearchAppBar extends React.Component {
 PrimarySearchAppBar.propTypes = {
   classes: PropTypes.object.isRequired
 };
-function mapStateToProps(state) {
-  return { auth: state.auth };
-}
 
 export default withStyles(styles)(PrimarySearchAppBar);

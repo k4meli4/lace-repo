@@ -132,6 +132,9 @@ class Landing extends Component {
         <div
           className="postalCodeSearch"
           style={{
+            position: 'absolute',
+            bottom: '40px',
+            width: '100%',
             marginTop: '0px',
             marginBottom: '0px',
             height: 'auto',
