@@ -4,11 +4,6 @@ import { Link } from 'react-router-dom';
 import SearchBar from './SearchBar';
 import { connect } from 'react-redux';
 // import * as actions from '../actions';
-const style = {
-  navStyle: {
-    // 'backgroundColor': '#064373',
-  }
-};
 
 class Navbar extends Component {
   renderButton() {
@@ -18,6 +13,7 @@ class Navbar extends Component {
       case false:
         return (
           <a
+            style={{ color: 'white' }}
             href="/auth/google"
             className="link dim gray f6 f5-ns dib mr3"
             title="login"
@@ -28,6 +24,7 @@ class Navbar extends Component {
       default:
         return (
           <a
+            style={{ color: 'white' }}
             href="/api/logout"
             className="link dim gray f6 f5-ns dib mr3"
             title="login"
@@ -40,22 +37,8 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav id="navBar" className="pa3 pa4-ns" style={style.navStyle}>
-        <Link to="/" className="link dim  b f6 f5-ns dib mr3" title="Home">
-          In Their Own Words!
-        </Link>
-        <SearchBar />
+      <nav id="navBar" className="pa3 pa4-ns">
         {this.renderButton()}
-        {/* <Link to="/test" className="link dim gray f6 f5-ns dib mr3" title="Shortcut for testing">
-          Test!
-        </Link> */}
-        <Link
-          to="/User"
-          className="link dim gray f6 f5-ns dib mr3"
-          title="User Page"
-        >
-          User Page
-        </Link>
       </nav>
     );
   }
