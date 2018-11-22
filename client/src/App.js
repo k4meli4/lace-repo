@@ -14,6 +14,7 @@ import fakeData from './fakedata';
 import Logo from './components/Logo';
 import Footer from './components/Footer';
 import Loader from './components/Loader';
+import Appbar from './components/Appbar';
 // import Login from './components/Login';
 // import Signup from './components/Signup';
 // import listMPPS from './components/AllMPPS';
@@ -35,19 +36,21 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <div>
-          <Navbar id="navBar" />
-          <Route exact path="/" component={Logo} />
-          <Route exact path="/test" component={Landing} />
-          <Route
-            exact
-            path="/user"
-            render={props =>
-              fakeData.map(follow => <UserDash {...props} item={follow} />)
-            }
-          />
-          <Route path="/mpp/:mppName" component={SelectedDash} />
-          <Footer />
+          <div class="acCointainer">
+            <Appbar />
+            {/* <Navbar id="navBar" /> */}
+            <Route exact path="/" component={Logo} />
+            <Route exact path="/test" component={Landing} />
+            {/* <Route exact path="/test" component={Dashboard} /> */}
+            <Route
+              exact
+              path="/user"
+              render={props =>
+                fakeData.map(follow => <UserDash {...props} item={follow} />)
+              }
+            />
+            <Route path="/mpp/:mppName" component={SelectedDash} />
+            <Footer />
           </div>
         </BrowserRouter>
       </div>
