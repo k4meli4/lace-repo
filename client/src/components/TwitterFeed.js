@@ -12,7 +12,7 @@ const TwitterFeed = props => (
       overflow: 'scroll'
     }}
   >
-    <a className="twitter-timeline" href="https://twitter.com/onpoli?lang=en">
+    <a className="twitter-timeline" href="https://twitter.com/ontariopolitix?lang=en">
       Tweets by TwitterDev
     </a>{' '}
     <script
