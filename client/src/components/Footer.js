@@ -12,13 +12,13 @@ const styles = {
     justifyContent: 'center',
     paddingBottom: '10px',
     paddingTop: '10px',
-    color: 'white'
+    color: 'white',
   },
   footerDiv: {
     // position: 'absolute',
     // bottom: '0px',
     // width: '100%',
-  }
+  },
 };
 const Footer = () => (
   <div style={styles.footerDiv}>
@@ -33,14 +33,11 @@ const Footer = () => (
         height: 'auto',
         backgroundColor: 'grey',
         paddingBottom: '20px',
-        paddingTop: '20px'
+        paddingTop: '20px',
       }}
     >
       <h3>Not Sure who your MPP is?</h3>
-      <a
-        href="https://voterinformationservice.elections.on.ca/en/election/search?mode=postalCode"
-        target="blank"
-      >
+      <a href="https://voterinformationservice.elections.on.ca/en/election/search?mode=postalCode" target="blank">
         Click here to search by postal code
       </a>
     </div>
