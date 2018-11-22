@@ -58,7 +58,9 @@ const style = {
   partitionL: {
     display: 'flex', 
     // height: "80%",
-    maxHeight: "800px",
+    // maxHeight: "800px",
+    // maxHeight: "601px",
+    maxHeight: "80vh",
     // border: "2px solid blue"
   }
 };

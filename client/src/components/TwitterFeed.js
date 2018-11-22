@@ -7,7 +7,8 @@ const TwitterFeed = props => (
     style={{
       // maxHeight: '489px',
       // maxHeight: '680px',
-      height:"75%",
+      // height:"75%",
+      height:"92%",
       overflow: 'scroll'
     }}
   >

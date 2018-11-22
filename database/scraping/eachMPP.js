@@ -71,9 +71,7 @@ const eachmppRouter = router => {
             .then(dbeachMPP => {
               console.log(dbeachMPP);
             })
-            .catch
-            // err => res.json(err)
-            ();
+            .catch(err => res.json(err));
         });
       });
     });
