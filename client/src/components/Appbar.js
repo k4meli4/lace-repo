@@ -146,9 +146,9 @@ class PrimarySearchAppBar extends React.Component {
       <div className={classes.root}>
         <AppBar position="static">
           <Toolbar className={classes.palette}>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
+            { /* <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
               <MenuIcon />
-            </IconButton>
+    </IconButton> */}
             <Button component={Link} to="/" className={classes.title} variant="h6" color="inherit" nowrap>
               In Their Own Words!
             </Button>
