@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
-import SearchBar from './SearchBar';
-import Footer from './Footer';
+// import SearchBar from './SearchBar';
+// import Footer from './Footer';
 import TwitterFeed from './TwitterFeed';
 import FacebookFeed from './FacebookFeed';
 import './styling/Landing.css';
@@ -29,7 +29,7 @@ window.twttr = (function(d, s, id) {
 const style = {
   panelLayout: {
     width: '50%',
-    border: 'solid gray 2px',
+    // border: 'solid gray 2px',
     textAlign: 'left'
   },
   feed: {
@@ -37,7 +37,8 @@ const style = {
     justifyContent: 'center',
     justifyItems: 'center',
     padding: '0px',
-    width: '50%'
+    width: '50%',
+    // height: "13%"
   },
   'gtn-group': {
     width: '100%',
@@ -55,7 +56,10 @@ const style = {
     marginBottom: '0px'
   },
   partitionL: {
-    display: 'flex'
+    display: 'flex', 
+    // height: "80%",
+    maxHeight: "800px",
+    // border: "2px solid blue"
   }
 };
 
