@@ -1,7 +1,6 @@
 /* eslint-disable */
 // const passport = require('passport');
 const express = require('express');
-const arrayNames = require('../database/seeds/arrayNames');
 const eachMPP = require('../database/models/eachMPP');
 const hansard = require('../database/models/Hansard');
 const billVotes = require('../database/models/billVotes');
