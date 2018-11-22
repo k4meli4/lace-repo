@@ -36,7 +36,7 @@ class App extends Component {
     return (
       <div className="App">
         <BrowserRouter>
-          <div class="acCointainer">
+          <div className="acCointainer">
             <Appbar />
             {/* <Navbar id="navBar" /> */}
             <Route exact path="/" component={Logo} />
