@@ -1,3 +1,4 @@
+/* eslint-disable */
 const express = require('express');
 const arrayNames = require('../database/seeds/arrayNames');
 const eachMPP = require('../database/models/eachMPP');
@@ -7,18 +8,8 @@ const bills = require('../database/models/Bills');
 
 
 module.exports = app => {
-    app.get(
-      '/auth/google',
-      passport.authenticate('google', {
-        scope: ['profile', 'email'],
-      })
-    );
-  
-    app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
-      res.redirect('/test');
-    });
-  
-    app.get('/api/logout', (req, res) => {
+   
+    app.get('/bills/scrape', (req, res) => {
       req.logout();
       res.redirect('/');
     });
