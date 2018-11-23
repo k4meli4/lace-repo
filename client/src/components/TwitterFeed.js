@@ -5,11 +5,14 @@ const TwitterFeed = props => (
   <div
     className={props.className}
     style={{
-      maxHeight: '489px',
+      // maxHeight: '489px',
+      // maxHeight: '680px',
+      // height:"75%",
+      height:"92%",
       overflow: 'scroll'
     }}
   >
-    <a className="twitter-timeline" href="https://twitter.com/onpoli?lang=en">
+    <a className="twitter-timeline" href="https://twitter.com/ontariopolitix?lang=en">
       Tweets by TwitterDev
     </a>{' '}
     <script
