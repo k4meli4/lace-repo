@@ -40,7 +40,7 @@ const hansardRouter = router => {
         });
         // Send a "Scrape Complete" message to the browser
         res.send('Scrape Complete');
-      });
+      }).catch(err => res.json(err));
   });
   return router;
 };
