@@ -60,6 +60,10 @@ class FullWidthTabs extends React.Component {
     this.loadRecentBills();
   }
 
+  componentDidUpdate() {
+    this.swipeableActions.updateHeight();
+  }
+
   handleChange = (event, value) => {
     this.setState({ value });
   };
@@ -91,11 +95,18 @@ class FullWidthTabs extends React.Component {
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
+          action={actions => {
+            this.swipeableActions = actions;
+          }}
+          animateHeight
+          style={{
+            maxHeight: '78vh'
+          }}
         >
           <TabContainer
             style={{
-              overflowY: 'scroll',
-              maxHeight: '70vh'
+              overflowY: 'scroll'
+              // maxHeight: '70vh'
             }}
             dir={theme.direction}
           >
@@ -131,11 +142,11 @@ class FullWidthTabs extends React.Component {
             // bottom: '40px',
             width: '100%',
             marginTop: '0px',
-            marginBottom: '10px',
+            // marginBottom: '10px',
             height: 'auto',
-            backgroundColor: 'grey',
-            paddingBottom: '20px',
-            paddingTop: '20px'
+            backgroundColor: '#F4F4F4'
+            // paddingBottom: '20px',
+            // paddingTop: '20px'/
           }}
         >
           <h3>Not Sure who your MPP is?</h3>
