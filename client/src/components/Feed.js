@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -32,14 +33,6 @@ const styles = theme => ({
     flexGrow: 1 // this will center
   }
 });
-
-const Sc = {
-  panel: {
-    overflowY: 'scroll',
-    maxHeight: '70vh',
-    background: 'blue'
-  }
-};
 
 class FullWidthTabs extends React.Component {
   state = {
