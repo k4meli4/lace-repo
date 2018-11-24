@@ -148,7 +148,10 @@ export default class SelectedMPP extends Component {
             {/* <NewsFeed customStyle={styles.rightA} /> */}
           </div>
           <div className="innerDiv-right w-80 ">
-            <VotingRecords votingRecords={VotingRecords} customStyle={styles.rightA} />
+            <VotingRecords
+              votingRecords={VotingRecords}
+              customStyle={styles.rightA}
+            />
             <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
           </div>
         </div>

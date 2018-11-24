@@ -29,9 +29,17 @@ const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
     // width: 500,
-    flexGrow: 1, // this will center 
+    flexGrow: 1 // this will center
   }
 });
+
+const Sc = {
+  panel: {
+    overflowY: 'scroll',
+    maxHeight: '70vh',
+    background: 'blue'
+  }
+};
 
 class FullWidthTabs extends React.Component {
   state = {
@@ -84,19 +92,60 @@ class FullWidthTabs extends React.Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
-          <TabContainer dir={theme.direction}>
-            <div className="billsToday" >
+          <TabContainer
+            style={{
+              overflowY: 'scroll',
+              maxHeight: '70vh'
+            }}
+            dir={theme.direction}
+          >
+            <div className="billsToday">
               <h2>Recent Bills</h2>
               <BillsFeed recentBill={this.state.recentBill} />
             </div>
           </TabContainer>
-          <TabContainer dir={theme.direction}>
-          <TwitterFeed className={this.state.TwitterClass} />
+          <TabContainer
+            style={{
+              overflowY: 'scroll',
+              maxHeight: '70vh'
+            }}
+            dir={theme.direction}
+            className="test"
+          >
+            <TwitterFeed />
           </TabContainer>
-          <TabContainer dir={theme.direction}>
-          <FacebookFeed className={this.state.FacebookClass} />
+          <TabContainer
+            style={{
+              overflowY: 'scroll',
+              maxHeight: '70vh'
+            }}
+            dir={theme.direction}
+          >
+            <FacebookFeed />
           </TabContainer>
         </SwipeableViews>
+        <div
+          className="postalCodeSearch"
+          style={{
+            // position: 'absolute',
+            // bottom: '40px',
+            width: '100%',
+            marginTop: '0px',
+            marginBottom: '10px',
+            height: 'auto',
+            backgroundColor: 'grey',
+            paddingBottom: '20px',
+            paddingTop: '20px'
+          }}
+        >
+          <h3>Not Sure who your MPP is?</h3>
+          <a
+            href="https://voterinformationservice.elections.on.ca/en/election/search?mode=postalCode"
+            target="blank"
+          >
+            Click here to search by postal code
+          </a>
+        </div>
       </div>
     );
   }
