@@ -12,13 +12,13 @@ const styles = {
     justifyContent: 'center',
     paddingBottom: '10px',
     paddingTop: '10px',
-    color: 'white'
+    color: 'white',
   },
   footerDiv: {
     position: 'absolute',
     bottom: '0px',
-    width: '100%'
-  }
+    width: '100%',
+  },
 };
 const Footer = () => (
   <div style={styles.footerDiv}>
