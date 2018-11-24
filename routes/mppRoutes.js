@@ -8,15 +8,11 @@ const bills = require('../database/models/Bills');
 const requireLogin = require('../middlewares/requireLogin');
 
 module.exports = app => {
-  const billsRouter = require('../database/scraping/Bills');
-  const eachmppRouter = require('../database/scraping/eachMPP');
-  const mppUrlRouter = require('../database/scraping/MPPurls');
-  const hansardRouter = require('../database/scraping/Hansard');
-
-  // app.use('/bills', billsRouter);
-  //app.use('/eachmpp', eachmppRouter);
-  // app.use('/mppUrl', mppUrlRouter);
-  // app.use('/hansard', hansardRouter);
+  const billsScraper = require('../database/scraping/Bills');
+  const eachmppScraper = require('../database/scraping/eachMPP');
+  const mppUrlScraper = require('../database/scraping/MPPurls');
+  const hansardScraper = require('../database/scraping/Hansard');
+  const populateCreate = require('../database/scraping/populateDB');
   // //this finds MPP from search bar, direct link
   app.use('/api/mppName/:name', requireLogin, (req, res) => {
     eachMPP
