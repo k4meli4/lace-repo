@@ -8,10 +8,10 @@ const bills = require('../database/models/Bills');
 const requireLogin = require('../middlewares/requireLogin');
 
 module.exports = app => {
-  const billsRouter = require('../database/scraping/Bills')
-  const eachmppRouter = require('../database/scraping/eachMPP')
-  const mppUrlRouter = require('../database/scraping/MPPurls')
-  hansardRouter = require('../database/scraping/Hansard')
+  const billsRouter = require('../database/scraping/Bills');
+  const eachmppRouter = require('../database/scraping/eachMPP');
+  const mppUrlRouter = require('../database/scraping/MPPurls');
+  const hansardRouter = require('../database/scraping/Hansard');
 
   // app.use('/bills', billsRouter);
   //app.use('/eachmpp', eachmppRouter);
@@ -69,7 +69,16 @@ module.exports = app => {
   // this finds recent bills to display on landing page, October selected
   app.use('/api/specificBills', requireLogin, (req, res) => {
     bills
-      .find({$or: [{ "title": "Bill 2, Urgent Priorities Act, 2018" }, { "title": "Bill 5, Better Local Government Act, 2018" },{ "title": "Bill 27, Waterways Examination Act, 2018" }]} , req.query)
+      .find(
+        {
+          $or: [
+            { title: 'Bill 2, Urgent Priorities Act, 2018' },
+            { title: 'Bill 5, Better Local Government Act, 2018' },
+            { title: 'Bill 27, Waterways Examination Act, 2018' }
+          ]
+        },
+        req.query
+      )
       .then(specific => {
         res.json(specific);
       })
