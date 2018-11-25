@@ -27,7 +27,7 @@ class Logo extends Component {
     console.log('its mounted');
     setTimeout(() => {
       console.log('this logo timer');
-      window.location = '/test';
+      window.location = '/landing';
     }, 5000);
   }
 
