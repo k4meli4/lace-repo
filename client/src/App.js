@@ -5,16 +5,17 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './actions';
 // import compoenents
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 import Landing from './components/Landing';
 import SelectedDash from './components/SelectedDash';
-import GenDash from './components/GenDash';
+// import GenDash from './components/GenDash';
 import UserDash from './components/UserDash';
 import fakeData from './fakedata';
 import Logo from './components/Logo';
 import Footer from './components/Footer';
-import Loader from './components/Loader';
+// import Loader from './components/Loader';
 import Appbar from './components/Appbar';
+import Feed from './components/Feed';
 // import Login from './components/Login';
 // import Signup from './components/Signup';
 // import listMPPS from './components/AllMPPS';
@@ -40,8 +41,9 @@ class App extends Component {
             <Appbar />
             {/* <Navbar id="navBar" /> */}
             <Route exact path="/" component={Logo} />
-            <Route exact path="/test" component={Landing} />
-            {/* <Route exact path="/test" component={Dashboard} /> */}
+            {/* <Route exact path="/landing" component={Landing} /> */}
+            <Route exact path="/landing" component={Feed} />
+            {/* <Route exact path="/landing" component={Dashboard} /> */}
             <Route
               exact
               path="/user"

@@ -15,14 +15,14 @@ const styles = {
     color: 'white',
   },
   footerDiv: {
-    // position: 'absolute',
-    // bottom: '0px',
-    // width: '100%',
+    position: 'absolute',
+    bottom: '0px',
+    width: '100%',
   },
 };
 const Footer = () => (
   <div style={styles.footerDiv}>
-    <div
+    {/* <div
       className="postalCodeSearch"
       style={{
         // position: 'absolute',
@@ -40,7 +40,7 @@ const Footer = () => (
       <a href="https://voterinformationservice.elections.on.ca/en/election/search?mode=postalCode" target="blank">
         Click here to search by postal code
       </a>
-    </div>
+    </div> */}
     <div style={styles.footerStyle}>In Their Own Words &copy;</div>
   </div>
 );
