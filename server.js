@@ -35,13 +35,13 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
 }
 
-mongoose.connect('mongodb://localhost/lace-repo');
+// mongoose.connect('mongodb://localhost/lace-repo');
 
 // the setup for passport to use the cookiesssss
 app.use(
   cookieSession({
     maxAge: 30 * 24 * 60 * 60 * 1000,
-    keys: [keys.cookieKey],
+    keys: [keys.cookieKey]
   })
 );
 app.use(passport.initialize());
@@ -50,10 +50,10 @@ app.use(passport.session());
 require('./routes/authRoutes')(app);
 require('./routes/mppRoutes')(app);
 
-// mongoose.connect(
-//   keys.mongoURI,
-//   { useNewUrlParser: true }
-// );
+mongoose.connect(
+  keys.mongoURI,
+  { useNewUrlParser: true }
+);
 
 app.get('*', (_req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'));
@@ -61,5 +61,9 @@ app.get('*', (_req, res) => {
 
 // Listen on port 3000
 app.listen(PORT, () => {
-  console.log('==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.', PORT, PORT);
+  console.log(
+    '==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.',
+    PORT,
+    PORT
+  );
 });

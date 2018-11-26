@@ -5,8 +5,8 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from './actions';
 // import compoenents
-// import Navbar from './components/Navbar';
-import Landing from './components/Landing';
+// import AuthButton from './components/AuthButton';
+// import Landing from './components/Landing';
 import SelectedDash from './components/SelectedDash';
 // import GenDash from './components/GenDash';
 import UserDash from './components/UserDash';
@@ -39,7 +39,7 @@ class App extends Component {
         <BrowserRouter>
           <div className="acCointainer">
             <Appbar />
-            {/* <Navbar id="navBar" /> */}
+            {/* <AuthButton id="navBar" /> */}
             <Route exact path="/" component={Logo} />
             {/* <Route exact path="/landing" component={Landing} /> */}
             <Route exact path="/landing" component={Feed} />
