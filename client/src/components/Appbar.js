@@ -4,16 +4,16 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
+// import IconButton from '@material-ui/core/IconButton';
+// import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import { fade } from '@material-ui/core/styles/colorManipulator';
 import { withStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
+// import MenuIcon from '@material-ui/icons/Menu';
 import SearchIcon from '@material-ui/icons/Search';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
-import Navbar from './Navbar';
+import AuthButton from './AuthButton';
 
 const styles = theme => ({
   root: {
@@ -103,19 +103,25 @@ class PrimarySearchAppBar extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log('search key pressed');
-    axios.post(`/api/mppName/${this.state.value}`).then(res => {
-      window.location = `/mpp/${this.state.value}`;
-      this.loading = false;
-    });
+    axios
+      .post(`/api/mppName/${this.state.value}`)
+      .then(res => {
+        window.location = `/mpp/${this.state.value}`;
+        this.loading = false;
+      })
+      .catch(err => console.log(err));
   }
 
   handleKeyPress(event) {
     if (event.key === 'Enter') {
       event.preventDefault();
-      axios.post(`/api/mppName/${this.state.value}`).then(res => {
-        // console.log(res.data)
-        window.location = `/mpp/${this.state.value}`;
-      });
+      axios
+        .post(`/api/mppName/${this.state.value}`)
+        .then(res => {
+          // console.log(res.data)
+          window.location = `/mpp/${this.state.value}`;
+        })
+        .catch(err => alert('Please Login'));
     }
   }
 
@@ -181,7 +187,7 @@ class PrimarySearchAppBar extends React.Component {
                 onKeyPress={event => this.handleKeyPress(event)}
               />
             </div>
-            <Navbar id="navBar" />
+            <AuthButton id="navBar" />
             <Button color="inherit" component={Link} to="/User">
               User
             </Button>
