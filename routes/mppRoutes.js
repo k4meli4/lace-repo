@@ -6,6 +6,7 @@ const hansard = require('../database/models/Hansard');
 const billVotes = require('../database/models/billVotes');
 const bills = require('../database/models/Bills');
 const requireLogin = require('../middlewares/requireLogin');
+const users = require('../database/models/User');
 
 module.exports = app => {
   const billsScraper = require('../database/scraping/Bills');
@@ -77,6 +78,38 @@ module.exports = app => {
       )
       .then(specific => {
         res.json(specific);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(422).json(err);
+      });
+  });
+  app.get('/api/currentUser', (req, res) => {
+    res.send(req.user);
+  })
+
+  app.put('/api/following/:userId&:followingId', (req, res) => {
+    users.find({ _id: req.params.userId, followingId: { $ne: req.params.followingId } })
+      .then(data => {
+        console.log(data)
+        if (!data.followingId) {
+          users.updateOne({ _id: req.params.userId }, { $push: { followingId: req.params.followingId } }, { new: true })
+            .then(added => { console.log('added to user ') })
+        }
+        console.log('already following')
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(422).json(err);
+      });
+  })
+
+  app.get('/api/userMpps', (req, res) => {
+    users
+      .findById(req.user._id)
+      .populate('followingId')
+      .then(dbUser => {
+        res.json(dbUser);
       })
       .catch(err => {
         console.error(err);
