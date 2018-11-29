@@ -71,8 +71,8 @@ class UserPage extends React.Component {
   getUserMpps = () => {
     axios.get('/api/userMpps')
       .then(res => {
-        console.log(JSON.stringify(res.data) + ' here')
-        this.setState({ mppInfo: res.data })        
+        console.log(JSON.stringify((res.data) + ' here'))
+        this.setState({ mppInfo: res.data.followingId })        
       })
       .catch(err => console.log(err));
   };
@@ -92,25 +92,25 @@ class UserPage extends React.Component {
           <div className={classNames(classes.layout, classes.cardGrid)}>
             {/* End hero unit */}
             <Grid container spacing={40}>
-            {console.log(classes.mppInfo)}
-              {/* {this.state.mppInfo.map(info =>  */}
+            {console.log(this.state.mppInfo)}
+              {this.state.mppInfo.map(info => 
                 <Grid sm={6} md={4} lg={3}>
                   <Card className={classes.card}>
                     <CardMedia
                       className={classes.cardMedia}
-                      //  image={this.state.photo}
-                      // title={this.state.name}
+                      image={info.photo}
+                       title={info.name}
                     />
                     <CardContent className={classes.cardContent}>
                       <Typography gutterBottom variant="h5" component="h2">
-                        {/* {this.state.name} */}
+                        {info.name}
                       </Typography>
                       <Typography>
-                        Riding: 
+                        Riding: {info.currentRiding}
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Link to={`/mpp/`}>
+                      <Link to={`/mpp/${info.name}`}>
                         <Button size="small" color="primary">
                           Details                       
                         </Button>
@@ -118,6 +118,7 @@ class UserPage extends React.Component {
                     </CardActions>
                   </Card>
                 </Grid>
+              )}
             </Grid>
           </div>
         </main>
