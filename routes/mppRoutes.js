@@ -52,7 +52,7 @@ module.exports = app => {
         res.status(422).json(err);
       });
   });
-  // this finds recent bills to display on landing page, October selected
+  // this finds recent bills to display on landing page, november selected
   app.use('/api/recentBills', (req, res) => {
     bills
       .find({ $text: { $search: 'november' } }, req.query)
@@ -64,7 +64,7 @@ module.exports = app => {
         res.status(422).json(err);
       });
   });
-  // this finds recent bills to display on landing page, October selected
+  // this finds recent bills to display on the MPP page
   app.use('/api/specificBills', requireLogin, (req, res) => {
     bills
       .find(
