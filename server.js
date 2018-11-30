@@ -5,20 +5,8 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const path = require('path');
 const bodyParser = require('body-parser');
-//
 const mongoose = require('mongoose');
-const arrayNames = require('./database/seeds/arrayNames');
-// const eachMPP = require('./database/models/eachMPP');
-// const hansard = require('./database/models/Hansard');
-const mppconstituenciesSeed = require('./database/seeds/mppconstituencies');
-
-// const billVotes = require('./database/models/billVotes');
-const billVotesSeed = require('./database/seeds/billVotes');
-// const bills = require('./database/models/Bills');
-const votingStatsSeed = require('./database/seeds/votingStats');
-const votingStats = require('./database/models/votingStats');
 const keys = require('./config/keys');
-// const db = require('./database/models');
 require('./database/models/User');
 require('./services/passport');
 
