@@ -46,11 +46,7 @@ class App extends Component {
             {/* <Route exact path="/landing" component={Dashboard} /> */}
             <Route
               exact
-              path="/user"
-              render={props =>
-                fakeData.map(follow => <UserDash {...props} item={follow} />)
-              }
-            />
+              path="/user" component = {UserDash} />
             <Route path="/mpp/:mppName" component={SelectedDash} />
             <Footer />
           </div>
