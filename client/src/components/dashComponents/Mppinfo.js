@@ -13,11 +13,11 @@ const styles = {
   },
 };
 
-const Mppinfo = ({ photo, name, position, telephone, currentRiding, party, parliamentNumber }) => (
+const Mppinfo = ({ lastName, followingId, photo, name, position, telephone, currentRiding, party, parliamentNumber }) => (
   <div className="container center" style={styles.layout}>
     <article style={styles.fixedHeight} className="mw5 bg-white pa3 pa4-ns ba b--black-10">
       <div className="tc">
-        <img src={photo} className="br-100 h4 w4 dib ba b--black-05 pa2" alt="selected MPP" />
+        <img src={photo} key= {followingId} className="br-100 h4 w4 dib ba b--black-05 pa2" alt="selected MPP" />
         <h4 className="f4 mb2">{name}</h4>
         <h3 className="f5 fw4 gray mt0">
        <strong>Current Riding:</strong>  

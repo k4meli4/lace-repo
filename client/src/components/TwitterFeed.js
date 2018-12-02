@@ -28,5 +28,5 @@ const TwitterFeed = props => (
 export default TwitterFeed;
 
 {
-  /* <a class="twitter-timeline" data-width="1000" data-height="1000" data-dnt="true" href="https://twitter.com/OntarioPolitix?ref_src=twsrc%5Etfw">Tweets by OntarioPolitix</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> */
+  /* <a className="twitter-timeline" data-width="1000" data-height="1000" data-dnt="true" href="https://twitter.com/OntarioPolitix?ref_src=twsrc%5Etfw">Tweets by OntarioPolitix</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> */
 }

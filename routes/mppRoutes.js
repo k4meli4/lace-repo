@@ -6,6 +6,7 @@ const hansard = require('../database/models/Hansard');
 const billVotes = require('../database/models/billVotes');
 const bills = require('../database/models/Bills');
 const requireLogin = require('../middlewares/requireLogin');
+const users = require('../database/models/User');
 
 module.exports = app => {
   const billsScraper = require('../database/scraping/Bills');
@@ -26,6 +27,18 @@ module.exports = app => {
         res.status(422).json(err);
       });
   });
+  // app.use('/api/mppName/:id', requireLogin, (req, res) => {
+  //   eachMPP
+  //     .findById(req.params._id)
+  //     .populate('addressEmailId')
+  //     .then(dbModel => {
+  //       res.json(dbModel);
+  //     })
+  //     .catch(err => {
+  //       console.error(err);
+  //       res.status(422).json(err);
+  //     });
+  // });
   // //this finds speeches by name typed in Search Bar, pulled from URL
   app.use('/api/hansard/:name', requireLogin, (req, res) => {
     hansard
@@ -50,7 +63,7 @@ module.exports = app => {
         res.status(422).json(err);
       });
   });
-  // this finds recent bills to display on landing page, October selected
+  // this finds recent bills to display on landing page, november selected
   app.use('/api/recentBills', (req, res) => {
     bills
       .find({ $text: { $search: 'november' } }, req.query)
@@ -62,7 +75,7 @@ module.exports = app => {
         res.status(422).json(err);
       });
   });
-  // this finds recent bills to display on landing page, October selected
+  // this finds recent bills to display on the MPP page
   app.use('/api/specificBills', requireLogin, (req, res) => {
     bills
       .find(
@@ -77,6 +90,49 @@ module.exports = app => {
       )
       .then(specific => {
         res.json(specific);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(422).json(err);
+      });
+  });
+  //get user info from window
+  app.get('/api/currentUser', (req, res) => {
+    res.send(req.user);
+  })
+//pass userid and followingId to update Userdb with reference to MPP following
+  app.put('/api/following/:userId&:followingId', (req, res) => {
+    users.findById(req.params.userId).where({ followingId: req.params.followingId })
+      .then(data => {
+        console.log(data)
+        if (!data) {
+          users.updateOne({ _id: req.params.userId }, { $push: { followingId: req.params.followingId } }, { new: true })
+            .then(added => { console.log('added to user ') })
+        }
+        else {console.log('already following')}        
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(422).json(err);
+      });
+  })
+  app.put('/api/unfollow/:userId&:followingId', (req, res) => {
+    users.updateOne({_id:req.params.userId}, {$pull: {followingId: req.params.followingId }})
+      .then(unfollow => {
+      console.log('unfollowing!')
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(422).json(err);
+      });
+  })
+// route to retrieve
+  app.get('/api/userMpps', (req, res) => {
+    users
+      .findById(req.user._id)
+      .populate('followingId')
+      .then(dbUser => {
+        res.json(dbUser);
       })
       .catch(err => {
         console.error(err);

@@ -5,7 +5,7 @@ const CronJob = require('cron').CronJob;
 const eachmpp = require('../models/eachMPP');
 const db = require('../models/MPPurl');
 
-
+// const eachmppScraper = new CronJob('50 * * * * *', () => {
 const eachmppScraper = new CronJob('* 2 23 1 1 *', () => {
   const d = new Date();
   console.log('Second:', d);
@@ -22,6 +22,8 @@ const eachmppScraper = new CronJob('* 2 23 1 1 *', () => {
           .replace(/ *\([^)]*\) */g, '')
           .replace(/\s+/g, ' ')
           .trim();
+        let index = result.name.lastIndexOf(' ')
+        result.lastName = result.name.substring(index +1)
         const photo = $('.views-field-field-image')
           .find('img')
           .attr('src');
