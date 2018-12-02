@@ -1,5 +1,7 @@
 /* eslint-disable */
 import React from 'react';
+// end of inports
+
 const facebookPlug = (d, s, id) => {
   var js,
     fjs = d.getElementsByTagName(s)[0];

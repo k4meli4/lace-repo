@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -13,6 +14,7 @@ import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 // Tool
 import SocialList from './list/mppSocial';
+// end of inports
 
 function TabContainer({ children, dir }) {
   return (
@@ -21,7 +23,7 @@ function TabContainer({ children, dir }) {
     </Typography>
   );
 }
-
+//
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
   dir: PropTypes.string.isRequired
@@ -48,6 +50,7 @@ class FullWidthTabs extends React.Component {
   handleChangeIndex = index => {
     this.setState({ value: index });
   };
+
   //
   getTwitter() {
     SocialList.forEach(tName => {
@@ -56,6 +59,7 @@ class FullWidthTabs extends React.Component {
       }
     });
   }
+
   //
   getFacebook() {
     SocialList.forEach(fName => {
