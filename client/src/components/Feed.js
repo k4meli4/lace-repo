@@ -12,6 +12,7 @@ import API from '../utils/API';
 import TwitterFeed from './TwitterFeed';
 import FacebookFeed from './FacebookFeed';
 import BillsFeed from './dashComponents/BillsFeed';
+// end of inports
 
 function TabContainer({ children, dir }) {
   return (

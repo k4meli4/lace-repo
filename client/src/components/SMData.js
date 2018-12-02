@@ -14,7 +14,7 @@ import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 // Tool
 import SocialList from './list/mppSocial';
-// end
+// end of inports
 
 function TabContainer({ children, dir }) {
   return (
