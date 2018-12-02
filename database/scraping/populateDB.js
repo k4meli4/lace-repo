@@ -21,6 +21,7 @@ const mppInfoSeed = new CronJob('* 4 0 1 1 *', () => {
         });
 })
 // ///// reference eachMPP with MPPconstituency (address/email)
+// const refEachMpp = new CronJob('30 * * * * *', () => {
 const refEachMpp = new CronJob('* 6 0 1 1 *', () => {
     const result = arrayNames.map(a => a.name);
     for (let m = 0; m < result.length; m += 1) {

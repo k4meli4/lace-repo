@@ -36,6 +36,7 @@ const styles = {
 export default class SelectedMPP extends Component {
   state = {
     mppLockup: this.props.match.params.mppName,
+    lastName: '',
     name: '',
     position: [],
     url: '',
@@ -65,6 +66,7 @@ export default class SelectedMPP extends Component {
       .then(res => {
         this.setState({
           followingId: res.data[0]._id,
+          lastName: res.data[0].lastName,
           name: res.data[0].name,
           position: res.data[0].careerDetails[0].positions,
           url: res.data[0].url,
@@ -135,7 +137,8 @@ export default class SelectedMPP extends Component {
       facebook,
       mppLockup,
       userId,
-      followingId
+      followingId,
+      lastName
     } = this.state;
 
     return (
@@ -145,6 +148,8 @@ export default class SelectedMPP extends Component {
         isVisible={true}
       >
         <MppInfo
+          followingId={followingId}
+          lastName={lastName}
           name={name}
           position={position}
           url={url}
@@ -157,6 +162,8 @@ export default class SelectedMPP extends Component {
         <div className="outterDiv center w-80" style={styles.layout}>
           <div className="innerDiv-left">
             {/* <SocialFeed twitter={twitter} facebook={facebook} /> */}
+            {/* {console.log(userId + 'user')}
+            {console.log(followingId)} */}
             <FollowButton
               userId={userId}
               followingId={followingId}
