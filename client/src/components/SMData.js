@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -48,6 +49,7 @@ class FullWidthTabs extends React.Component {
   handleChangeIndex = index => {
     this.setState({ value: index });
   };
+
   //
   getTwitter() {
     SocialList.forEach(tName => {
@@ -56,6 +58,7 @@ class FullWidthTabs extends React.Component {
       }
     });
   }
+
   //
   getFacebook() {
     SocialList.forEach(fName => {
