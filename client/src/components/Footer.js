@@ -10,17 +10,17 @@ const styles = {
     justifyContent: 'center',
     paddingBottom: '10px',
     paddingTop: '10px',
-    color: 'white',
+    color: 'white'
   },
   footerDiv: {
-    // position: 'absolute',
+    position: 'absolute',
     // position: 'sticky',
-    // bottom: '0px',
+    bottom: '0px',
     width: '100%',
     //
-    height: '50px',
+    height: '50px'
     // marginTop: '-50px'
-  },
+  }
 };
 const Footer = () => (
   <div style={styles.footerDiv}>
