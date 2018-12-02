@@ -11,6 +11,8 @@ import TwitterFeed from './TwitterFeed';
 import FacebookFeed from './FacebookFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
+// Tool
+import SocialList from './list/mppSocial';
 
 function TabContainer({ children, dir }) {
   return (
@@ -46,6 +48,30 @@ class FullWidthTabs extends React.Component {
   handleChangeIndex = index => {
     this.setState({ value: index });
   };
+  //
+  getTwitter() {
+    SocialList.forEach(tName => {
+      if (tName.name === this.state.name) {
+        return this.setState({ twitter: tName.twitter });
+      }
+    });
+  }
+  //
+  getFacebook() {
+    SocialList.forEach(fName => {
+      if (fName.name === this.state.name) {
+        console.log(fName.name);
+        console.log(this.state.name);
+        console.log(fName.facebook);
+        return this.setState({ facebook: fName.facebook });
+      }
+    });
+  }
+
+  componentDidMount() {
+    this.getTwitter();
+    this.getFacebook();
+  }
 
   render() {
     const { classes, theme, mppLockup } = this.props;

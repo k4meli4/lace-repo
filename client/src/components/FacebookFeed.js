@@ -10,12 +10,25 @@ const facebookPlug = (d, s, id) => {
   fjs.parentNode.insertBefore(js, fjs);
 };
 
-const FacebookFeed = props => (
+const defaultFb = 'https://www.facebook.com/CBCPolitics/';
+
+const handleFacebookUrl = fb => {
+  if (window.location.pathname === '/landing') {
+    fb = defaultFb;
+    console.log(fb);
+  } else {
+    fb = fb;
+    console.log(fb);
+  }
+};
+
+const FacebookFeed = ({ facebook }) => (
+  // handleFacebookUrl(facebook),
   facebookPlug(document, 'script', 'facebook-jssdk'),
   (
     <div
-      class="fb-page"
-      data-href="https://www.facebook.com/CBCPolitics/"
+      className="fb-page"
+      data-href={defaultFb}
       data-tabs="timeline"
       data-width="500"
       data-small-header="true"
@@ -23,11 +36,8 @@ const FacebookFeed = props => (
       data-hide-cover="true"
       data-show-facepile="false"
     >
-      <blockquote
-        cite="https://www.facebook.com/CBCPolitics/"
-        class="fb-xfbml-parse-ignore"
-      >
-        <a href="https://www.facebook.com/CBCPolitics/">CBC Politics</a>
+      <blockquote cite={defaultFb} className="fb-xfbml-parse-ignore">
+        <a href={defaultFb}>Politics</a>
       </blockquote>
     </div>
   )
