@@ -16,9 +16,11 @@ import Footer from './components/Footer';
 // import Loader from './components/Loader';
 import Appbar from './components/Appbar';
 import Feed from './components/Feed';
+import SelectedMpp from './components/SelectedMpp';
 // import Login from './components/Login';
 // import Signup from './components/Signup';
 // import listMPPS from './components/AllMPPS';
+// end of inports
 
 // styling
 // import SearchBar from './components/SearchBar';
@@ -40,14 +42,16 @@ class App extends Component {
           <div className="acCointainer">
             <Appbar />
             {/* <AuthButton id="navBar" /> */}
-            <Route exact path="/" component={Logo} />
-            {/* <Route exact path="/landing" component={Landing} /> */}
-            <Route exact path="/landing" component={Feed} />
-            {/* <Route exact path="/landing" component={Dashboard} /> */}
-            <Route
-              exact
-              path="/user" component = {UserDash} />
-            <Route path="/mpp/:mppName" component={SelectedDash} />
+            <div className="mainContent ">
+              <Route exact path="/" component={Logo} />
+              {/* <Route exact path="/landing" component={Landing} /> */}
+              <Route exact path="/landing" component={Feed} />
+              {/* <Route exact path="/landing" component={Dashboard} /> */}
+              <Route exact path="/user" component={UserDash} />
+              {/* <Route path="/mpp/:mppName" component={SelectedDash} /> */}
+              <Route path="/mpp/:mppName" component={SelectedMpp} />
+              {/* <Route exact path="/dev-ca" component={SelectedMpp} /> */}
+            </div>
             <Footer />
           </div>
         </BrowserRouter>
