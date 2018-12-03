@@ -74,7 +74,6 @@ class UserPage extends React.Component {
   getUserMpps = () => {
     axios.get('/api/userMpps')
       .then(res => {
-
         this.setState({
           mppInfo: res.data.followingId,
           userId: res.data._id
@@ -82,71 +81,69 @@ class UserPage extends React.Component {
       })
       .catch(err => console.log(err));
   }
-  // handleUnFollow = (event, info) => {
-  //   console.log('unfollow key!!!')
-  //   axios.put(`/api/unfollow/${info.userId}&${info.followingId}`)
-  //     .then(res => {
-  //     })
-  //     .catch(err => console.log(err));
-  // }
+  removeCard = key => {
+   const removed =  this.state.mppInfo.filter(mpp => mpp._id !== key)
+    this.setState({ mppInfo:removed })
+  };
+componentDidMount() {
+  this.getUserMpps();
+};
+render() {
+  const { classes } = this.props;
+  return (
+    <React.Fragment>
+      <CssBaseline />
+      <main>
 
-  componentDidMount() {
-    this.getUserMpps();
-  }
-  render() {
-    const { classes } = this.props;
-    return (
-      <React.Fragment>
-        <CssBaseline />
-        <main>
+        <div className={classNames(classes.layout, classes.cardGrid)}>
+          {/* End hero unit */}
 
-          <div className={classNames(classes.layout, classes.cardGrid)}>
-            {/* End hero unit */}
+          <Grid container spacing={40}>
+            {/* {this.state.userinfo = Object.keys(this.state.userinfo)} */}
+            {/* {this.state.userinfo.map(userid => { */}
+            {/* {Object.assign({},userId)} */}
 
-            <Grid container spacing={40}>
-              {/* {this.state.userinfo = Object.keys(this.state.userinfo)} */}
-              {/* {this.state.userinfo.map(userid => { */}
-              {/* {Object.assign({},userId)} */}
-              {this.state.mppInfo.map(info =>
-                <Grid sm={6} md={4} lg={3}  >
-                  <Card className={classes.card} key={info._id} >
-                    <CardMedia
-                      className={classes.cardMedia}
-                      image={info.photo}
-                      title={info.name}
-                    />
-                    <CardContent className={classes.cardContent}>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        {info.name}
-                      </Typography>
-                      <Typography>
-                        Riding: {info.currentRiding}
-                      </Typography>
-                    </CardContent>
-                    <CardActions>
-                      <Link to={`/mpp/${info.lastName}`}>
-                        <Button size="small" color="primary">
-                          Details
+            {this.state.mppInfo.map(info =>
+              <Grid sm={6} md={4} lg={3}  >
+                <Card className={classes.card} key={info._id}  >
+
+                  <CardMedia
+                    className={classes.cardMedia}
+                    image={info.photo}
+                    title={info.name}
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography gutterBottom variant="h5" component="h2">
+                      {info.name}
+                    </Typography>
+                    <Typography>
+                      Riding: {info.currentRiding}
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Link to={`/mpp/${info.lastName}`}>
+                      <Button size="small" color="primary">
+                        Details
                         </Button>
-                      </Link>
-                      <UnFollowButton variant="contained" size="small" color="primary" className={classes.button}
-                        followingId={info._id}
-                        userId={this.state.userId}
-                      >
-                        {console.log(this.state.userId)}
-                      </UnFollowButton>
-                    </CardActions>
-                  </Card>
+                    </Link>
+                    <UnFollowButton variant="contained" size="small" color="primary" className={classes.button}
+                      followingId={info._id}
+                      userId={this.state.userId}
+                      removeCard={this.removeCard}
+                    >
+                    </UnFollowButton>
+                  </CardActions>
+                </Card>
 
-                </Grid>
-              )}
-            </Grid>
+              </Grid>
+            )}
+          </Grid>
 
-          </div>
-        </main>
-      </React.Fragment>
-    );
-  }
+        </div>
+      </main>
+    </React.Fragment >
+  );
+}
 }
 
 UserPage.propTypes = {

@@ -13,7 +13,7 @@ const styles = {
   },
 };
 
-const Mppinfo = ({ lastName, followingId, photo, name, position, telephone, currentRiding, party, parliamentNumber }) => (
+const Mppinfo = ({followingId, photo, name, position, telephone, currentRiding, party, parliamentNumber }) => (
   <div className="container center" style={styles.layout}>
     <article style={styles.fixedHeight} className="mw5 bg-white pa3 pa4-ns ba b--black-10">
       <div className="tc">
