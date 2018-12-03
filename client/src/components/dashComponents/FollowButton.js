@@ -8,43 +8,46 @@ import Fab from '@material-ui/core/Fab';
 import axios from 'axios';
 
 const styles = theme => ({
-    fab: {
-        margin: theme.spacing.unit,
-    },
-    extendedIcon: {
-        marginRight: theme.spacing.unit,
-    },
+  fab: {
+    margin: theme.spacing.unit
+  },
+  extendedIcon: {
+    marginRight: theme.spacing.unit
+  }
 });
 
 const handleFollow = (event, props) => {
-    event.preventDefault();
-    console.log('follow key!!!')
-    axios.put(`/api/following/${props.userId}&${props.followingId}`)
-        .then(res => {
-        })
-        .catch(err => console.log(err));
-}
+  event.preventDefault();
+  console.log('follow key!!!');
+  axios
+    .put(`/api/following/${props.userId}&${props.followingId}`)
+    .then(res => {})
+    .catch(err => console.log(err));
+};
 
 const FollowButton = props => {
-    return (
-        <div>
-            <Fab color="primary" aria-label="Add" style={styles.fab} onClick={event => handleFollow(event, props)}
-            >
-                <AddIcon />
-            </Fab>
-            {/* <Button variant="contained" color="primary" href="#contained-buttons" */}
+  return (
+    <div>
+      <Fab
+        color="primary"
+        aria-label="Add"
+        style={styles.fab}
+        onClick={event => handleFollow(event, props)}
+      >
+        <AddIcon />
+      </Fab>
+      {/* <Button variant="contained" color="primary" href="#contained-buttons" */}
 
-
-            {/* Follow + */}
-            {/* </Button> */}
-        </div>
-    );
-}
+      {/* Follow + */}
+      {/* </Button> */}
+    </div>
+  );
+};
 
 FollowButton.propTypes = {
-    userId: PropTypes.object.isRequired,
-    followingId: PropTypes.object.isRequired,
-    fab: PropTypes.object.isRequired
+  userId: PropTypes.string.isRequired,
+  followingId: PropTypes.string.isRequired,
+  fab: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(FollowButton);

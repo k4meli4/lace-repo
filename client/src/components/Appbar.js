@@ -106,6 +106,7 @@ class PrimarySearchAppBar extends React.Component {
     axios
       .post(`/api/mppName/${this.state.value}`)
       .then(res => {
+        this.setState({value:res.data[0].name})
         window.location = `/mpp/${this.state.value}`;
         this.loading = false;
       })
@@ -118,7 +119,7 @@ class PrimarySearchAppBar extends React.Component {
       axios
         .post(`/api/mppName/${this.state.value}`)
         .then(res => {
-          // console.log(res.data)
+          this.setState({value:res.data[0].name})
           window.location = `/mpp/${this.state.value}`;
         })
         .catch(err => alert('Please Login'));
@@ -167,7 +168,7 @@ class PrimarySearchAppBar extends React.Component {
               component={Link}
               to="/"
               className={classes.title}
-              variant="h6"
+              // variant="h6"
               color="inherit"
               nowrap="true"
             >

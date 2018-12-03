@@ -122,7 +122,7 @@ render() {
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Link to={`/mpp/${info.lastName}`}>
+                    <Link to={`/mpp/${info.name}`}>
                       <Button size="small" color="primary">
                         Details
                         </Button>

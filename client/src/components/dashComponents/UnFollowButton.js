@@ -25,7 +25,6 @@ const handleUnFollow = (event, props) => {
 }
 
 const UnFollowButton = props => {
-    console.log(JSON.stringify(props) + 'props')
     return (
         <div>
             <Button variant='contained' className={props.button} size="small" color="primary"
