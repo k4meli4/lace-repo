@@ -1,4 +1,6 @@
+/* eslint-disable */
 import React from 'react';
+//
 
 const styles = {
   footerStyle: {
