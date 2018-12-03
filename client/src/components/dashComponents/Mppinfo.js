@@ -51,7 +51,7 @@ const styles = theme => ({
   mppContainer: {
     maxWidth: '100%',
     display: 'flex',
-    // flexWrap: 'wrap',
+    flexWrap: 'wrap',
     justifyContent: 'center'
   },
   expender: {
@@ -106,11 +106,6 @@ const Mppinfo = ({
               </Typography>
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
-              {/* <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Suspendisse malesuada lacus ex, sit amet blandit leo lobortis
-                eget.
-              </Typography> */}
               <CardMedia
                 className={classes.media}
                 image={ridingMap}
