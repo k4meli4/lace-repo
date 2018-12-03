@@ -30,7 +30,8 @@ const styles = theme => ({
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
-    fontWeight: theme.typography.fontWeightRegular
+    fontWeight: theme.typography.fontWeightRegular,
+    margin: 'auto'
   },
   layout: {
     display: 'flex',
@@ -48,6 +49,10 @@ const styles = theme => ({
     width: '250px',
     height: '300px'
   },
+  ridingMedia: {
+    width: '100%',
+    height: '300px'
+  },
   mppContainer: {
     maxWidth: '100%',
     display: 'flex',
@@ -60,7 +65,6 @@ const styles = theme => ({
 });
 
 const Mppinfo = ({
-  lastName,
   followingId,
   photo,
   name,
@@ -99,7 +103,7 @@ const Mppinfo = ({
             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
               <Typography
                 className={classes.heading}
-                variant="h5"
+                // variant="h5"
                 component="h3"
               >
                 {name}
@@ -107,7 +111,7 @@ const Mppinfo = ({
             </ExpansionPanelSummary>
             <ExpansionPanelDetails>
               <CardMedia
-                className={classes.media}
+                className={classes.ridingMedia}
                 image={ridingMap}
                 title={name}
                 key={followingId}
@@ -117,13 +121,13 @@ const Mppinfo = ({
         </div>
         <hr />
         <Typography component="p">Career: {parliamentNumber}</Typography>
-        <Typography component="p">
+        <Typography component="ul">
           Position(s):
-          <ul>
-            {position.map((jobs, i) => (
-              <ol key={i}>{jobs}</ol>
-            ))}
-          </ul>
+          {/* <ul> */}
+          {position.map((jobs, i) => (
+            <li key={i}>{jobs}</li>
+          ))}
+          {/* </ul> */}
         </Typography>
         <Typography component="p">Party: {party}</Typography>
         <Typography component="p">{telephone}</Typography>
