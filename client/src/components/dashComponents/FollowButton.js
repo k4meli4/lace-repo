@@ -45,9 +45,9 @@ const FollowButton = ({ props, classes }) => {
 };
 
 FollowButton.propTypes = {
-  userId: PropTypes.object.isRequired,
-  followingId: PropTypes.object.isRequired
-  // fab: PropTypes.object.isRequired
+  userId: PropTypes.string.isRequired,
+  followingId: PropTypes.string.isRequired,
+  fab: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(FollowButton);

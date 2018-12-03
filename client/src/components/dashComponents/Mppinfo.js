@@ -65,7 +65,6 @@ const styles = theme => ({
 });
 
 const Mppinfo = ({
-  lastName,
   followingId,
   photo,
   name,

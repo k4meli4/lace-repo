@@ -53,7 +53,6 @@ export default class SelectedMPP extends Component {
     facebook: '',
     userId: '',
     followingId: '',
-
     isLoading: true
   };
 
@@ -123,7 +122,7 @@ export default class SelectedMPP extends Component {
     if (this.state.isLoading) {
       return <Loader />;
     }
-
+   
     const {
       name,
       position,
