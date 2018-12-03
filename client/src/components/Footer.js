@@ -17,11 +17,11 @@ const styles = {
     position: 'sticky',
     bottom: '-10px',
     width: '100%',
-    //
     height: '50px'
     // marginTop: '-50px'
   }
 };
+//
 const Footer = () => (
   <div style={styles.footerDiv}>
     <div style={styles.footerStyle}>In Their Own Words &copy;</div>
