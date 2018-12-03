@@ -1,4 +1,6 @@
+/* eslint-disable */
 import React from 'react';
+//
 
 const styles = {
   footerStyle: {
@@ -10,18 +12,18 @@ const styles = {
     justifyContent: 'center',
     paddingBottom: '10px',
     paddingTop: '10px',
-    color: 'white',
+    color: 'white'
   },
   footerDiv: {
     // position: 'absolute',
-    // position: 'sticky',
-    // bottom: '0px',
+    position: 'sticky',
+    bottom: '-10px',
     width: '100%',
-    //
-    height: '50px',
+    height: '50px'
     // marginTop: '-50px'
-  },
+  }
 };
+//
 const Footer = () => (
   <div style={styles.footerDiv}>
     <div style={styles.footerStyle}>In Their Own Words &copy;</div>

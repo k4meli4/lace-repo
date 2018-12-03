@@ -114,7 +114,8 @@ class PaperSheet extends Component {
       mppLockup,
       userId,
       followingId,
-      lastName
+      lastName,
+      ridingMap
     } = this.state;
 
     const { classes } = this.props;
@@ -122,14 +123,6 @@ class PaperSheet extends Component {
     return (
       <div>
         <Paper className={classes.root} elevation={1}>
-          <Typography variant="h5" component="h3">
-            {/* {name} */}
-            Mr. Ford (test text)
-          </Typography>
-          <Typography component="p">
-            Paper can be used to build surface or other elements for your
-            application.
-          </Typography>
           <MppInfo
             followingId={followingId}
             lastName={lastName}
@@ -141,8 +134,10 @@ class PaperSheet extends Component {
             party={party}
             parliamentNumber={parliamentNumber}
             telephone={telephone}
+            userId={userId}
+            ridingMap={ridingMap}
           />
-          <FollowButton userId={userId} followingId={followingId} />
+          {/* <FollowButton userId={userId} followingId={followingId} /> */}
           <SMData mppLockup={mppLockup} />
         </Paper>
       </div>
