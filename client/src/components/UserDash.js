@@ -83,7 +83,8 @@ class UserPage extends React.Component {
   }
   removeCard = key => {
    const removed =  this.state.mppInfo.filter(mpp => mpp._id !== key)
-    this.setState({ mppInfo:removed })
+    this.setState({ mppInfo:removed
+     })
   };
 componentDidMount() {
   this.getUserMpps();
