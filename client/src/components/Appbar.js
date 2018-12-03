@@ -167,7 +167,7 @@ class PrimarySearchAppBar extends React.Component {
               component={Link}
               to="/"
               className={classes.title}
-              variant="h6"
+              // variant="h6"
               color="inherit"
               nowrap="true"
             >

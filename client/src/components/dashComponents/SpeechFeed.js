@@ -43,7 +43,7 @@ class SpeechFeed extends Component {
         <ul>
           {hansard.map((element, index) => {
             return (
-              <div>
+              <div key={index}>
                 <li
                   key={index}
                   className="f6 link dim br3 ph3 pv2 mb2 dib white bg-mid-gray"

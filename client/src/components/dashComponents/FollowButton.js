@@ -25,13 +25,13 @@ const handleFollow = (event, props) => {
     .catch(err => console.log(err));
 };
 
-const FollowButton = props => {
+const FollowButton = ({ props, classes }) => {
   return (
     <div>
       <Fab
         color="primary"
         aria-label="Add"
-        style={styles.fab}
+        className={classes.fab}
         onClick={event => handleFollow(event, props)}
       >
         <AddIcon />
@@ -46,8 +46,8 @@ const FollowButton = props => {
 
 FollowButton.propTypes = {
   userId: PropTypes.object.isRequired,
-  followingId: PropTypes.object.isRequired,
-  fab: PropTypes.object.isRequired
+  followingId: PropTypes.object.isRequired
+  // fab: PropTypes.object.isRequired
 };
 
 export default withStyles(styles)(FollowButton);

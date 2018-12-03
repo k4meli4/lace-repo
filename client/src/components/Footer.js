@@ -16,8 +16,8 @@ const styles = {
   },
   footerDiv: {
     // position: 'absolute',
-    position: 'sticky',
-    bottom: '-10px',
+    // position: 'sticky',
+    bottom: '0px',
     width: '100%',
     height: '50px'
     // marginTop: '-50px'
