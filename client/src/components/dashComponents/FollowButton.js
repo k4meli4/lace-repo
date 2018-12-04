@@ -16,25 +16,26 @@ const styles = theme => ({
   }
 });
 
-const handleFollow = (event, props) => {
+const handleFollow = (event, followingId, userId) => {
+
   event.preventDefault();
   console.log('follow key!!!');
   axios
-    .put(`/api/following/${props.userId}&${props.followingId}`)
-    .then(res => {})
+    .put(`/api/following/${userId}&${followingId}`)
+    .then(res => { })
     .catch(err => console.log(err));
 };
 
-const FollowButton = ({ props, classes }) => {
-  
+const FollowButton = ({ classes, followingId, userId }) => {
   return (
     <div>
       <Fab
+
         color="primary"
         aria-label="Add"
         className={classes.fab}
-        onClick={event => handleFollow(event, props)}
-      >     
+        onClick={event => handleFollow(event, followingId, userId)}
+      >
         <AddIcon />
       </Fab>
     </div>

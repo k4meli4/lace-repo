@@ -20,7 +20,6 @@ export default class SelectMenu extends Component {
         axios
             .post(`/api/mppName/${newValue}`)
             .then(res => {
-                console.log(res.data + 'me')
                 this.setState({ value: newValue })
                 window.location = `/mpp/${this.state.value}`;
                 this.loading = false;
