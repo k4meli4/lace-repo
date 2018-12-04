@@ -104,10 +104,9 @@ module.exports = app => {
   app.put('/api/following/:userId&:followingId', (req, res) => {
     users.findById(req.params.userId).where({ followingId: req.params.followingId })
       .then(data => {
-        console.log(data)
         if (!data) {
           users.updateOne({ _id: req.params.userId }, { $push: { followingId: req.params.followingId } }, { new: true })
-            .then(added => { console.log('added to user ') })
+            .then(added => { console.log( 'added ')})
         }
         else {console.log('already following')}        
       })
@@ -116,6 +115,7 @@ module.exports = app => {
         res.status(422).json(err);
       });
   })
+  // remove MPP/followingId from User
   app.put('/api/unfollow/:userId&:followingId', (req, res) => {
     users.updateOne({_id:req.params.userId}, {$pull: {followingId: req.params.followingId }})
       .then(unfollow => {
@@ -126,7 +126,7 @@ module.exports = app => {
         res.status(422).json(err);
       });
   })
-// route to retrieve
+// route to retrieve MPP's for User pager
   app.get('/api/userMpps', (req, res) => {
     users
       .findById(req.user._id)

@@ -8,43 +8,43 @@ import Fab from '@material-ui/core/Fab';
 import axios from 'axios';
 
 const styles = theme => ({
-    fab: {
-        margin: theme.spacing.unit,
-    },
-    extendedIcon: {
-        marginRight: theme.spacing.unit,
-    },
+  fab: {
+    margin: theme.spacing.unit
+  },
+  extendedIcon: {
+    marginRight: theme.spacing.unit
+  }
 });
 
-const handleFollow = (event, props) => {
-    event.preventDefault();
-    console.log('follow key!!!')
-    axios.put(`/api/following/${props.userId}&${props.followingId}`)
-        .then(res => {
-        })
-        .catch(err => console.log(err));
-}
+const handleFollow = (event, followingId, userId) => {
 
-const FollowButton = props => {
-    return (
-        <div>
-            <Fab color="primary" aria-label="Add" style={styles.fab} onClick={event => handleFollow(event, props)}
-            >
-                <AddIcon />
-            </Fab>
-            {/* <Button variant="contained" color="primary" href="#contained-buttons" */}
+  event.preventDefault();
+  console.log('follow key!!!');
+  axios
+    .put(`/api/following/${userId}&${followingId}`)
+    .then(res => { })
+    .catch(err => console.log(err));
+};
 
+const FollowButton = ({ classes, followingId, userId }) => {
+  return (
+    <div>
+      <Fab
 
-            {/* Follow + */}
-            {/* </Button> */}
-        </div>
-    );
-}
+        color="primary"
+        aria-label="Add"
+        className={classes.fab}
+        onClick={event => handleFollow(event, followingId, userId)}
+      >
+        <AddIcon />
+      </Fab>
+    </div>
+  );
+};
 
 FollowButton.propTypes = {
-    userId: PropTypes.object.isRequired,
-    followingId: PropTypes.object.isRequired,
-    fab: PropTypes.object.isRequired
+  userId: PropTypes.string.isRequired,
+  followingId: PropTypes.string.isRequired
 };
 
 export default withStyles(styles)(FollowButton);

@@ -12,6 +12,7 @@ import API from '../utils/API';
 import TwitterFeed from './TwitterFeed';
 import FacebookFeed from './FacebookFeed';
 import BillsFeed from './dashComponents/BillsFeed';
+// end of inports
 
 function TabContainer({ children, dir }) {
   return (
@@ -37,7 +38,7 @@ const styles = theme => ({
 class FullWidthTabs extends React.Component {
   state = {
     value: 0,
-    value: '',
+    // value: '',
     recentBill: []
   };
 
@@ -131,15 +132,10 @@ class FullWidthTabs extends React.Component {
         <div
           className="postalCodeSearch"
           style={{
-            // position: 'absolute',
-            // bottom: '40px',
             width: '100%',
             marginTop: '0px',
-            // marginBottom: '10px',
             height: 'auto',
             backgroundColor: '#F4F4F4'
-            // paddingBottom: '20px',
-            // paddingTop: '20px'/
           }}
         >
           <h3>Not Sure who your MPP is?</h3>

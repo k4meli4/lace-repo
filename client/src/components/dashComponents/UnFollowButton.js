@@ -17,6 +17,7 @@ const styles = theme => ({
 const handleUnFollow = (event, props) => {
     event.preventDefault();
     console.log('unfollow key!!!')
+    
     axios.put(`/api/unFollow/${props.userId}&${props.followingId}`)
         .then(res => {
         })
@@ -28,6 +29,7 @@ const UnFollowButton = props => {
         <div>
             <Button variant='contained' className={props.button} size="small" color="primary"
                 onClick={event => handleUnFollow(event, props)}
+                onClick={() => props.removeCard(props.followingId)}
             >
                 Unfollow
         </Button>
@@ -36,8 +38,9 @@ const UnFollowButton = props => {
 }
 
 UnFollowButton.propTypes = {
-    userId: PropTypes.object.isRequired,
-    followingId: PropTypes.object.isRequired
+    userId: PropTypes.string.isRequired,
+    followingId: PropTypes.string.isRequired,
+    removeCard: PropTypes.func.isRequired
 };
 
 export default withStyles(styles)(UnFollowButton);

@@ -24,15 +24,6 @@ const styles = theme => ({
   icon: {
     marginRight: theme.spacing.unit * 2,
   },
-
-  heroContent: {
-    maxWidth: 600,
-    margin: '0 auto',
-    padding: `${theme.spacing.unit * 8}px 0 ${theme.spacing.unit * 6}px`,
-  },
-  heroButtons: {
-    marginTop: theme.spacing.unit * 4,
-  },
   layout: {
     width: 'auto',
     marginLeft: theme.spacing.unit * 3,
@@ -52,7 +43,10 @@ const styles = theme => ({
     flexDirection: 'column',
   },
   cardMedia: {
-    paddingTop: '56.25%', // 16:9
+    marginLeft: '50px',
+    marginTop: '10px',
+    width: '190px',
+    height: '230px',
   },
   cardContent: {
     flexGrow: 1,
@@ -109,7 +103,6 @@ class UserPage extends React.Component {
   getUserMpps = () => {
     axios.get('/api/userMpps')
       .then(res => {
-
         this.setState({
           mppInfo: res.data.followingId,
           userId: res.data._id
@@ -129,26 +122,26 @@ class UserPage extends React.Component {
       [name]: event.target.value,
     })
   }
+  removeCard = key => {
+    const removed = this.state.mppInfo.filter(mpp => mpp._id !== key)
+    this.setState({
+      mppInfo: removed
+    })
+  };
   componentDidMount() {
     this.getUserMpps();
-  }
+  };
   render() {
     const { classes } = this.props;
     return (
       <React.Fragment>
         <CssBaseline />
         <main>
-
           <div className={classNames(classes.layout, classes.cardGrid)}>
-            {/* End hero unit */}
-
             <Grid container spacing={40}>
-              {/* {this.state.userinfo = Object.keys(this.state.userinfo)} */}
-              {/* {this.state.userinfo.map(userid => { */}
-              {/* {Object.assign({},userId)} */}
               {this.state.mppInfo.map(info =>
                 <Grid sm={6} md={4} lg={3}  >
-                  <Card className={classes.card} key={info._id} >
+                  <Card className={classes.card} key={info._id}  >
                     <CardMedia
                       className={classes.cardMedia}
                       image={info.photo}
@@ -163,7 +156,7 @@ class UserPage extends React.Component {
                       </Typography>
                     </CardContent>
                     <CardActions>
-                      <Link to={`/mpp/${info.lastName}`}>
+                      <Link to={`/mpp/${info.name}`}>
                         <Button size="small" color="primary">
                           Details
                         </Button>
@@ -171,8 +164,8 @@ class UserPage extends React.Component {
                       <UnFollowButton variant="contained" size="small" color="primary" className={classes.button}
                         followingId={info._id}
                         userId={this.state.userId}
+                        removeCard={this.removeCard}
                       >
-                        {console.log(this.state.userId)}
                       </UnFollowButton>
                     </CardActions>
                   </Card>
@@ -221,7 +214,7 @@ class UserPage extends React.Component {
           </form>
           <button onClick={this.formSubmission}>Submit</button>
         </main>
-      </React.Fragment>
+      </React.Fragment >
     );
   }
 }

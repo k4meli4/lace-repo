@@ -16,11 +16,11 @@ const eachmppSchema = new Schema({
   name: {
     type: String,
     required: true,
+    text: true,
   },
   lastName: {
     type: String,
-    required: true,
-    text: true,
+    required: true    
   },
   photo: {
     type: String,
