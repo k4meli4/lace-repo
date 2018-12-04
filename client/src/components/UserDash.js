@@ -14,6 +14,8 @@ import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import MenuItem from '@material-ui/core/MenuItem';
+import TextField from '@material-ui/core/TextField';
 
 const styles = theme => ({
   appBar: {
@@ -59,6 +61,21 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     padding: theme.spacing.unit * 6,
   },
+  container: {
+    display: 'flex',
+    flexWrap: 'wrap',
+  },
+  textField: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+    width: 200,
+  },
+  dense: {
+    marginTop: 19,
+  },
+  menu: {
+    width: 200,
+  }
 });
 
 class UserPage extends React.Component {
@@ -68,8 +85,26 @@ class UserPage extends React.Component {
     this.state = {
       mppInfo: [],
       followingId: '',
-      userId: ''
+      userId: '',
+      eventName: '',
+      eventSpeaker: '',
+      eventDate: '',
+      eventLocation: ''
     }
+  }
+  formSubmission = () => {
+    console.log(this.state)
+    const eventInfo = {
+      eventSpeaker: this.state.eventSpeaker,
+      eventDate: this.state.eventDate,
+      eventLocation: this.state.eventLocation
+    }
+    console.log(eventInfo);
+    document.getElementById("standard-name-eventName").value = '';
+    document.getElementById("standard-name-eventSpeaker").value = '';
+    document.getElementById("standard-name-eventLocation").value = '';
+    document.getElementById("datetime-local").value = '';
+
   }
   getUserMpps = () => {
     axios.get('/api/userMpps')
@@ -89,7 +124,11 @@ class UserPage extends React.Component {
   //     })
   //     .catch(err => console.log(err));
   // }
-
+  handleChange = name => event => {
+    this.setState({
+      [name]: event.target.value,
+    })
+  }
   componentDidMount() {
     this.getUserMpps();
   }
@@ -141,8 +180,46 @@ class UserPage extends React.Component {
                 </Grid>
               )}
             </Grid>
-
+            
           </div>
+          <form className={classes.container} noValidate autoComplete="off">
+            <TextField
+              id="standard-name-eventName"
+              label="Event Name"
+              className={classes.textField}
+              value={this.state.eventName}
+              onChange={this.handleChange('eventName')}
+              margin="normal"
+            />
+            <TextField
+              id="standard-name-eventSpeaker"
+              label="Event Speaker"
+              className={classes.textField}
+              value={this.state.eventSpeaker}
+              onChange={this.handleChange('eventSpeaker')}
+              margin="normal"
+            />
+            <TextField
+            id="standard-name-eventLocation"
+            label="Event Location"
+            className={classes.textField}
+            value={this.state.eventLocation}
+            onChange={this.handleChange('eventLocation')}
+            />
+            <TextField
+              id="datetime-local"
+              label="Date"
+              type="date"
+              defaultValue="2017-05-24"
+              value={this.state.eventDate}
+              onChange={this.handleChange('eventDate')}
+              className={classes.textField}
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </form>
+          <button onClick={this.formSubmission}>Submit</button>
         </main>
       </React.Fragment>
     );
