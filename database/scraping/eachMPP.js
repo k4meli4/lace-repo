@@ -5,7 +5,7 @@ const CronJob = require('cron').CronJob;
 const eachmpp = require('../models/eachMPP');
 const db = require('../models/MPPurl');
 
-// const eachmppScraper = new CronJob('50 * * * * *', () => {
+// const eachmppScraper = new CronJob('40 * * * * *', () => {
 const eachmppScraper = new CronJob('* 2 23 1 1 *', () => {
   const d = new Date();
   console.log('Second:', d);

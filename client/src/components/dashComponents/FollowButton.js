@@ -33,21 +33,16 @@ const FollowButton = props => {
         aria-label="Add"
         style={styles.fab}
         onClick={event => handleFollow(event, props)}
-      >
+      >     
         <AddIcon />
       </Fab>
-      {/* <Button variant="contained" color="primary" href="#contained-buttons" */}
-
-      {/* Follow + */}
-      {/* </Button> */}
     </div>
   );
 };
 
 FollowButton.propTypes = {
   userId: PropTypes.string.isRequired,
-  followingId: PropTypes.string.isRequired,
-  fab: PropTypes.object.isRequired
+  followingId: PropTypes.string.isRequired
 };
 
 export default withStyles(styles)(FollowButton);

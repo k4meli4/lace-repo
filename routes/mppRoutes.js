@@ -21,7 +21,6 @@ module.exports = app => {
       .populate('addressEmailId')
       .then(dbModel => {
         res.json(dbModel);
-        // console.log(dbModel[0].name + ' dbmodel')
       })
       .catch(err => {
         console.error(err);
@@ -107,7 +106,7 @@ module.exports = app => {
       .then(data => {
         if (!data) {
           users.updateOne({ _id: req.params.userId }, { $push: { followingId: req.params.followingId } }, { new: true })
-            .then(added => { console.log('added to user ') })
+            .then(added => { console.log( 'added ')})
         }
         else {console.log('already following')}        
       })
