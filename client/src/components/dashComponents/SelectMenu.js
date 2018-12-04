@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types, react/jsx-handler-names */
+/* eslint-disable */
 import React, { Component } from 'react';
 import axios from 'axios';
 import CreatableSelect from 'react-select/lib/Creatable';
@@ -18,14 +18,14 @@ export default class SelectMenu extends Component {
         console.log(`action: ${actionMeta.action}`);
         console.groupEnd();
         axios
-        .post(`/api/mppName/${newValue}`)
-        .then(res => {
-            console.log(res.data + 'me')
-          this.setState({ value: newValue })
-          window.location = `/mpp/${this.state.value}`;
-          this.loading = false;
-        })
-        .catch(err => console.log(err));
+            .post(`/api/mppName/${newValue}`)
+            .then(res => {
+                console.log(res.data + 'me')
+                this.setState({ value: newValue })
+                window.location = `/mpp/${this.state.value}`;
+                this.loading = false;
+            })
+            .catch(err => console.log(err));
     };
     handleInputChange = (value, actionMeta) => {
         console.group('Input Changed');
