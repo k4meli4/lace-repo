@@ -53,7 +53,6 @@ export default class SelectedMPP extends Component {
     facebook: '',
     userId: '',
     followingId: '',
-    event: '',
     isLoading: true
   };
   
