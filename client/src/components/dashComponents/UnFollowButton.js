@@ -38,8 +38,8 @@ const UnFollowButton = props => {
 }
 
 UnFollowButton.propTypes = {
-    userId: PropTypes.object.isRequired,
-    followingId: PropTypes.object.isRequired,
+    userId: PropTypes.string.isRequired,
+    followingId: PropTypes.string.isRequired,
     removeCard: PropTypes.func.isRequired
 };
 

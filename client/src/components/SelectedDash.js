@@ -10,6 +10,7 @@ import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 import FollowButton from './dashComponents/FollowButton';
 import demoList from './list/mppSocial';
+
 import Loader from './Loader';
 import { Animated } from 'react-animated-css';
 
@@ -122,7 +123,7 @@ export default class SelectedMPP extends Component {
     if (this.state.isLoading) {
       return <Loader />;
     }
-   
+
     const {
       name,
       position,
@@ -157,6 +158,7 @@ export default class SelectedMPP extends Component {
           party={party}
           parliamentNumber={parliamentNumber}
           telephone={telephone}
+          userId={userId}
         />
         <div className="outterDiv center w-80" style={styles.layout}>
           <div className="innerDiv-left">
@@ -166,7 +168,9 @@ export default class SelectedMPP extends Component {
             <FollowButton
               userId={userId}
               followingId={followingId}
-            />
+            >
+            </FollowButton>
+
             <TwitterFeed twitter={twitter} />
             <FacebookFeed facebook={facebook} />
             {/* <EventFeed /> */}
