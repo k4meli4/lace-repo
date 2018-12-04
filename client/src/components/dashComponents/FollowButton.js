@@ -26,6 +26,7 @@ const handleFollow = (event, props) => {
 };
 
 const FollowButton = ({ props, classes }) => {
+  
   return (
     <div>
       <Fab

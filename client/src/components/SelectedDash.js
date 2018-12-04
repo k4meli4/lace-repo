@@ -158,6 +158,7 @@ export default class SelectedMPP extends Component {
           party={party}
           parliamentNumber={parliamentNumber}
           telephone={telephone}
+          userId={userId}
         />
         <div className="outterDiv center w-80" style={styles.layout}>
           <div className="innerDiv-left">
@@ -166,7 +167,8 @@ export default class SelectedMPP extends Component {
             {console.log(followingId)} */}
             <FollowButton
               userId={userId}
-              followingId={followingId}>
+              followingId={followingId}
+            >
             </FollowButton>
 
             <TwitterFeed twitter={twitter} />
