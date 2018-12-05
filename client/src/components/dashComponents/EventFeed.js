@@ -34,12 +34,12 @@ const styles = theme => ({
   }
 });
 
+
 class EventFeed extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      mppInfo: [],
+      eventDetails: [],
       followingId: '',
       userId: '',
       eventName: '',
@@ -48,7 +48,15 @@ class EventFeed extends Component {
       eventLocation: ''
     };
   }
-  //
+
+  getCurrentUser = () => {
+    axios.get('/api/currentUser')
+      .then(res => {
+        // console.log(res.data)
+        this.setState({ userId: res.data._id })
+      })
+      .catch(err => console.log(err));
+  };
 
   handleChange = name => event => {
     this.setState({
@@ -56,20 +64,48 @@ class EventFeed extends Component {
     });
   };
 
-  formSubmission = () => {
-    console.log(this.state);
+  displayEvents() {
+    axios
+      .get('/api/events/', {
+      })
+      .then(res => {
+        this.setState({
+          eventDetails: res.data
+        });
+      })
+      .catch(err => console.log(err));
+  }
+
+
+  formSubmission = (event) => {
+    event.preventDefault();
+    console.log('submitted!!!');
     const eventInfo = {
+      userId: this.state.userId,
+      eventName: this.state.eventName,
       eventSpeaker: this.state.eventSpeaker,
       eventDate: this.state.eventDate,
       eventLocation: this.state.eventLocation
     };
-    console.log(eventInfo);
+    axios.post('/api/submit/', eventInfo)
+
+      .then(res => {
+        // console.log(res.data)
+      })
+      .catch(err => console.log(err));
+
+    // console.log(eventInfo);
     document.getElementById('standard-name-eventName').value = '';
     document.getElementById('standard-name-eventSpeaker').value = '';
     document.getElementById('standard-name-eventLocation').value = '';
     document.getElementById('datetime-local').value = '';
   };
+
   //
+  componentDidMount() {
+    this.getCurrentUser();
+    // this.displayEvents()
+  };
 
   render() {
     const { classes } = this.props;
@@ -115,7 +151,9 @@ class EventFeed extends Component {
                 }}
               />
             </form>
-            <button onClick={this.formSubmission}>Submit</button>
+            <button onClick={event => this.formSubmission(event)} >
+              Submit
+              </button>
           </main>
         </React.Fragment>
       </article>
@@ -123,4 +161,7 @@ class EventFeed extends Component {
   }
 }
 
+EventFeed.propTypes = {
+  classes: PropTypes.object.isRequired
+};
 export default withStyles(styles)(EventFeed);

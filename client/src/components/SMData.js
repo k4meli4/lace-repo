@@ -60,7 +60,7 @@ class FullWidthTabs extends React.Component {
   };
 
   render() {
-    const { classes, theme, mppLockup, twitter, facebook } = this.props;
+    const { classes, theme, mppLockup, twitter, facebook, userId } = this.props;
 
     return (
       <div className={classes.root}>
@@ -95,7 +95,7 @@ class FullWidthTabs extends React.Component {
             <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <EventFeed />
+            <EventFeed userId={userId} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
             <TwitterFeed twitter={twitter} />
@@ -111,7 +111,9 @@ class FullWidthTabs extends React.Component {
 
 FullWidthTabs.propTypes = {
   classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  theme: PropTypes.object.isRequired,
+  mppLockup: PropTypes.string.isRequired,
+  userId: PropTypes.string.isRequired
 };
 
 export default withStyles(styles, { withTheme: true })(FullWidthTabs);
