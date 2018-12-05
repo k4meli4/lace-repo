@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types, react/jsx-handler-names */
+/* eslint-disable */
 import React, { Component } from 'react';
 import axios from 'axios';
 import CreatableSelect from 'react-select/lib/Creatable';
