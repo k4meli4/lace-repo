@@ -14,7 +14,7 @@ import SpeechFeed from './dashComponents/SpeechFeed';
 import EventFeed from './dashComponents/EventFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 // Tool
-import SocialList from './list/mppSocial';
+// import SocialList from './list/mppSocial';
 // end of inports
 
 function TabContainer({ children, dir }) {
@@ -45,7 +45,10 @@ const styles = theme => ({
 
 class FullWidthTabs extends React.Component {
   state = {
-    value: 0
+    value: 0,
+    name: ' ',
+    twitter: '',
+    facebook: ''
   };
 
   handleChange = (event, value) => {
@@ -56,34 +59,8 @@ class FullWidthTabs extends React.Component {
     this.setState({ value: index });
   };
 
-  //
-  getTwitter() {
-    SocialList.forEach(tName => {
-      if (tName.name === this.state.name) {
-        return this.setState({ twitter: tName.twitter });
-      }
-    });
-  }
-
-  //
-  getFacebook() {
-    SocialList.forEach(fName => {
-      if (fName.name === this.state.name) {
-        console.log(fName.name);
-        console.log(this.state.name);
-        console.log(fName.facebook);
-        return this.setState({ facebook: fName.facebook });
-      }
-    });
-  }
-
-  componentDidMount() {
-    this.getTwitter();
-    this.getFacebook();
-  }
-
   render() {
-    const { classes, theme, mppLockup } = this.props;
+    const { classes, theme, mppLockup, twitter, facebook } = this.props;
 
     return (
       <div className={classes.root}>
@@ -121,10 +98,10 @@ class FullWidthTabs extends React.Component {
             <EventFeed />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <TwitterFeed />
+            <TwitterFeed twitter={twitter} />
           </TabContainer>
           <TabContainer dir={theme.direction}>
-            <FacebookFeed />
+            <FacebookFeed facebook={facebook} />
           </TabContainer>
         </SwipeableViews>
       </div>
