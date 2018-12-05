@@ -11,6 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import TwitterFeed from './TwitterFeed';
 import FacebookFeed from './FacebookFeed';
 import SpeechFeed from './dashComponents/SpeechFeed';
+import EventFeed from './dashComponents/EventFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 // Tool
 import SocialList from './list/mppSocial';
@@ -111,7 +112,9 @@ class FullWidthTabs extends React.Component {
           <TabContainer dir={theme.direction}>
             <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
           </TabContainer>
-          <TabContainer dir={theme.direction}>CRUD Events Here</TabContainer>
+          <TabContainer dir={theme.direction}>
+            <EventFeed />
+          </TabContainer>
           <TabContainer dir={theme.direction}>
             <TwitterFeed />
           </TabContainer>
