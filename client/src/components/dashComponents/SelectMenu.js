@@ -4,23 +4,32 @@ import axios from 'axios';
 import CreatableSelect from 'react-select/lib/Creatable';
 import arrayNames from '../list/arrayNames';
 
-const names = arrayNames.map(name => {
-  return name.name;
-});
-
+const customStyles = {
+  option: () => ({
+    color: '#009688',
+    padding: 2
+  }),
+  //
+  singleValue: (provided, state) => {
+    const opacity = state.isDisabled ? 0.5 : 1;
+    const transition = 'opacity 300ms';
+    return { ...provided, opacity, transition };
+  }
+};
 export default class SelectMenu extends Component {
   state = {
     value: ''
   };
   handleChange = (newValue, actionMeta) => {
     console.group('Value Changed');
-    console.log(newValue);
+    console.log(newValue.label);
     console.log(`action: ${actionMeta.action}`);
     console.groupEnd();
     axios
-      .post(`/api/mppName/${newValue}`)
+      .post(`/api/mppName/${newValue.label}`)
       .then(res => {
-        this.setState({ value: newValue });
+        console.log(res.data + 'me');
+        this.setState({ value: newValue.label });
         window.location = `/mpp/${this.state.value}`;
         this.loading = false;
       })
@@ -38,7 +47,9 @@ export default class SelectMenu extends Component {
         isClearable
         onChange={this.handleChange}
         onInputChange={this.handleInputChange}
-        options={names}
+        options={arrayNames}
+        defaultValue
+        styles={customStyles}
       />
     );
   }
