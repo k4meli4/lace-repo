@@ -78,27 +78,9 @@ class UserPage extends React.Component {
 
     this.state = {
       mppInfo: [],
-      followingId: '',
-      userId: '',
-      eventName: '',
-      eventSpeaker: '',
-      eventDate: '',
-      eventLocation: ''
+      userId: ''
     };
   }
-  formSubmission = () => {
-    console.log(this.state);
-    const eventInfo = {
-      eventSpeaker: this.state.eventSpeaker,
-      eventDate: this.state.eventDate,
-      eventLocation: this.state.eventLocation
-    };
-    console.log(eventInfo);
-    document.getElementById('standard-name-eventName').value = '';
-    document.getElementById('standard-name-eventSpeaker').value = '';
-    document.getElementById('standard-name-eventLocation').value = '';
-    document.getElementById('datetime-local').value = '';
-  };
   getUserMpps = () => {
     axios
       .get('/api/userMpps')
@@ -109,18 +91,6 @@ class UserPage extends React.Component {
         });
       })
       .catch(err => console.log(err));
-  };
-  // handleUnFollow = (event, info) => {
-  //   console.log('unfollow key!!!')
-  //   axios.put(`/api/unfollow/${info.userId}&${info.followingId}`)
-  //     .then(res => {
-  //     })
-  //     .catch(err => console.log(err));
-  // }
-  handleChange = name => event => {
-    this.setState({
-      [name]: event.target.value
-    });
   };
   removeCard = key => {
     const removed = this.state.mppInfo.filter(mpp => mpp._id !== key);
@@ -220,7 +190,7 @@ class UserPage extends React.Component {
 
 UserPage.propTypes = {
   classes: PropTypes.object.isRequired,
-  mppInfo: PropTypes.object.isRequired
+  mppInfo: PropTypes.array.isRequired
 };
 
 export default withStyles(styles)(UserPage);
