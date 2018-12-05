@@ -5,6 +5,6 @@ import nameReducer from './nameReducer';
 
 export default combineReducers({
   auth: authReducer,
-  name: nameReducer
+  name: nameReducer,
   // form: formReducer,
 });

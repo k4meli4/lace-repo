@@ -10,7 +10,6 @@ import SpeechFeed from './dashComponents/SpeechFeed';
 import VotingRecords from './dashComponents/VotingRecords';
 import FollowButton from './dashComponents/FollowButton';
 import demoList from './list/mppSocial';
-
 import Loader from './Loader';
 import { Animated } from 'react-animated-css';
 
@@ -56,8 +55,6 @@ export default class SelectedMPP extends Component {
     followingId: '',
     isLoading: true
   };
-  
-  // let url = window.location.href;
 
   mppSearch() {
     axios
@@ -150,7 +147,7 @@ export default class SelectedMPP extends Component {
         isVisible={true}
       >
         <MppInfo
-          followingId={followingId}
+          // followingId={followingId}
           lastName={lastName}
           name={name}
           position={position}
@@ -160,29 +157,19 @@ export default class SelectedMPP extends Component {
           party={party}
           parliamentNumber={parliamentNumber}
           telephone={telephone}
-          userId={userId}
+          // userId={userId}
         />
         <div className="outterDiv center w-80" style={styles.layout}>
           <div className="innerDiv-left">
             {/* <SocialFeed twitter={twitter} facebook={facebook} /> */}
-            {/* {console.log(userId + 'user')}
-            {console.log(followingId)} */}
-            <FollowButton
-              userId={userId}
-              followingId={followingId}
-            >
-            </FollowButton>
-
+            <FollowButton userId={userId} followingId={followingId}/>
             <TwitterFeed twitter={twitter} />
             <FacebookFeed facebook={facebook} />
-            {/* <EventFeed /> */}
+            <EventFeed  userId={userId} followingId={followingId}/>
             {/* <NewsFeed customStyle={styles.rightA} /> */}
           </div>
           <div className="innerDiv-right w-80 ">
-            <VotingRecords
-              votingRecords={VotingRecords}
-              customStyle={styles.rightA}
-            />
+            <VotingRecords votingRecords={VotingRecords} customStyle={styles.rightA} />
             <SpeechFeed mppLockup={mppLockup} customStyle={styles.rightA} />
           </div>
         </div>
