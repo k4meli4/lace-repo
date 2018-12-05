@@ -39,7 +39,7 @@ class EventFeed extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventDetails =[],
+      eventDetails: [],
       followingId: '',
       userId: '',
       eventName: '',
