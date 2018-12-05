@@ -35,6 +35,10 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     // width: 500
     flexGrow: 1 // this will center
+  },
+  tabSize: {
+    // border: 'solid 2px black',
+    maxHeight: '50vh'
   }
 });
 
@@ -101,6 +105,7 @@ class FullWidthTabs extends React.Component {
           axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
+          className={classes.tabSize}
         >
           <TabContainer dir={theme.direction}>
             <VotingRecords
