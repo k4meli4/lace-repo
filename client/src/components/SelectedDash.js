@@ -56,8 +56,9 @@ export default class SelectedMPP extends Component {
     followingId: '',
     isLoading: true
   };
-
+  
   // let url = window.location.href;
+
   mppSearch() {
     axios
       .get(`/api/mppName/${this.state.mppLockup}`, {
@@ -115,6 +116,7 @@ export default class SelectedMPP extends Component {
     setTimeout(() => {
       this.getTwitter();
       this.getFacebook();
+
     }, 10000);
     setTimeout(() => this.setState({ isLoading: false }), 3000);
   }
