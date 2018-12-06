@@ -21,6 +21,7 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
   root: {
@@ -43,9 +44,15 @@ const styles = theme => ({
   menu: {
     width: 200
   },
+  button: {
+    margin: theme.spacing.unit
+  },
   eventLayout: {
-    display: 'flex'
-  }
+    display: 'flex',
+    flexWrap: 'wrap'
+  },
+  eventList: { width: '60rem' },
+  eventForm: {}
 });
 
 class EventFeed extends Component {
@@ -127,7 +134,7 @@ class EventFeed extends Component {
     const { eventDetails } = this.state;
     return (
       <div className={classes.eventLayout}>
-        <article className="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+        <Paper className={classes.root} elevation={1}>
           <React.Fragment>
             <CssBaseline />
             <main>
@@ -168,13 +175,16 @@ class EventFeed extends Component {
                   }}
                 />
               </form>
-              <button onClick={event => this.formSubmission(event)}>
+              <Button
+                onClick={event => this.formSubmission(event)}
+                className={classes.button}
+              >
                 Submit
-              </button>
+              </Button>
             </main>
           </React.Fragment>
-        </article>
-        <div>
+        </Paper>
+        <div className={classes.eventList}>
           {eventDetails.map((event, i) => (
             <div key={i}>
               <ExpansionPanel className={classes.expender}>
@@ -188,12 +198,19 @@ class EventFeed extends Component {
                   </Typography>
                 </ExpansionPanelSummary>
                 <ExpansionPanelDetails>
-                  <Typography component="p">
-                    Speaker: {event.eventSpeaker}
+                  <Typography component="p" className="pa2">
+                    <strong>Speaker: </strong>
+                    {event.eventSpeaker}
                   </Typography>
-                  <Typography component="p">Date: {event.eventDate}</Typography>
-                  <Typography component="p">
-                    Location: {event.eventLocation}
+
+                  <Typography component="p" className="pa2">
+                    <strong>Date: </strong>
+                    {event.eventDate}
+                  </Typography>
+
+                  <Typography component="p" className="pa2">
+                    <strong>Location: </strong>
+                    {event.eventLocation}
                   </Typography>
                 </ExpansionPanelDetails>
               </ExpansionPanel>
