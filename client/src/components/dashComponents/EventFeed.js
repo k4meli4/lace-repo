@@ -1,22 +1,33 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+// import classNames from 'classnames';
+// import Button from '@material-ui/core/Button';
+// import Card from '@material-ui/core/Card';
+// import CardActions from '@material-ui/core/CardActions';
+// import CardContent from '@material-ui/core/CardContent';
+// import CardMedia from '@material-ui/core/CardMedia';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
+// import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import axios from 'axios';
-import MenuItem from '@material-ui/core/MenuItem';
+// import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Paper from '@material-ui/core/Paper';
+// next - Expansion
+import ExpansionPanel from '@material-ui/core/ExpansionPanel';
+import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
+import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 const styles = theme => ({
+  root: {
+    ...theme.mixins.gutters(),
+    paddingTop: theme.spacing.unit * 2,
+    paddingBottom: theme.spacing.unit * 2
+  },
   container: {
     display: 'flex',
     flexWrap: 'wrap'
@@ -31,9 +42,11 @@ const styles = theme => ({
   },
   menu: {
     width: 200
+  },
+  eventLayout: {
+    display: 'flex'
   }
 });
-
 
 class EventFeed extends Component {
   constructor(props) {
@@ -50,10 +63,11 @@ class EventFeed extends Component {
   }
 
   getCurrentUser = () => {
-    axios.get('/api/currentUser')
+    axios
+      .get('/api/currentUser')
       .then(res => {
         // console.log(res.data)
-        this.setState({ userId: res.data._id })
+        this.setState({ userId: res.data._id });
       })
       .catch(err => console.log(err));
   };
@@ -66,9 +80,9 @@ class EventFeed extends Component {
 
   displayEvents() {
     axios
-      .get('/api/events/', {
-      })
+      .get('/api/events/', {})
       .then(res => {
+        console.log(res);
         this.setState({
           eventDetails: res.data
         });
@@ -76,8 +90,7 @@ class EventFeed extends Component {
       .catch(err => console.log(err));
   }
 
-
-  formSubmission = (event) => {
+  formSubmission = event => {
     event.preventDefault();
     console.log('submitted!!!');
     const eventInfo = {
@@ -87,9 +100,11 @@ class EventFeed extends Component {
       eventDate: this.state.eventDate,
       eventLocation: this.state.eventLocation
     };
-    axios.post('/api/submit/', eventInfo)
+    axios
+      .post('/api/submit/', eventInfo)
 
       .then(res => {
+        this.displayEvents();
         // console.log(res.data)
       })
       .catch(err => console.log(err));
@@ -104,59 +119,88 @@ class EventFeed extends Component {
   //
   componentDidMount() {
     this.getCurrentUser();
-    // this.displayEvents()
-  };
+    this.displayEvents();
+  }
 
   render() {
     const { classes } = this.props;
+    const { eventDetails } = this.state;
     return (
-      <article className="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
-        <React.Fragment>
-          <CssBaseline />
-          <main>
-            <form className={classes.container} noValidate autoComplete="off">
-              <TextField
-                id="standard-name-eventName"
-                label="Event Name"
-                className={classes.textField}
-                value={this.state.eventName}
-                onChange={this.handleChange('eventName')}
-                margin="normal"
-              />
-              <TextField
-                id="standard-name-eventSpeaker"
-                label="Event Speaker"
-                className={classes.textField}
-                value={this.state.eventSpeaker}
-                onChange={this.handleChange('eventSpeaker')}
-                margin="normal"
-              />
-              <TextField
-                id="standard-name-eventLocation"
-                label="Event Location"
-                className={classes.textField}
-                value={this.state.eventLocation}
-                onChange={this.handleChange('eventLocation')}
-              />
-              <TextField
-                id="datetime-local"
-                label="Date"
-                type="date"
-                defaultValue="2017-05-24"
-                value={this.state.eventDate}
-                onChange={this.handleChange('eventDate')}
-                className={classes.textField}
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
-            </form>
-            <button onClick={event => this.formSubmission(event)} >
-              Submit
+      <div className={classes.eventLayout}>
+        <article className="mw5 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10">
+          <React.Fragment>
+            <CssBaseline />
+            <main>
+              <form className={classes.container} noValidate autoComplete="off">
+                <TextField
+                  id="standard-name-eventName"
+                  label="Event Name"
+                  className={classes.textField}
+                  value={this.state.eventName}
+                  onChange={this.handleChange('eventName')}
+                  margin="normal"
+                />
+                <TextField
+                  id="standard-name-eventSpeaker"
+                  label="Event Speaker"
+                  className={classes.textField}
+                  value={this.state.eventSpeaker}
+                  onChange={this.handleChange('eventSpeaker')}
+                  margin="normal"
+                />
+                <TextField
+                  id="standard-name-eventLocation"
+                  label="Event Location"
+                  className={classes.textField}
+                  value={this.state.eventLocation}
+                  onChange={this.handleChange('eventLocation')}
+                />
+                <TextField
+                  id="datetime-local"
+                  label="Date"
+                  type="date"
+                  defaultValue="2017-05-24"
+                  value={this.state.eventDate}
+                  onChange={this.handleChange('eventDate')}
+                  className={classes.textField}
+                  InputLabelProps={{
+                    shrink: true
+                  }}
+                />
+              </form>
+              <button onClick={event => this.formSubmission(event)}>
+                Submit
               </button>
-          </main>
-        </React.Fragment>
-      </article>
+            </main>
+          </React.Fragment>
+        </article>
+        <div>
+          {eventDetails.map((event, i) => (
+            <div key={i}>
+              <ExpansionPanel className={classes.expender}>
+                <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />}>
+                  <Typography
+                    className={classes.heading}
+                    // variant="h5"
+                    component="h3"
+                  >
+                    {event.eventName}
+                  </Typography>
+                </ExpansionPanelSummary>
+                <ExpansionPanelDetails>
+                  <Typography component="p">
+                    Speaker: {event.eventSpeaker}
+                  </Typography>
+                  <Typography component="p">Date: {event.eventDate}</Typography>
+                  <Typography component="p">
+                    Location: {event.eventLocation}
+                  </Typography>
+                </ExpansionPanelDetails>
+              </ExpansionPanel>
+            </div>
+          ))}
+        </div>
+      </div>
     );
   }
 }
@@ -164,4 +208,5 @@ class EventFeed extends Component {
 EventFeed.propTypes = {
   classes: PropTypes.object.isRequired
 };
+
 export default withStyles(styles)(EventFeed);
